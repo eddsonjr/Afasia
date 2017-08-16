@@ -99,13 +99,11 @@
 		AD2B1C801F43D99C001175E2 /* Afasia */ = {
 			isa = PBXGroup;
 			children = (
-				AD2B1C811F43D99C001175E2 /* AppDelegate.swift */,
-				AD2B1C831F43D99C001175E2 /* ViewController.swift */,
-				AD2B1C851F43D99C001175E2 /* Main.storyboard */,
+				AD2B1CB51F43DADB001175E2 /* Models */,
+				AD2B1CB41F43DACE001175E2 /* Controllers */,
+				AD2B1CB31F43DAC4001175E2 /* View */,
+				AD2B1CB21F43DAB7001175E2 /* System */,
 				AD2B1C8B1F43D99C001175E2 /* Assets.xcassets */,
-				AD2B1C8D1F43D99C001175E2 /* LaunchScreen.storyboard */,
-				AD2B1C901F43D99C001175E2 /* Info.plist */,
-				AD2B1C881F43D99C001175E2 /* Afasia.xcdatamodeld */,
 			);
 			path = Afasia;
 			sourceTree = "<group>";
@@ -126,6 +124,40 @@
 				AD2B1CA61F43D99D001175E2 /* Info.plist */,
 			);
 			path = AfasiaUITests;
+			sourceTree = "<group>";
+		};
+		AD2B1CB21F43DAB7001175E2 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				AD2B1C901F43D99C001175E2 /* Info.plist */,
+				AD2B1C881F43D99C001175E2 /* Afasia.xcdatamodeld */,
+				AD2B1C811F43D99C001175E2 /* AppDelegate.swift */,
+			);
+			name = System;
+			sourceTree = "<group>";
+		};
+		AD2B1CB31F43DAC4001175E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AD2B1C851F43D99C001175E2 /* Main.storyboard */,
+				AD2B1C8D1F43D99C001175E2 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		AD2B1CB41F43DACE001175E2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AD2B1C831F43D99C001175E2 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		AD2B1CB51F43DADB001175E2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
