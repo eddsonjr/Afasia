@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		AD1A31051F447FBB0058E920 /* ReconhecimentoPalavrasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1A31041F447FBB0058E920 /* ReconhecimentoPalavrasViewController.swift */; };
 		AD2B1C821F43D99C001175E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B1C811F43D99C001175E2 /* AppDelegate.swift */; };
-		AD2B1C841F43D99C001175E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B1C831F43D99C001175E2 /* ViewController.swift */; };
+		AD2B1C841F43D99C001175E2 /* SelecaoJogosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B1C831F43D99C001175E2 /* SelecaoJogosViewController.swift */; };
 		AD2B1C871F43D99C001175E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD2B1C851F43D99C001175E2 /* Main.storyboard */; };
 		AD2B1C8A1F43D99C001175E2 /* Afasia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AD2B1C881F43D99C001175E2 /* Afasia.xcdatamodeld */; };
 		AD2B1C8C1F43D99C001175E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD2B1C8B1F43D99C001175E2 /* Assets.xcassets */; };
@@ -39,7 +39,7 @@
 		AD1A31041F447FBB0058E920 /* ReconhecimentoPalavrasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReconhecimentoPalavrasViewController.swift; sourceTree = "<group>"; };
 		AD2B1C7E1F43D99C001175E2 /* Afasia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Afasia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD2B1C811F43D99C001175E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AD2B1C831F43D99C001175E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AD2B1C831F43D99C001175E2 /* SelecaoJogosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelecaoJogosViewController.swift; sourceTree = "<group>"; };
 		AD2B1C861F43D99C001175E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD2B1C891F43D99C001175E2 /* Afasia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Afasia.xcdatamodel; sourceTree = "<group>"; };
 		AD2B1C8B1F43D99C001175E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 		AD2B1CB41F43DACE001175E2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AD2B1C831F43D99C001175E2 /* ViewController.swift */,
+				AD2B1C831F43D99C001175E2 /* SelecaoJogosViewController.swift */,
 				AD1A31041F447FBB0058E920 /* ReconhecimentoPalavrasViewController.swift */,
 			);
 			name = Controllers;
@@ -300,7 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD2B1C841F43D99C001175E2 /* ViewController.swift in Sources */,
+				AD2B1C841F43D99C001175E2 /* SelecaoJogosViewController.swift in Sources */,
 				AD1A31051F447FBB0058E920 /* ReconhecimentoPalavrasViewController.swift in Sources */,
 				AD2B1C821F43D99C001175E2 /* AppDelegate.swift in Sources */,
 				AD2B1C8A1F43D99C001175E2 /* Afasia.xcdatamodeld in Sources */,
