@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AD1A31051F447FBB0058E920 /* ReconhecimentoPalavrasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1A31041F447FBB0058E920 /* ReconhecimentoPalavrasViewController.swift */; };
+		AD1A31081F448A180058E920 /* ImagemExercicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1A31071F448A180058E920 /* ImagemExercicio.swift */; };
 		AD2B1C821F43D99C001175E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B1C811F43D99C001175E2 /* AppDelegate.swift */; };
 		AD2B1C841F43D99C001175E2 /* SelecaoJogosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B1C831F43D99C001175E2 /* SelecaoJogosViewController.swift */; };
 		AD2B1C871F43D99C001175E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD2B1C851F43D99C001175E2 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		AD1A31041F447FBB0058E920 /* ReconhecimentoPalavrasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReconhecimentoPalavrasViewController.swift; sourceTree = "<group>"; };
+		AD1A31071F448A180058E920 /* ImagemExercicio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagemExercicio.swift; sourceTree = "<group>"; };
 		AD2B1C7E1F43D99C001175E2 /* Afasia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Afasia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD2B1C811F43D99C001175E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD2B1C831F43D99C001175E2 /* SelecaoJogosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelecaoJogosViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD1A31061F4489D80058E920 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				AD1A31071F448A180058E920 /* ImagemExercicio.swift */,
+			);
+			name = Stores;
+			sourceTree = "<group>";
+		};
 		AD2B1C751F43D99C001175E2 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +169,7 @@
 		AD2B1CB51F43DADB001175E2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AD1A31061F4489D80058E920 /* Stores */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -304,6 +315,7 @@
 				AD1A31051F447FBB0058E920 /* ReconhecimentoPalavrasViewController.swift in Sources */,
 				AD2B1C821F43D99C001175E2 /* AppDelegate.swift in Sources */,
 				AD2B1C8A1F43D99C001175E2 /* Afasia.xcdatamodeld in Sources */,
+				AD1A31081F448A180058E920 /* ImagemExercicio.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
