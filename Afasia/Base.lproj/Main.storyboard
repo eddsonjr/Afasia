@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="821" y="-136"/>
         </scene>
-        <!--View Controller-->
+        <!--Nome das Figuras-->
         <scene sceneID="t5C-BM-uja">
             <objects>
-                <viewController id="Eqx-q7-ADe" sceneMemberID="viewController">
+                <viewController id="Eqx-q7-ADe" customClass="ReconhecimentoPalavrasViewController" customModule="Afasia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SzT-Yi-BPC"/>
                         <viewControllerLayoutGuide type="bottom" id="CLa-h4-0fO"/>
@@ -53,20 +53,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="JOGO DE RECONHECIMENTO DAS PALAVRAS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWT-1Q-Iuv">
-                                <rect key="frame" x="375" y="374" width="357" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FDA-2G-Y94">
+                                <rect key="frame" x="140" y="191" width="745" height="365"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bju-zD-2Xd">
+                                <rect key="frame" x="319" y="681" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Acertou"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAp-NZ-IPd">
+                                <rect key="frame" x="488" y="681" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Dvuida"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bML-Z1-tHM">
+                                <rect key="frame" x="632" y="681" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Errou"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="WWT-1Q-Iuv" firstAttribute="centerY" secondItem="4G0-sG-uSz" secondAttribute="centerY" id="Da0-nj-Pf9"/>
-                            <constraint firstItem="WWT-1Q-Iuv" firstAttribute="centerX" secondItem="4G0-sG-uSz" secondAttribute="centerX" id="Jd6-oe-Kxm"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="4qR-9h-iDA"/>
+                    <navigationItem key="navigationItem" title="Nome das Figuras" id="4qR-9h-iDA">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="d9c-17-jrU">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dKr-TQ-QNE">
+                                <rect key="frame" x="20" y="7" width="227" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Voltar"/>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="fdK-sl-M2W">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fIS-lq-Bkw">
+                                <rect key="frame" x="777" y="7" width="227" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Configurações"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rAo-IM-PGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
