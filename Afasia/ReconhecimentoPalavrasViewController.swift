@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReconhecimentoPalavrasViewController: UIViewController {
+class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
 
     
     //Mark: View compoenntes
@@ -74,5 +74,35 @@ class ReconhecimentoPalavrasViewController: UIViewController {
         
     }
     
+    
+    
+    
+    
+    
+    //Mark: Funcoes de delegate do pickerView
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.configExecPickerData.count
+    }
+
  
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.configExecPickerData[row]
+    }
+
+    
+    
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+        
+        
+    }
+    
+    
+    
 }
