@@ -53,10 +53,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FDA-2G-Y94">
-                                <rect key="frame" x="140" y="191" width="745" height="365"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bju-zD-2Xd">
                                 <rect key="frame" x="319" y="681" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -81,6 +77,17 @@
                                     <action selector="errou:" destination="Eqx-q7-ADe" eventType="touchUpInside" id="fDY-Ei-taL"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="syn-sR-Xg3">
+                                <rect key="frame" x="20" y="145" width="984" height="478"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FDA-2G-Y94">
+                                        <rect key="frame" x="119" y="56" width="745" height="365"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -92,17 +99,12 @@
                                 <state key="normal" title="Voltar"/>
                             </button>
                             <connections>
-                                <action selector="voltarParaTelaAnterior:" destination="Eqx-q7-ADe" id="ocI-5g-0Hk"/>
+                                <action selector="voltarParaTelaAnterior:" destination="Eqx-q7-ADe" id="ab3-PK-gvA"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="fdK-sl-M2W">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fIS-lq-Bkw">
-                                <rect key="frame" x="777" y="7" width="227" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Configurações"/>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="Configurações" id="vkq-Yh-X39">
                             <connections>
-                                <action selector="configuracoes:" destination="Eqx-q7-ADe" id="mwL-Wm-Na0"/>
+                                <action selector="configuracoes:" destination="Eqx-q7-ADe" id="iVR-fX-gAQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -110,6 +112,7 @@
                         <outlet property="ImageView" destination="FDA-2G-Y94" id="thQ-IJ-X6l"/>
                         <outlet property="configuracoesPopOver" destination="4O3-ab-MQW" id="9Vm-6m-czq"/>
                         <outlet property="configuracoesPopOverPicker" destination="gGY-JR-E4v" id="enb-Wb-BLe"/>
+                        <outlet property="swipeView" destination="syn-sR-Xg3" id="XQT-Fr-IAT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rAo-IM-PGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -125,14 +128,12 @@
                             <rect key="frame" x="175" y="226" width="30" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="OK"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b14-7L-hyF">
-                            <rect key="frame" x="19" y="0.0" width="41" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Voltar"/>
+                            <connections>
+                                <action selector="fecharConfiguracoes:" destination="Eqx-q7-ADe" eventType="touchUpInside" id="cqi-4V-PLk"/>
+                            </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.90770725388601037" green="0.90770725388601037" blue="0.90770725388601037" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
             </objects>
             <point key="canvasLocation" x="2190.234375" y="-136.71875"/>
@@ -143,6 +144,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="pPL-Lr-609" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="RwO-YA-J6V">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>

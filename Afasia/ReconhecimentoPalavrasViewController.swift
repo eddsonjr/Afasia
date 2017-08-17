@@ -12,10 +12,15 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
 
     
     //Mark: View compoenntes
-    
     @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet var configuracoesPopOver: UIView!
     @IBOutlet weak var configuracoesPopOverPicker: UIPickerView!
+    @IBOutlet weak var swipeView: UIView!
+    
+    
+    //Mark: Mensagem de debug
+    private let dbgmsg = "[EXEC1]: "
+    
     
     
     //Mark: Configuracoes do picker
@@ -26,7 +31,16 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //adicionando o suporte ao swipe para passar as imagens
+        addSwipe()
+        
+        
+        //delegate e datasource do UIPickerView
+        self.configuracoesPopOverPicker.delegate = self
+        self.configuracoesPopOverPicker.dataSource = self
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,14 +58,17 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     
     //resposnavel por chamar o pop over das configuracoes do 
     @IBAction func configuracoes(_ sender: Any) {
-        
-        
+        print(dbgmsg + "Chamando configuracoes")
+        callPopover()
     }
     
     
     //responsavel por voltar para a tela anterior
     @IBAction func voltarParaTelaAnterior(_ sender: Any) {
-        
+     
+        self.dismiss(animated: true) { 
+            print(self.dbgmsg + "Voltando para tela anterior")
+        }
     }
     
     
@@ -77,10 +94,79 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     
     
     
+    @IBAction func fecharConfiguracoes(_ sender: Any) {
+        print(dbgmsg + "Fechando configuracoes")
+        removePopover()
+        
+    }
+    
+    
+    //Mark: Funcoes de swipe 
+    
+    //adicionando suporte ao swipe na swipeView
+    func addSwipe() {
+        let swipeGestures: [UISwipeGestureRecognizerDirection] = [UISwipeGestureRecognizerDirection.right,UISwipeGestureRecognizerDirection.left]
+        for direction in swipeGestures {
+            let gesture = UISwipeGestureRecognizer(target: self, action: #selector(ReconhecimentoPalavrasViewController.handleSwipeGesture(_sender:)))
+            gesture.direction = direction
+            self.swipeView.addGestureRecognizer(gesture)
+        }
+        
+    }
+
+    
+    
+    
+    //implementando comportamento de troca das imagens
+    func handleSwipeGesture(_sender: UISwipeGestureRecognizer){
+        
+        
+        if _sender.direction == UISwipeGestureRecognizerDirection.left {
+            print(dbgmsg + "Swipe action: esquerda")
+
+        
+        }else if _sender.direction == UISwipeGestureRecognizerDirection.right {
+             print(dbgmsg + "Swipe action: direita")
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+    //Mark: Funcoes de animacao para chamar e retirar o popover
+    //funcao para chamar o popover
+    func callPopover() {
+        self.view.addSubview(self.configuracoesPopOver)
+        self.configuracoesPopOver.center = self.view.center
+        
+        
+        self.configuracoesPopOver.transform = CGAffineTransform.identity.scaledBy(x: 1.5, y: 1.5)
+        UIView.animate(withDuration: 0.4, animations: {
+            self.configuracoesPopOver.alpha = 1.0
+            self.configuracoesPopOver.transform = CGAffineTransform.identity
+        })
+        
+    }
+    
+    
+    //funcao para remover o popover
+    func removePopover() {
+        UIView.animate(withDuration: 0.4, animations: {
+            self.configuracoesPopOver.transform = CGAffineTransform.identity.scaledBy(x: 1.5, y: 1.5)
+            self.configuracoesPopOver.alpha = 0
+        }, completion: {(sucess: Bool) in
+            self.configuracoesPopOver.removeFromSuperview()
+        })
+    }
+
+    
+    
     
     
     //Mark: Funcoes de delegate do pickerView
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
