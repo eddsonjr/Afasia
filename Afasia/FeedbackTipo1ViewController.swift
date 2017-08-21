@@ -11,15 +11,13 @@ import UIKit
 class FeedbackTipo1ViewController: UIViewController {
 
     //Mark: Variaveis que serao computadas quando a tela for chamada via storyboard id
-    var acertos: Int?
-    var erros: Int?
-    var duvidas: Int?
+    var acertos: Int = 0
+    var erros: Int = 0
+    var duvidas: Int = 0
     
     
     //Mark: mensagem de debug
     var dbmsg = "[FEEDABACK1]: "
-    
-    
     
     
     //Mark: outlets
@@ -34,9 +32,9 @@ class FeedbackTipo1ViewController: UIViewController {
         
         //monstrando na tela a quantidade de erros, acertos e duvidas
         
-        self.labelAcertos.text = String(describing: self.acertos)
-        self.labelErros.text = String(describing: self.erros)
-        self.labelDuvidas.text = String(describing: self.duvidas)
+        self.labelAcertos.text = String(self.acertos)
+        self.labelErros.text = String(self.erros)
+        self.labelDuvidas.text = String(self.duvidas)
         
     }
 
