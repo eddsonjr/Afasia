@@ -259,6 +259,10 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     
     
     
+    
+    
+    
+    
     //Mark: Funcoes de delegate do pickerView
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -283,6 +287,11 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     }
     
     
+    
+    
+    
+    
+    
     //Mark: Funcao para carregar imagens no vetor de imagens e mostra - las na tela
     func carregarImagens(imagens: [ImagemExercicio],qtImagens: Int) {
       
@@ -290,6 +299,7 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
         var selecoes: Int = 0
         
         
+        /*ALGORITMO ERRADO: FUNCIONA, MAS NAO ATINGE A LOGICA PRETENDIDA*/
         while selecoes < qtImagens {
             
             //pegando randomicamente uma imagem
