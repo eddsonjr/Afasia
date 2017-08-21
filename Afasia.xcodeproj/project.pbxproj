@@ -18,6 +18,7 @@
 		AD2B1C8F1F43D99C001175E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD2B1C8D1F43D99C001175E2 /* LaunchScreen.storyboard */; };
 		AD2B1C9A1F43D99D001175E2 /* AfasiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B1C991F43D99D001175E2 /* AfasiaTests.swift */; };
 		AD2B1CA51F43D99D001175E2 /* AfasiaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B1CA41F43D99D001175E2 /* AfasiaUITests.swift */; };
+		AD7BE2BE1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7BE2BD1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		AD2B1CA01F43D99D001175E2 /* AfasiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AfasiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD2B1CA41F43D99D001175E2 /* AfasiaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfasiaUITests.swift; sourceTree = "<group>"; };
 		AD2B1CA61F43D99D001175E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD7BE2BD1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackTipo1ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 			children = (
 				AD2B1C831F43D99C001175E2 /* SelecaoJogosViewController.swift */,
 				AD1A31041F447FBB0058E920 /* ReconhecimentoPalavrasViewController.swift */,
+				AD7BE2BD1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			files = (
 				AD2B1C841F43D99C001175E2 /* SelecaoJogosViewController.swift in Sources */,
 				AD1A31051F447FBB0058E920 /* ReconhecimentoPalavrasViewController.swift in Sources */,
+				AD7BE2BE1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift in Sources */,
 				AD2B1C821F43D99C001175E2 /* AppDelegate.swift in Sources */,
 				AD1A310A1F448EFB0058E920 /* ImagemExercicioStore.swift in Sources */,
 				AD2B1C8A1F43D99C001175E2 /* Afasia.xcdatamodeld in Sources */,

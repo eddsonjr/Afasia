@@ -146,6 +146,7 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
      
         //carregar a tela de feedback de erros e acertos aqui
         print(dbgmsg + "acertos: \(acertos) | erros: \(erros) | duvidas: \(duvidas)")
+        carregarTelaFeedaback() //carregando a tela de feedback
         
         
     }
@@ -297,6 +298,27 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
         self.ImageView.image = self.estruturaDeAcertosErrosDuvidas.first?.imagemExec?.asset
         self.idImagemAtual = 0
         
+    }
+    
+    
+    
+    //Mark: Funcao para carregar a tela de feedback via storyboard id
+    func carregarTelaFeedaback() {
+        
+        //colocar alertas sobre algumas condicao "adversa" antes de chamar a tela de feedback
+        
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var controller = storyboard.instantiateViewController(withIdentifier: "FeedbackTipo1") as! FeedbackTipo1ViewController
+        
+        
+        //carregando variaveis
+        controller.acertos = self.acertos
+        controller.erros = self.erros
+        controller.duvidas = self.duvidas
+    
+        
+        //chamando controladora
+        self.present(controller, animated: true, completion: nil)
     }
     
     
