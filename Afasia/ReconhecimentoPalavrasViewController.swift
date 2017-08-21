@@ -11,24 +11,17 @@ import UIKit
 class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
 
     
-    //Mark: View compoenntes
+    //Mark: View componentes
     @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet var configuracoesPopOver: UIView!
     @IBOutlet weak var configuracoesPopOverPicker: UIPickerView!
     @IBOutlet weak var swipeView: UIView!
     
     
+    
+    
     //Mark: Mensagem de debug
     private let dbgmsg = "[EXEC1]: "
-    
-    
-    
-    
-    //Mark: Variavel para carregar todas as imagens na memoria e manipula - las
-    var vetorDeImagens: [ImagemExercicio]?
-    var idImagemAtual: Int?
-    
-    
     
     
     //Mark: Configuracoes do picker
@@ -55,16 +48,15 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     
     
     
-    //Mark: variaveis para computar a quantidade de acertos, erros ou duvidas
+    //Mark: variaveis para computar a quantidade de acertos, erros ou duvidas e controlar o indice de acesso
     var acertos: Int?
     var erros: Int?
     var duvidas: Int?
     
     var estruturaDeAcertosErrosDuvidas: [acertoErroDuvidaStruct] = []
     
-    
-    
-    
+    var idImagemAtual: Int?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -88,10 +80,6 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     
 
     
-    
-    
-    
-    
     //Mark: Button Actions
     
     //resposnavel por chamar o pop over das configuracoes do 
@@ -112,21 +100,16 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     
     //responsavel por computar acertos
     @IBAction func acertou(_ sender: Any) {
-        
-        
+        print(dbgmsg + "Acertou!")
+        self.estruturaDeAcertosErrosDuvidas[idImagemAtual!].estado = estadosDoExercicio1.acertou.rawValue
     }
     
-    
-    //responsavel por computar as duvidas
-    @IBAction func duvida(_ sender: Any) {
-        
-    }
     
     
     //responsavel por computar os erros
     @IBAction func errou(_ sender: Any) {
-        
-        
+        print(dbgmsg + "Errou!")
+        self.estruturaDeAcertosErrosDuvidas[idImagemAtual!].estado = estadosDoExercicio1.erro.rawValue
     }
     
     
@@ -162,22 +145,20 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
         if _sender.direction == UISwipeGestureRecognizerDirection.left {
             print(dbgmsg + "Swipe action: esquerda") //avanca as imagens
             self.idImagemAtual = self.idImagemAtual! + 1
-            if idImagemAtual! < (self.vetorDeImagens?.count)! {
+            if idImagemAtual! < (self.estruturaDeAcertosErrosDuvidas.count) {
                 //animacoes de troca ocorrem aqui
-                self.ImageView.image = self.vetorDeImagens?[idImagemAtual!].asset
+                self.ImageView.image = self.estruturaDeAcertosErrosDuvidas[idImagemAtual!].imagemExec?.asset
             }else{
-                self.idImagemAtual = (self.vetorDeImagens?.count)! - 1
+                self.idImagemAtual = ((self.estruturaDeAcertosErrosDuvidas.count) - 1)
                 print(dbgmsg + "Limite maximo de imagens alcancado!")
             }
             
-            
-        
         }else if _sender.direction == UISwipeGestureRecognizerDirection.right {
             print(dbgmsg + "Swipe action: direita") //volta as imagens
             self.idImagemAtual = self.idImagemAtual! - 1
             if idImagemAtual! >= 0 {
                 //animacoes de troca podem ocorrer aqui
-                self.ImageView.image = self.vetorDeImagens?[idImagemAtual!].asset
+                self.ImageView.image = self.estruturaDeAcertosErrosDuvidas[idImagemAtual!].imagemExec?.asset
             }else {
                 self.idImagemAtual = 0
                 print(dbgmsg + "Limite minimo de imagens alcancado!")
@@ -251,7 +232,7 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
       
         //percorrendo todas as imagens e adicionando cada uma no vetor
         for imagem in imagens {
-            self.estruturaDeAcertosErrosDuvidas.append(acertoErroDuvidaStruct.init(imagemExec: imagem, estado: nil))
+            self.estruturaDeAcertosErrosDuvidas.append(acertoErroDuvidaStruct.init(imagemExec: imagem, estado: estadosDoExercicio1.duvida.rawValue))
         }
         
         print(dbgmsg + "Estrutura de acertos,erros,duvidas com: \(self.estruturaDeAcertosErrosDuvidas.count) elementos.")
@@ -260,11 +241,6 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
         self.ImageView.image = self.estruturaDeAcertosErrosDuvidas.first?.imagemExec?.asset
         self.idImagemAtual = 0
         
-        
-          /*Antigo codigo*/
-//        self.vetorDeImagens = imagens
-//        self.ImageView.image = imagens.first?.asset
-//        self.idImagemAtual = 0
     }
     
     
