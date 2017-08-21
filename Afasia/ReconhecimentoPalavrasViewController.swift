@@ -70,7 +70,7 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
         
         
         //Carregando todas as imagens no vetor de imagens
-        carregarImagens(imagens: ImagemExercicioStore.getAllImagensExecs())
+        carregarImagens(imagens: ImagemExercicioStore.getAllImagensExecs(), qtImagens: 4)
         
         
     }
@@ -284,21 +284,68 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     
     
     //Mark: Funcao para carregar imagens no vetor de imagens e mostra - las na tela
-    func carregarImagens(imagens: [ImagemExercicio]) {
+    func carregarImagens(imagens: [ImagemExercicio],qtImagens: Int) {
       
-        //percorrendo todas as imagens e adicionando cada uma no vetor
-        for imagem in imagens {
-            self.estruturaDeAcertosErrosDuvidas.append(acertoErroDuvidaStruct.init(imagemExec: imagem, estado: estadosDoExercicio1.duvida.rawValue))
+        var ultimoSelecionado: Int = 0
+        var selecoes: Int = 0
+        
+        
+        while selecoes < qtImagens {
+            
+            //pegando randomicamente uma imagem
+            var imagemAleatoria = Int(arc4random_uniform(UInt32(imagens.count)))
+            
+            //verificando se a mesma imagem ja nao foi selecionada
+            if self.estruturaDeAcertosErrosDuvidas.count == 0 { //neste caso ainda nao existem imagens
+                ultimoSelecionado = imagemAleatoria
+            }else {
+                if imagemAleatoria == ultimoSelecionado {
+                    print(dbgmsg + "Foram selecionadas duas imagens iguais.")
+                    
+                    while true {
+                        imagemAleatoria = Int(arc4random_uniform(UInt32(imagens.count)))
+                        if imagemAleatoria != ultimoSelecionado {
+                            ultimoSelecionado = imagemAleatoria
+                            break
+                        }
+                    }
+                }
+            }
+            
+            
+            self.estruturaDeAcertosErrosDuvidas.append(acertoErroDuvidaStruct.init(imagemExec: imagens[imagemAleatoria], estado: estadosDoExercicio1.duvida.rawValue))
             self.duvidas = duvidas + 1
+            
+
+            selecoes = selecoes + 1
         }
-        
-        print(dbgmsg + "Estrutura de acertos,erros,duvidas com: \(self.estruturaDeAcertosErrosDuvidas.count) elementos.")
-        
         
         self.ImageView.image = self.estruturaDeAcertosErrosDuvidas.first?.imagemExec?.asset
         self.idImagemAtual = 0
         
+        
+        
+        
+        
+        
+        /*Antigo Codigo*/
+        //percorrendo todas as imagens e adicionando cada uma no vetor
+//        for imagem in imagens {
+//            self.estruturaDeAcertosErrosDuvidas.append(acertoErroDuvidaStruct.init(imagemExec: imagem, estado: estadosDoExercicio1.duvida.rawValue))
+//            self.duvidas = duvidas + 1
+//        }
+//        
+//        print(dbgmsg + "Estrutura de acertos,erros,duvidas com: \(self.estruturaDeAcertosErrosDuvidas.count) elementos.")
+//        
+//        
+//        self.ImageView.image = self.estruturaDeAcertosErrosDuvidas.first?.imagemExec?.asset
+//        self.idImagemAtual = 0
+        
     }
+    
+    
+    
+    
     
     
     
