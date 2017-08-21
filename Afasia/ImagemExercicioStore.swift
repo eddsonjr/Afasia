@@ -44,7 +44,7 @@ class ImagemExercicioStore {
              "B"
             ),
             
-            (UIImage(named: "Bule")!,
+            (UIImage(named: "bule")!,
              "Bule",
              "B"
             ),

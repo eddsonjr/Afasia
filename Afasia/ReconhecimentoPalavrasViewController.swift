@@ -22,23 +22,29 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     private let dbgmsg = "[EXEC1]: "
     
     
+    //Mark: Variavel para carregar todas as imagens na memoria e manipula - las
+    var vetorDeImagens: [ImagemExercicio]?
+    var idImagemAtual: Int?
+    
+    
+    
+    
     
     //Mark: Configuracoes do picker
     var configExecPickerData: [String] = ["Todas","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","Y","Z"]
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //adicionando o suporte ao swipe para passar as imagens
         addSwipe()
-        
-        
         //delegate e datasource do UIPickerView
         self.configuracoesPopOverPicker.delegate = self
         self.configuracoesPopOverPicker.dataSource = self
         
+        
+        //Carregando todas as imagens no vetor de imagens
+        carregarImagens(imagens: ImagemExercicioStore.getAllImagensExecs())
         
         
     }
@@ -122,11 +128,29 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
         
         
         if _sender.direction == UISwipeGestureRecognizerDirection.left {
-            print(dbgmsg + "Swipe action: esquerda")
-
+            print(dbgmsg + "Swipe action: esquerda") //avanca as imagens
+            self.idImagemAtual = self.idImagemAtual! + 1
+            if idImagemAtual! < (self.vetorDeImagens?.count)! {
+                //animacoes de troca ocorrem aqui
+                self.ImageView.image = self.vetorDeImagens?[idImagemAtual!].asset
+            }else{
+                self.idImagemAtual = (self.vetorDeImagens?.count)! - 1
+                print(dbgmsg + "Limite maximo de imagens alcancado!")
+            }
+            
+            
         
         }else if _sender.direction == UISwipeGestureRecognizerDirection.right {
-             print(dbgmsg + "Swipe action: direita")
+            print(dbgmsg + "Swipe action: direita") //volta as imagens
+            self.idImagemAtual = self.idImagemAtual! - 1
+            if idImagemAtual! >= 0 {
+                //animacoes de troca podem ocorrer aqui
+                self.ImageView.image = self.vetorDeImagens?[idImagemAtual!].asset
+            }else {
+                self.idImagemAtual = 0
+                print(dbgmsg + "Limite minimo de imagens alcancado!")
+            }
+            
         }
         
     }
@@ -188,6 +212,15 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
         
         
     }
+    
+    
+    //Mark: Funcao para carregar imagens no vetor de imagens e mostra - las na tela
+    func carregarImagens(imagens: [ImagemExercicio]) {
+        self.vetorDeImagens = imagens
+        self.ImageView.image = imagens.first?.asset
+        self.idImagemAtual = 0
+    }
+    
     
     
     

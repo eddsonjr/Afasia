@@ -19,8 +19,9 @@ class ImagemExercicio{
     
     var asset: UIImage? = nil //Imagem em si
     var nome: String? = nil  //nome da imagem
-    var infoSelecao: String? = nil //letra inicial da imagem ou alguma informacao relevante para selecao da imagem
-                                //(exemplo: palavras que comecam com "A", palavras que contenham "nh", etc)
+    var infoSelecao: String? = nil
+    //letra inicial da imagem ou alguma informacao relevante para selecao da imagem
+    //(exemplo: palavras que comecam com "A", palavras que contenham "nh", etc)
     
     
 }
