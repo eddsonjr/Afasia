@@ -22,6 +22,8 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     private let dbgmsg = "[EXEC1]: "
     
     
+    
+    
     //Mark: Variavel para carregar todas as imagens na memoria e manipula - las
     var vetorDeImagens: [ImagemExercicio]?
     var idImagemAtual: Int?
@@ -29,9 +31,39 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     
     
     
-    
     //Mark: Configuracoes do picker
     var configExecPickerData: [String] = ["Todas","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","Y","Z"]
+    
+    
+    
+    
+    //Mark: enum para indicar quais os estados possiveis a serem computados no exercicio (acerto, erro, duvida)
+    enum estadosDoExercicio1: String {
+        case acertou = "acerto"
+        case erro = "erro"
+        case duvida = "duvida"
+    }
+    
+    
+    //Mark: Struct para armazenar se a pessoa acertou, errou ou esta em duvida naquela figura em si
+    struct acertoErroDuvidaStruct {
+        
+        var imagemExec: ImagemExercicio?
+        var estado: String?
+        
+    }
+    
+    
+    
+    //Mark: variaveis para computar a quantidade de acertos, erros ou duvidas
+    var acertos: Int?
+    var erros: Int?
+    var duvidas: Int?
+    
+    var estruturaDeAcertosErrosDuvidas: [acertoErroDuvidaStruct] = []
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -216,9 +248,23 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     
     //Mark: Funcao para carregar imagens no vetor de imagens e mostra - las na tela
     func carregarImagens(imagens: [ImagemExercicio]) {
-        self.vetorDeImagens = imagens
-        self.ImageView.image = imagens.first?.asset
+      
+        //percorrendo todas as imagens e adicionando cada uma no vetor
+        for imagem in imagens {
+            self.estruturaDeAcertosErrosDuvidas.append(acertoErroDuvidaStruct.init(imagemExec: imagem, estado: nil))
+        }
+        
+        print(dbgmsg + "Estrutura de acertos,erros,duvidas com: \(self.estruturaDeAcertosErrosDuvidas.count) elementos.")
+        
+        
+        self.ImageView.image = self.estruturaDeAcertosErrosDuvidas.first?.imagemExec?.asset
         self.idImagemAtual = 0
+        
+        
+          /*Antigo codigo*/
+//        self.vetorDeImagens = imagens
+//        self.ImageView.image = imagens.first?.asset
+//        self.idImagemAtual = 0
     }
     
     
