@@ -17,6 +17,8 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     @IBOutlet weak var configuracoesPopOverPicker: UIPickerView!
     @IBOutlet weak var swipeView: UIView!
     
+    @IBOutlet weak var errouBTN: UIButton!
+    @IBOutlet weak var acertouBTN: UIButton!
     
     
     
@@ -49,9 +51,9 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     
     
     //Mark: variaveis para computar a quantidade de acertos, erros ou duvidas e controlar o indice de acesso
-    var acertos: Int?
-    var erros: Int?
-    var duvidas: Int?
+    var acertos: Int = 0
+    var erros: Int = 0
+    var duvidas: Int = 0
     
     var estruturaDeAcertosErrosDuvidas: [acertoErroDuvidaStruct] = []
     
@@ -102,6 +104,13 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     @IBAction func acertou(_ sender: Any) {
         print(dbgmsg + "Acertou!")
         self.estruturaDeAcertosErrosDuvidas[idImagemAtual!].estado = estadosDoExercicio1.acertou.rawValue
+        self.acertouBTN.isHidden = true
+        self.errouBTN.isHidden = true
+        
+        //computando acerto
+        self.acertos = acertos + 1
+        self.duvidas = duvidas - 1
+    
     }
     
     
@@ -110,14 +119,34 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     @IBAction func errou(_ sender: Any) {
         print(dbgmsg + "Errou!")
         self.estruturaDeAcertosErrosDuvidas[idImagemAtual!].estado = estadosDoExercicio1.erro.rawValue
+        self.acertouBTN.isHidden = true
+        self.errouBTN.isHidden = true
+        
+        //computando erros
+        self.erros = erros + 1
+        self.duvidas = duvidas - 1
+
+    
+    }
+    
+    
+    
+    //responsavel por fechar as configuracoes
+    @IBAction func fecharConfiguracoes(_ sender: Any) {
+        print(dbgmsg + "Fechando configuracoes")
+        removePopover()
+        
     }
     
     
     
     
-    @IBAction func fecharConfiguracoes(_ sender: Any) {
-        print(dbgmsg + "Fechando configuracoes")
-        removePopover()
+    //responsavel por finalizar o exercicio
+    @IBAction func finalizar(_ sender: Any) {
+     
+        //carregar a tela de feedback de erros e acertos aqui
+        print(dbgmsg + "acertos: \(acertos) | erros: \(erros) | duvidas: \(duvidas)")
+        
         
     }
     
@@ -148,6 +177,17 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
             if idImagemAtual! < (self.estruturaDeAcertosErrosDuvidas.count) {
                 //animacoes de troca ocorrem aqui
                 self.ImageView.image = self.estruturaDeAcertosErrosDuvidas[idImagemAtual!].imagemExec?.asset
+                
+                //se o estado da imagem do exercicio atual for igual ao de duvida, apresente os botoes
+                if self.estruturaDeAcertosErrosDuvidas[idImagemAtual!].estado != estadosDoExercicio1.duvida.rawValue {
+                    print(dbgmsg + "Acertou ou errou esta imagem")
+                    self.errouBTN.isHidden = true
+                    self.acertouBTN.isHidden = true
+                }else{
+                    self.errouBTN.isHidden = false
+                    self.acertouBTN.isHidden = false
+                }
+                
             }else{
                 self.idImagemAtual = ((self.estruturaDeAcertosErrosDuvidas.count) - 1)
                 print(dbgmsg + "Limite maximo de imagens alcancado!")
@@ -159,6 +199,21 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
             if idImagemAtual! >= 0 {
                 //animacoes de troca podem ocorrer aqui
                 self.ImageView.image = self.estruturaDeAcertosErrosDuvidas[idImagemAtual!].imagemExec?.asset
+                
+                
+                //se o estado da imagem do exercicio atual for igual ao de duvida, apresente os botoes
+                if self.estruturaDeAcertosErrosDuvidas[idImagemAtual!].estado != estadosDoExercicio1.duvida.rawValue {
+                    print(dbgmsg + "Acertou ou errou esta imagem")
+                    self.errouBTN.isHidden = true
+                    self.acertouBTN.isHidden = true
+                }else{
+                    self.errouBTN.isHidden = false
+                    self.acertouBTN.isHidden = false
+                }
+
+
+                
+                
             }else {
                 self.idImagemAtual = 0
                 print(dbgmsg + "Limite minimo de imagens alcancado!")
@@ -233,6 +288,7 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
         //percorrendo todas as imagens e adicionando cada uma no vetor
         for imagem in imagens {
             self.estruturaDeAcertosErrosDuvidas.append(acertoErroDuvidaStruct.init(imagemExec: imagem, estado: estadosDoExercicio1.duvida.rawValue))
+            self.duvidas = duvidas + 1
         }
         
         print(dbgmsg + "Estrutura de acertos,erros,duvidas com: \(self.estruturaDeAcertosErrosDuvidas.count) elementos.")

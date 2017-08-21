@@ -61,6 +61,14 @@
                                     <action selector="acertou:" destination="Eqx-q7-ADe" eventType="touchUpInside" id="QXA-f2-Q8e"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bML-Z1-tHM">
+                                <rect key="frame" x="494" y="681" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Errou"/>
+                                <connections>
+                                    <action selector="errou:" destination="Eqx-q7-ADe" eventType="touchUpInside" id="fDY-Ei-taL"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="syn-sR-Xg3">
                                 <rect key="frame" x="20" y="145" width="984" height="478"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -72,12 +80,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bML-Z1-tHM">
-                                <rect key="frame" x="494" y="681" width="37" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAN-a0-iIf">
+                                <rect key="frame" x="947" y="681" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Errou"/>
+                                <state key="normal" title="Finalizar"/>
                                 <connections>
-                                    <action selector="errou:" destination="Eqx-q7-ADe" eventType="touchUpInside" id="fDY-Ei-taL"/>
+                                    <action selector="finalizar:" destination="Eqx-q7-ADe" eventType="touchUpInside" id="zHP-d7-5yR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -97,8 +105,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ImageView" destination="FDA-2G-Y94" id="thQ-IJ-X6l"/>
+                        <outlet property="acertouBTN" destination="Bju-zD-2Xd" id="KFb-BP-gFg"/>
                         <outlet property="configuracoesPopOver" destination="4O3-ab-MQW" id="9Vm-6m-czq"/>
                         <outlet property="configuracoesPopOverPicker" destination="gGY-JR-E4v" id="enb-Wb-BLe"/>
+                        <outlet property="errouBTN" destination="bML-Z1-tHM" id="6Fu-U7-nGz"/>
                         <outlet property="swipeView" destination="syn-sR-Xg3" id="XQT-Fr-IAT"/>
                     </connections>
                 </viewController>
