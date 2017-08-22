@@ -110,6 +110,12 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
         //computando acerto
         self.acertos = acertos + 1
         self.duvidas = duvidas - 1
+        
+        
+        //verificando se ainda restam imagens que nao foram computadas
+        if verificarSeTodasImagensForamRespondidas() {
+            print(dbgmsg + "Todas imagens ja foram computadas. Va para a tela de feedback")
+        }
     
     }
     
@@ -125,6 +131,12 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
         //computando erros
         self.erros = erros + 1
         self.duvidas = duvidas - 1
+        
+        //verificando se ainda restam imagens que nao foram computadas
+        if verificarSeTodasImagensForamRespondidas() {
+            print(dbgmsg + "Todas imagens ja foram computadas. Va para a tela de feedback")
+        }
+
 
     
     }
@@ -379,7 +391,15 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     }
     
     
-    //Mark:
+    //Mark: funcao para verificar se todas as imagens ja foram tidas como corretas ou erradas
+    func verificarSeTodasImagensForamRespondidas() -> Bool{
+        
+        if self.duvidas == 0 {
+            return true
+        }else {
+            return false
+        }
+    }
     
     
     
