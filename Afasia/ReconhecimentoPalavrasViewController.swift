@@ -379,6 +379,9 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     }
     
     
+    //Mark:
+    
+    
     
     
 }

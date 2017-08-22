@@ -19,6 +19,8 @@
 		AD2B1C9A1F43D99D001175E2 /* AfasiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B1C991F43D99D001175E2 /* AfasiaTests.swift */; };
 		AD2B1CA51F43D99D001175E2 /* AfasiaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B1CA41F43D99D001175E2 /* AfasiaUITests.swift */; };
 		AD7BE2BE1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7BE2BD1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift */; };
+		AD82A68F1F4CD57300F4F5CD /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82A68D1F4CD57300F4F5CD /* SCLAlertView.swift */; };
+		AD82A6901F4CD57300F4F5CD /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82A68E1F4CD57300F4F5CD /* SCLExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		AD2B1CA41F43D99D001175E2 /* AfasiaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfasiaUITests.swift; sourceTree = "<group>"; };
 		AD2B1CA61F43D99D001175E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD7BE2BD1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackTipo1ViewController.swift; sourceTree = "<group>"; };
+		AD82A68D1F4CD57300F4F5CD /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
+		AD82A68E1F4CD57300F4F5CD /* SCLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,7 @@
 		AD2B1CB31F43DAC4001175E2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AD82A68C1F4CD55800F4F5CD /* Elementos_UI */,
 				AD2B1C851F43D99C001175E2 /* Main.storyboard */,
 				AD2B1C8D1F43D99C001175E2 /* LaunchScreen.storyboard */,
 			);
@@ -178,6 +183,15 @@
 				AD1A31061F4489D80058E920 /* Stores */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		AD82A68C1F4CD55800F4F5CD /* Elementos_UI */ = {
+			isa = PBXGroup;
+			children = (
+				AD82A68D1F4CD57300F4F5CD /* SCLAlertView.swift */,
+				AD82A68E1F4CD57300F4F5CD /* SCLExtensions.swift */,
+			);
+			name = Elementos_UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +333,8 @@
 			files = (
 				AD2B1C841F43D99C001175E2 /* SelecaoJogosViewController.swift in Sources */,
 				AD1A31051F447FBB0058E920 /* ReconhecimentoPalavrasViewController.swift in Sources */,
+				AD82A68F1F4CD57300F4F5CD /* SCLAlertView.swift in Sources */,
+				AD82A6901F4CD57300F4F5CD /* SCLExtensions.swift in Sources */,
 				AD7BE2BE1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift in Sources */,
 				AD2B1C821F43D99C001175E2 /* AppDelegate.swift in Sources */,
 				AD1A310A1F448EFB0058E920 /* ImagemExercicioStore.swift in Sources */,

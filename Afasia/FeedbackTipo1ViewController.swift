@@ -51,8 +51,8 @@ class FeedbackTipo1ViewController: UIViewController {
     //Fecha a tela de feedback e volta para a tela de selecao de jogos
     @IBAction func fecharFeedback(_ sender: Any) {
         
-        var storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var controller = storyboard.instantiateViewController(withIdentifier: "SelecaoJogos") as! SelecaoJogosViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "SelecaoJogos") as! SelecaoJogosViewController
         self.present(controller, animated: true, completion: nil)
         
     }
