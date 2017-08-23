@@ -55,7 +55,7 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     var erros: Int = 0
     var duvidas: Int = 0
     
-    var estruturaDeAcertosErrosDuvidas: [acertoErroDuvidaStruct] = []
+    var estruturaDeAcertosErrosDuvidas: [acertoErroDuvidaStruct]?
     
     var idImagemAtual: Int?
 
@@ -70,7 +70,7 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
         
         
         //Carregando todas as imagens no vetor de imagens
-        carregarImagens(imagens: ImagemExercicioStore.getAllImagensExecs(), qtImagens: 4)
+        carregarTodasImagens(imagens: ImagemExercicioStore.getAllImagensExecs(), qtImagens: 4)
         
         
     }
@@ -93,48 +93,59 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     
     //responsavel por voltar para a tela anterior
     @IBAction func voltarParaTelaAnterior(_ sender: Any) {
-     
-        self.dismiss(animated: true) { 
-            print(self.dbgmsg + "Voltando para tela anterior")
-        }
+        alertarExercicioEmCurso(irParaFeedback: false)
+        
     }
+    
+    
     
     
     //responsavel por computar acertos
     @IBAction func acertou(_ sender: Any) {
         print(dbgmsg + "Acertou!")
-        self.estruturaDeAcertosErrosDuvidas[idImagemAtual!].estado = estadosDoExercicio1.acertou.rawValue
-        self.acertouBTN.isHidden = true
-        self.errouBTN.isHidden = true
+        self.estruturaDeAcertosErrosDuvidas?[idImagemAtual!].estado = estadosDoExercicio1.acertou.rawValue
+        //self.acertouBTN.isHidden = true
+        //self.errouBTN.isHidden = true
         
         //computando acerto
         self.acertos = acertos + 1
         self.duvidas = duvidas - 1
         
         
+         //carrega a proxima imagem se possivel
+         carregarProximaImagem()
+        
         //verificando se ainda restam imagens que nao foram computadas
         if verificarSeTodasImagensForamRespondidas() {
             print(dbgmsg + "Todas imagens ja foram computadas. Va para a tela de feedback")
+            alertarConclusaoExercicio()
         }
     
     }
     
     
     
+    
+    
     //responsavel por computar os erros
     @IBAction func errou(_ sender: Any) {
         print(dbgmsg + "Errou!")
-        self.estruturaDeAcertosErrosDuvidas[idImagemAtual!].estado = estadosDoExercicio1.erro.rawValue
-        self.acertouBTN.isHidden = true
-        self.errouBTN.isHidden = true
+        self.estruturaDeAcertosErrosDuvidas?[idImagemAtual!].estado = estadosDoExercicio1.erro.rawValue
+        //self.acertouBTN.isHidden = true
+        //self.errouBTN.isHidden = true
         
         //computando erros
         self.erros = erros + 1
         self.duvidas = duvidas - 1
         
+        
+        //carrega a proxima imagem se possivel
+        carregarProximaImagem()
+        
         //verificando se ainda restam imagens que nao foram computadas
         if verificarSeTodasImagensForamRespondidas() {
             print(dbgmsg + "Todas imagens ja foram computadas. Va para a tela de feedback")
+            alertarConclusaoExercicio()
         }
 
 
@@ -158,7 +169,7 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
      
         //carregar a tela de feedback de erros e acertos aqui
         print(dbgmsg + "acertos: \(acertos) | erros: \(erros) | duvidas: \(duvidas)")
-        carregarTelaFeedaback() //carregando a tela de feedback
+       alertarExercicioEmCurso(irParaFeedback: true)
         
         
     }
@@ -187,12 +198,12 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
         if _sender.direction == UISwipeGestureRecognizerDirection.left {
             print(dbgmsg + "Swipe action: esquerda") //avanca as imagens
             self.idImagemAtual = self.idImagemAtual! + 1
-            if idImagemAtual! < (self.estruturaDeAcertosErrosDuvidas.count) {
+            if idImagemAtual! < (self.estruturaDeAcertosErrosDuvidas?.count)! {
                 //animacoes de troca ocorrem aqui
-                self.ImageView.image = self.estruturaDeAcertosErrosDuvidas[idImagemAtual!].imagemExec?.asset
+                self.ImageView.image = self.estruturaDeAcertosErrosDuvidas?[idImagemAtual!].imagemExec?.asset
                 
                 //se o estado da imagem do exercicio atual for igual ao de duvida, apresente os botoes
-                if self.estruturaDeAcertosErrosDuvidas[idImagemAtual!].estado != estadosDoExercicio1.duvida.rawValue {
+                if self.estruturaDeAcertosErrosDuvidas?[idImagemAtual!].estado != estadosDoExercicio1.duvida.rawValue {
                     print(dbgmsg + "Acertou ou errou esta imagem")
                     self.errouBTN.isHidden = true
                     self.acertouBTN.isHidden = true
@@ -202,7 +213,7 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
                 }
                 
             }else{
-                self.idImagemAtual = ((self.estruturaDeAcertosErrosDuvidas.count) - 1)
+                self.idImagemAtual = ((self.estruturaDeAcertosErrosDuvidas?.count)! - 1)
                 print(dbgmsg + "Limite maximo de imagens alcancado!")
             }
             
@@ -211,11 +222,11 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
             self.idImagemAtual = self.idImagemAtual! - 1
             if idImagemAtual! >= 0 {
                 //animacoes de troca podem ocorrer aqui
-                self.ImageView.image = self.estruturaDeAcertosErrosDuvidas[idImagemAtual!].imagemExec?.asset
+                self.ImageView.image = self.estruturaDeAcertosErrosDuvidas?[idImagemAtual!].imagemExec?.asset
                 
                 
                 //se o estado da imagem do exercicio atual for igual ao de duvida, apresente os botoes
-                if self.estruturaDeAcertosErrosDuvidas[idImagemAtual!].estado != estadosDoExercicio1.duvida.rawValue {
+                if self.estruturaDeAcertosErrosDuvidas?[idImagemAtual!].estado != estadosDoExercicio1.duvida.rawValue {
                     print(dbgmsg + "Acertou ou errou esta imagem")
                     self.errouBTN.isHidden = true
                     self.acertouBTN.isHidden = true
@@ -294,7 +305,35 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+        let opcaoSelecionada = self.configExecPickerData[row]
+        print(dbgmsg + "Configuracoes do exercicio 1. Selecionada opcao [\(opcaoSelecionada)]")
         
+        
+        /*Falta implementar para carregar todas as imagens*/
+        carregarImagens(imagens: ImagemExercicioStore.getAllImagensExecs(incial: opcaoSelecionada))
+        
+    }
+    
+    
+    
+    //Mark: Funcao  para carregar as imagens de acordo com o nome dado
+    func carregarImagens(imagens: [ImagemExercicio]) {
+        
+        self.estruturaDeAcertosErrosDuvidas = []
+        
+        for imagem in imagens {
+            
+            self.estruturaDeAcertosErrosDuvidas?.append(acertoErroDuvidaStruct.init(imagemExec: imagem, estado: estadosDoExercicio1.duvida.rawValue))
+            self.duvidas = duvidas + 1
+ 
+        }
+            
+        print(dbgmsg + "Estrutura de acertos,erros,duvidas com: \(self.estruturaDeAcertosErrosDuvidas?.count) elementos.")
+            
+            
+        self.ImageView.image = self.estruturaDeAcertosErrosDuvidas?.first?.imagemExec?.asset
+        self.idImagemAtual = 0
+
         
     }
     
@@ -304,9 +343,12 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     
     
     
+    
     //Mark: Funcao para carregar imagens no vetor de imagens e mostra - las na tela
-    func carregarImagens(imagens: [ImagemExercicio],qtImagens: Int) {
+    func carregarTodasImagens(imagens: [ImagemExercicio],qtImagens: Int) {
       
+        self.estruturaDeAcertosErrosDuvidas = []
+
         var ultimoSelecionado: Int = 0
         var selecoes: Int = 0
         
@@ -318,7 +360,7 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
             var imagemAleatoria = Int(arc4random_uniform(UInt32(imagens.count)))
             
             //verificando se a mesma imagem ja nao foi selecionada
-            if self.estruturaDeAcertosErrosDuvidas.count == 0 { //neste caso ainda nao existem imagens
+            if self.estruturaDeAcertosErrosDuvidas?.count == 0 { //neste caso ainda nao existem imagens
                 ultimoSelecionado = imagemAleatoria
             }else {
                 if imagemAleatoria == ultimoSelecionado {
@@ -334,19 +376,16 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
                 }
             }
             
-            
-            self.estruturaDeAcertosErrosDuvidas.append(acertoErroDuvidaStruct.init(imagemExec: imagens[imagemAleatoria], estado: estadosDoExercicio1.duvida.rawValue))
+            self.estruturaDeAcertosErrosDuvidas?.append(acertoErroDuvidaStruct.init(imagemExec: imagens[imagemAleatoria], estado: estadosDoExercicio1.duvida.rawValue))
+
             self.duvidas = duvidas + 1
             
 
             selecoes = selecoes + 1
         }
         
-        self.ImageView.image = self.estruturaDeAcertosErrosDuvidas.first?.imagemExec?.asset
+        self.ImageView.image = self.estruturaDeAcertosErrosDuvidas?.first?.imagemExec?.asset
         self.idImagemAtual = 0
-        
-        
-        
         
         
         
@@ -376,8 +415,8 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
         
         //colocar alertas sobre algumas condicao "adversa" antes de chamar a tela de feedback
         
-        var storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var controller = storyboard.instantiateViewController(withIdentifier: "FeedbackTipo1") as! FeedbackTipo1ViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "FeedbackTipo1") as! FeedbackTipo1ViewController
         
         
         //carregando variaveis
@@ -400,6 +439,72 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
             return false
         }
     }
+    
+    
+    
+    //Mark: Criar alerta para informar que todas as imagens foram respondidas 
+    func alertarConclusaoExercicio() {
+        
+
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: false
+        )
+        
+        let alert = SCLAlertView(appearance: appearance)
+        alert.addButton("Ok") {
+            print(self.dbgmsg + "Exercicio concluido. Indo para a tela de feedback.")
+            //chamar a tela de feedback aqui
+            self.carregarTelaFeedaback()
+        }
+        
+        alert.showSuccess("Exercício Concluído", subTitle: "Você completou este exercício. Veja seus resultados!")
+    }
+    
+    
+    
+    
+    //Mark: Criar alerta para informar que o exercicio esta em curso caso o usuario queira sair
+    func alertarExercicioEmCurso(irParaFeedback: Bool) {
+        
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: true
+        )
+        
+        let alert = SCLAlertView(appearance: appearance)
+        alert.addButton("Sair") {
+            
+            //escolhe se deseja carregar a tela de feedback ou sair para a tela anterior
+            if irParaFeedback {
+                print(self.dbgmsg + "Saindo do exercicio.Indo para o feedback")
+                self.carregarTelaFeedaback()
+            }else {
+                print(self.dbgmsg + "Saindo do exercicio.Indo para a selecao de jogos")
+                self.dismiss(animated: true) {
+                    print(self.dbgmsg + "Voltando para tela anterior")
+                }
+            }
+        }
+        
+        
+        /*NECESSITA AJEITAR*/
+        alert.showWarning("Sair do Exercício?", subTitle: "Você deseja realmente sair deste exercício?", closeButtonTitle: "Cancelar", timeout: nil, colorStyle: 0x0000, colorTextButton: 0x0000, animationStyle: .topToBottom)
+       
+    }
+    
+    
+    
+    
+    //Mark: Funcao para passar as imagens de forma automatica
+    func carregarProximaImagem() {
+        self.idImagemAtual = self.idImagemAtual! + 1
+        if idImagemAtual! < (self.estruturaDeAcertosErrosDuvidas?.count)!{
+             self.ImageView.image = self.estruturaDeAcertosErrosDuvidas?[idImagemAtual!].imagemExec?.asset
+        }
+        
+    }
+    
+    
+    
     
     
     
