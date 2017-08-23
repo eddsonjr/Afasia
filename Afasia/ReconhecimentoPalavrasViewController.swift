@@ -457,7 +457,7 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
             self.carregarTelaFeedaback()
         }
         
-        alert.showSuccess("Exercício Concluído", subTitle: "Você completou este exercício. Veja seus resultados!")
+        alert.showWarning("Exercício Concluído", subTitle: "Você completou este exercício. Veja seus resultados!")
     }
     
     
