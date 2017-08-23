@@ -19,7 +19,7 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     
     @IBOutlet weak var errouBTN: UIButton!
     @IBOutlet weak var acertouBTN: UIButton!
-    
+    @IBOutlet weak var statusDaImagem: UILabel!
     
     
     //Mark: Mensagem de debug
@@ -34,8 +34,8 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     
     //Mark: enum para indicar quais os estados possiveis a serem computados no exercicio (acerto, erro, duvida)
     enum estadosDoExercicio1: String {
-        case acertou = "acerto"
-        case erro = "erro"
+        case acertou = "acertou"
+        case erro = "errou"
         case duvida = "duvida"
     }
     
@@ -104,7 +104,7 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     @IBAction func acertou(_ sender: Any) {
         print(dbgmsg + "Acertou!")
         self.estruturaDeAcertosErrosDuvidas?[idImagemAtual!].estado = estadosDoExercicio1.acertou.rawValue
-       
+        
         
         //computando acerto
         self.acertos = acertos + 1
@@ -119,6 +119,7 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
             print(dbgmsg + "Todas imagens ja foram computadas. Va para a tela de feedback")
             alertarConclusaoExercicio()
         }
+        
     
     }
     
@@ -204,9 +205,11 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
                     print(dbgmsg + "Acertou ou errou esta imagem")
                     self.errouBTN.isHidden = true
                     self.acertouBTN.isHidden = true
+                    self.statusDaImagem.text = self.estruturaDeAcertosErrosDuvidas?[idImagemAtual!].estado
                 }else{
                     self.errouBTN.isHidden = false
                     self.acertouBTN.isHidden = false
+                    self.statusDaImagem.text = "  "
                 }
                 
             }else{
@@ -227,9 +230,11 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
                     print(dbgmsg + "Acertou ou errou esta imagem")
                     self.errouBTN.isHidden = true
                     self.acertouBTN.isHidden = true
+                    self.statusDaImagem.text = self.estruturaDeAcertosErrosDuvidas?[idImagemAtual!].estado
                 }else{
                     self.errouBTN.isHidden = false
                     self.acertouBTN.isHidden = false
+                    self.statusDaImagem.text = "  "
                 }
 
 
@@ -509,6 +514,27 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     
     
     
+    //Mark: Funcao para animar a label que indica acerto ou erro
+//    func animarImagemStatusLabel() {
+//        
+//       UIView.transition(with: self.statusDaImagem, duration: 1.0, options: .transitionCrossDissolve, animations: {
+//            [weak self] in
+//                self?.statusDaImagem.text = self?.estruturaDeAcertosErrosDuvidas?[(self?.idImagemAtual!)!].estado
+//       }) { (true) in
+//            print("Animation Ended!")
+//        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+//            if self.verificarSeTodasImagensForamRespondidas() {
+//                print(self.dbgmsg + "Todas imagens ja foram computadas. Va para a tela de feedback")
+//                self.alertarConclusaoExercicio()
+//            }
+//        })
+//        
+//        
+//
+//        }
+//        
+//    }
     
-    
+
 }

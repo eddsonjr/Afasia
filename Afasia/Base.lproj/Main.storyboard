@@ -61,22 +61,21 @@
                                     <action selector="acertou:" destination="Eqx-q7-ADe" eventType="touchUpInside" id="QXA-f2-Q8e"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bML-Z1-tHM">
-                                <rect key="frame" x="494" y="681" width="37" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Errou"/>
-                                <connections>
-                                    <action selector="errou:" destination="Eqx-q7-ADe" eventType="touchUpInside" id="fDY-Ei-taL"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="syn-sR-Xg3">
-                                <rect key="frame" x="20" y="145" width="984" height="478"/>
+                                <rect key="frame" x="20" y="145" width="984" height="506"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aviao" translatesAutoresizingMaskIntoConstraints="NO" id="FDA-2G-Y94">
                                         <rect key="frame" x="119" y="56" width="745" height="365"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eu7-70-BDi">
+                                        <rect key="frame" x="471" y="477" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -86,6 +85,14 @@
                                 <state key="normal" title="Finalizar"/>
                                 <connections>
                                     <action selector="finalizar:" destination="Eqx-q7-ADe" eventType="touchUpInside" id="zHP-d7-5yR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bML-Z1-tHM">
+                                <rect key="frame" x="501" y="681" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Errou"/>
+                                <connections>
+                                    <action selector="errou:" destination="Eqx-q7-ADe" eventType="touchUpInside" id="fDY-Ei-taL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -109,6 +116,7 @@
                         <outlet property="configuracoesPopOver" destination="4O3-ab-MQW" id="9Vm-6m-czq"/>
                         <outlet property="configuracoesPopOverPicker" destination="gGY-JR-E4v" id="enb-Wb-BLe"/>
                         <outlet property="errouBTN" destination="bML-Z1-tHM" id="6Fu-U7-nGz"/>
+                        <outlet property="statusDaImagem" destination="eu7-70-BDi" id="SN1-Se-LuY"/>
                         <outlet property="swipeView" destination="syn-sR-Xg3" id="XQT-Fr-IAT"/>
                     </connections>
                 </viewController>
