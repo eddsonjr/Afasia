@@ -104,8 +104,7 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     @IBAction func acertou(_ sender: Any) {
         print(dbgmsg + "Acertou!")
         self.estruturaDeAcertosErrosDuvidas?[idImagemAtual!].estado = estadosDoExercicio1.acertou.rawValue
-        //self.acertouBTN.isHidden = true
-        //self.errouBTN.isHidden = true
+       
         
         //computando acerto
         self.acertos = acertos + 1
@@ -126,13 +125,11 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     
     
     
-    
     //responsavel por computar os erros
     @IBAction func errou(_ sender: Any) {
         print(dbgmsg + "Errou!")
         self.estruturaDeAcertosErrosDuvidas?[idImagemAtual!].estado = estadosDoExercicio1.erro.rawValue
-        //self.acertouBTN.isHidden = true
-        //self.errouBTN.isHidden = true
+       
         
         //computando erros
         self.erros = erros + 1
@@ -320,6 +317,7 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     func carregarImagens(imagens: [ImagemExercicio]) {
         
         self.estruturaDeAcertosErrosDuvidas = []
+        self.duvidas = 0
         
         for imagem in imagens {
             
@@ -328,12 +326,11 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
  
         }
             
-        print(dbgmsg + "Estrutura de acertos,erros,duvidas com: \(self.estruturaDeAcertosErrosDuvidas?.count) elementos.")
-            
-            
+        
         self.ImageView.image = self.estruturaDeAcertosErrosDuvidas?.first?.imagemExec?.asset
         self.idImagemAtual = 0
 
+         print(dbgmsg + "Estrutura de acertos,erros,duvidas com: \(self.estruturaDeAcertosErrosDuvidas?.count) elementos. Indice da imagem em: \(self.idImagemAtual)")
         
     }
     
@@ -348,6 +345,7 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     func carregarTodasImagens(imagens: [ImagemExercicio],qtImagens: Int) {
       
         self.estruturaDeAcertosErrosDuvidas = []
+        self.duvidas = 0
 
         var ultimoSelecionado: Int = 0
         var selecoes: Int = 0
@@ -386,6 +384,9 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
         
         self.ImageView.image = self.estruturaDeAcertosErrosDuvidas?.first?.imagemExec?.asset
         self.idImagemAtual = 0
+        
+        
+         print(dbgmsg + "Estrutura de acertos,erros,duvidas com: \(self.estruturaDeAcertosErrosDuvidas?.count) elementos. Indice da imagem em: \(self.idImagemAtual)")
         
         
         
@@ -457,7 +458,7 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
             self.carregarTelaFeedaback()
         }
         
-        alert.showWarning("Exercício Concluído", subTitle: "Você completou este exercício. Veja seus resultados!")
+        alert.showSuccess("Exercício Concluído", subTitle: "Você completou este exercício. Veja seus resultados!")
     }
     
     
@@ -487,7 +488,7 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
         
         
         /*NECESSITA AJEITAR*/
-        alert.showWarning("Sair do Exercício?", subTitle: "Você deseja realmente sair deste exercício?", closeButtonTitle: "Cancelar", timeout: nil, colorStyle: 0x0000, colorTextButton: 0x0000, animationStyle: .topToBottom)
+        alert.showWarning("Sair do Exercício?", subTitle: "Você deseja realmente sair deste exercício?", closeButtonTitle: "Cancelar", timeout: nil, colorStyle: 0xFED035, colorTextButton: 0x262626, animationStyle: .topToBottom)
        
     }
     
@@ -496,6 +497,7 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     
     //Mark: Funcao para passar as imagens de forma automatica
     func carregarProximaImagem() {
+        print(dbgmsg + "Index anterior: \(self.idImagemAtual)")
         self.idImagemAtual = self.idImagemAtual! + 1
         if idImagemAtual! < (self.estruturaDeAcertosErrosDuvidas?.count)!{
              self.ImageView.image = self.estruturaDeAcertosErrosDuvidas?[idImagemAtual!].imagemExec?.asset
