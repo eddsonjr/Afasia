@@ -73,6 +73,11 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
         carregarTodasImagens(imagens: ImagemExercicioStore.getAllImagensExecs(), qtImagens: 4)
         
         
+        
+        
+        //Testando 
+        var speechTest: SpeechTranscribe = SpeechTranscribe(speechLocaleIdentifier: Locale.init(identifier: "pt-BR"))
+
     }
 
     override func didReceiveMemoryWarning() {
