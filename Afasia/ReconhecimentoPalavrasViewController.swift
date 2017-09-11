@@ -448,6 +448,25 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     
     
     
+    
+    //Mark: carregar tela de selecao de jogos
+    func carregarTelaSelecaoJogos() {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "SelecaoJogos") as! SelecaoJogosViewController
+        
+        //chamando controladora
+        self.present(controller, animated: true, completion: nil)
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
     //Mark: Criar alerta para informar que todas as imagens foram respondidas 
     func alertarConclusaoExercicio() {
         
@@ -485,9 +504,7 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
                 self.carregarTelaFeedaback()
             }else {
                 print(self.dbgmsg + "Saindo do exercicio.Indo para a selecao de jogos")
-                self.dismiss(animated: true) {
-                    print(self.dbgmsg + "Voltando para tela anterior")
-                }
+                self.carregarTelaSelecaoJogos()
             }
         }
         
@@ -509,10 +526,6 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
         }
         
     }
-    
-    
-    
-    
     
     //Mark: Funcao para animar a label que indica acerto ou erro
 //    func animarImagemStatusLabel() {
