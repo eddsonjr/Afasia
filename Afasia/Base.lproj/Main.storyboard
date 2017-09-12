@@ -23,19 +23,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qs-aE-aiJ">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qs-aE-aiJ">
                                 <rect key="frame" x="418" y="369" width="188" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Reconhecimento de figuras"/>
                                 <connections>
                                     <segue destination="Eqx-q7-ADe" kind="show" id="ORB-8P-jbf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5n-X4-yiH">
+                                <rect key="frame" x="347" y="407" width="331" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reconhecer objetos em cenas"/>
+                                <connections>
+                                    <segue destination="3dq-VW-npU" kind="show" id="Y5v-Zg-kZd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="6qs-aE-aiJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4zm-fd-zBf"/>
-                            <constraint firstItem="6qs-aE-aiJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tFZ-z1-bZw"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dBl-5m-cyt"/>
                 </viewController>
@@ -199,7 +204,56 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2347" y="-138"/>
+            <point key="canvasLocation" x="2469" y="-894"/>
+        </scene>
+        <!--Selecao Reconhecimento Objs Cena View Controller-->
+        <scene sceneID="yAq-ge-V0m">
+            <objects>
+                <viewController id="3dq-VW-npU" customClass="SelecaoReconhecimentoObjsCenaViewController" customModule="Afasia" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Phc-nq-PH2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hks-Kz-JNa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z9Z-LW-0kc">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79B-F7-ArE">
+                                <rect key="frame" x="491" y="369" width="42" height="30"/>
+                                <state key="normal" title="Cena1"/>
+                                <connections>
+                                    <action selector="carregarExercicio2_1:" destination="3dq-VW-npU" eventType="touchUpInside" id="90Z-Pw-2tm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="79B-F7-ArE" firstAttribute="centerY" secondItem="Z9Z-LW-0kc" secondAttribute="centerY" id="HxW-xn-23y"/>
+                            <constraint firstItem="79B-F7-ArE" firstAttribute="centerX" secondItem="Z9Z-LW-0kc" secondAttribute="centerX" id="fj0-7b-cFl"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M0C-45-Mdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2468.5546875" y="-120.3125"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="ahq-1O-KMN">
+            <objects>
+                <viewController storyboardIdentifier="GameViewController" id="wCd-Zn-glX" customClass="GameViewController" customModule="Afasia" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ye8-16-6Ei"/>
+                        <viewControllerLayoutGuide type="bottom" id="FWO-Cp-4ji"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BiK-xR-JYy">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z2s-Z9-5RB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3325" y="-120"/>
         </scene>
         <!--Feedback Tipo1 View Controller-->
         <scene sceneID="BFQ-BW-Gll">
@@ -274,7 +328,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v8a-Ee-n2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3748.8281249999995" y="-137.5"/>
+            <point key="canvasLocation" x="3325" y="-895"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rxp-cG-KhA">

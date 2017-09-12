@@ -13,11 +13,27 @@ import GameplayKit
 
 
 class GameViewController: UIViewController {
-
-
-
+    
+    
+    
+    private let dbgmsg = "[GameViewController]: "
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view = SKView()
+        let skView = view as! SKView
+        
+        
+        if let view = self.view as! SKView? {
+            if let scene = ReconhecimentoObjetosCena1(fileNamed: "ReconhecimentoObejtosCena1") {
+                print(self.dbgmsg + "Carregando cena 1 exercicio 2")
+                scene.scaleMode = .aspectFill
+                view.presentScene(scene)
+            }
+        }
+        
+        
         
     }
     
