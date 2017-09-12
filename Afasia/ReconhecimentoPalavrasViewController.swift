@@ -77,7 +77,6 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
         
         //Testando 
         var speechTest: SpeechTranscribe = SpeechTranscribe(speechLocaleIdentifier: Locale.init(identifier: "pt-BR"))
-
     }
 
     override func didReceiveMemoryWarning() {
