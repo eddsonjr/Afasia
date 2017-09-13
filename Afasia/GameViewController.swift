@@ -21,27 +21,26 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view = SKView()
-        let skView = view as! SKView
         
-        
-        if let view = self.view as! SKView? {
-            if let scene = ReconhecimentoObjetosCena1(fileNamed: "ReconhecimentoObejtosCena1") {
-                print(self.dbgmsg + "Carregando cena 1 exercicio 2")
-                scene.scaleMode = .aspectFill
-                view.presentScene(scene)
+        if let scene = GKScene(fileNamed: "ReconhecimentoObjetosCena1") {
+            
+            if let sceneNode = scene.rootNode as! ReconhecimentoObjetosCena1? {
+                sceneNode.scaleMode = .aspectFill
+                if let view = self.view as! SKView? {
+                    print(dbgmsg + "Carregando spritekit...")
+                    view.presentScene(sceneNode)
+                    
+                    view.ignoresSiblingOrder = true
+                    
+                    view.showsFPS = true
+                    view.showsNodeCount = true
+                }
             }
         }
-        
-        
-        
     }
-    
-    
-    
-    
-    
-    
+
+        
+        
     
     override func viewDidAppear(_ animated: Bool) {
         

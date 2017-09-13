@@ -17,6 +17,13 @@ class ReconhecimentoObjetosCena1: SKScene{
     
     private let dbgmsg = "[RecObjCena1]: "
     
+    
+    
+    override func sceneDidLoad() {
+        
+        
+    }
+    
     override func didMove(to view: SKView) {
         print(self.dbgmsg + "Dentro de didMove")
         
