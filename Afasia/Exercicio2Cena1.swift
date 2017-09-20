@@ -12,7 +12,7 @@ import GameplayKit
 import UIKit
 
 
-class Exercicio2: SKScene{
+class Exercicio2Cena1: SKScene{
     
     
     private let dbgmsg = "[RecObjCena1]: "
