@@ -1,0 +1,58 @@
+Definicao de nomes de classes e pastas do projeto
+
+
+NOMECLATURA PARA CLASSES E PASTAS DE EXERCICIO
+Cada exercicio tera uma pasta propria contendo suas proprias classes, cenas e demais
+arquivos. Isso manterá a organizacao do projeto.
+
+Exemplo:
+Exercicio1
+    -> Exercicio1ViewController
+    -> Exercicio1GameDefinition
+    -> Exercicio1Scene
+
+O nome de cada classe sera de acordo com uma nomeclatura:
+
+->Classes que tem a ver com algum tipo de exercicio em si iniciarao com "Exercicio"x<comp>, onde:
+
+    ->Exercicio: significa que a classe compoe um exercicio
+    ->x: indica alguma identificacao numerica do exercicio
+    -><comp>: algum complemento, como por exemplo "ViewController" para indicar controladora
+
+
+
+NOMECLATURA PARA EXTENSIONS
+As extensions estarao dentro de uma pasta com o nome "Extensions" e seguirao a
+seguinte nomeclatura:
+    <classe>_<extension>_<describe>, onde:
+
+    ->classe: Indica a classe que recebera a extension, ex: UIView, SKSPriteNode,etc.
+    -><extension>: palavra indicada para extensao
+    -><describe>: uma breve descricao do que a extension esta fazendo, ex: animacao
+
+
+
+NOMECLATURA PARA CLASSES DE SUPORTE A UI
+Elementos de suporte a UI estarão dentro de uma pasta denominada "Elementos_UI" e
+deverao ter o nome que lhes representam, nao seguindo nenhuma nomeclatura
+especifica.
+
+
+NOMECLATURA PARA BANCO DE DADOS E STORES
+Todos os arquivos que correspondem a armazenamento de dados, seja em banco ou
+estaticas, estarão dentro da pasta Models, sendo que as informacoes estaticas
+estarão dentro de uma subpasta denominada Stores e as informacoes referentes a
+banco de dados estarao dentro da pasta BD.
+
+Para as classes que armazenarao dados de forma estatica, as mesmas deveram seguir
+o seguinte padrao
+    <NomeDaClasse>Store, onde:
+
+    -><NomeDaClasse>: Nome da classe qeu deve estar em conjunto com a sua model
+    ->Store: palavra reservada para indicar que ela sera responsavel por armazenar dados de forma estatica
+
+Exemplo:
+    ImagemExercicio1 <- classe model
+    ImagemExercicio1Store  <- classe de armazenamento de dados estaticos
+
+
