@@ -22,7 +22,7 @@
 		AD7BE2BE1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7BE2BD1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift */; };
 		AD7E203E1F729A3B00EA3A66 /* Definicoes in Resources */ = {isa = PBXBuildFile; fileRef = AD7E203D1F729A3B00EA3A66 /* Definicoes */; };
 		AD80D8C01F6815820064201B /* Exercicio2Cena1.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD80D8BF1F6815820064201B /* Exercicio2Cena1.sks */; };
-		AD80D8C21F6815DD0064201B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80D8C11F6815DD0064201B /* GameViewController.swift */; };
+		AD80D8C21F6815DD0064201B /* Exercicio2GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80D8C11F6815DD0064201B /* Exercicio2GameViewController.swift */; };
 		AD80D8C51F6816960064201B /* Exercicio2Cena1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80D8C41F6816960064201B /* Exercicio2Cena1.swift */; };
 		AD80D8C71F681AA80064201B /* Exercicio2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80D8C61F681AA80064201B /* Exercicio2ViewController.swift */; };
 		AD82A68F1F4CD57300F4F5CD /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82A68D1F4CD57300F4F5CD /* SCLAlertView.swift */; };
@@ -68,7 +68,7 @@
 		AD7BE2BD1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackTipo1ViewController.swift; sourceTree = "<group>"; };
 		AD7E203D1F729A3B00EA3A66 /* Definicoes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Definicoes; sourceTree = "<group>"; };
 		AD80D8BF1F6815820064201B /* Exercicio2Cena1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Exercicio2Cena1.sks; sourceTree = "<group>"; };
-		AD80D8C11F6815DD0064201B /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		AD80D8C11F6815DD0064201B /* Exercicio2GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercicio2GameViewController.swift; sourceTree = "<group>"; };
 		AD80D8C41F6816960064201B /* Exercicio2Cena1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercicio2Cena1.swift; sourceTree = "<group>"; };
 		AD80D8C61F681AA80064201B /* Exercicio2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercicio2ViewController.swift; sourceTree = "<group>"; };
 		AD82A68D1F4CD57300F4F5CD /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
@@ -254,7 +254,7 @@
 		AD7E20441F72A72B00EA3A66 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AD80D8C11F6815DD0064201B /* GameViewController.swift */,
+				AD80D8C11F6815DD0064201B /* Exercicio2GameViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -450,7 +450,7 @@
 				AD2B1C821F43D99C001175E2 /* AppDelegate.swift in Sources */,
 				AD1A310A1F448EFB0058E920 /* ImagemExercicioStore.swift in Sources */,
 				AD2B1C8A1F43D99C001175E2 /* Afasia.xcdatamodeld in Sources */,
-				AD80D8C21F6815DD0064201B /* GameViewController.swift in Sources */,
+				AD80D8C21F6815DD0064201B /* Exercicio2GameViewController.swift in Sources */,
 				AD1A31081F448A180058E920 /* ImagemExercicio.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

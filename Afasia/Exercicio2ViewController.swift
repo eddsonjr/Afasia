@@ -27,7 +27,7 @@ class Exercicio2ViewController: UIViewController {
     
     //Mark: Funcao para carregar as cenas do exercicio 2 de acordo com a opcao do usuario
     func carregarGameScene() {
-        let newViewController = storyboard?.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
+        let newViewController = storyboard?.instantiateViewController(withIdentifier: "Exercicio2GameViewController") as! Exercicio2GameViewController
         self.present(newViewController, animated: true, completion: nil)
     }
     

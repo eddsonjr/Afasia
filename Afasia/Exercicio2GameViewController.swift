@@ -12,7 +12,7 @@ import GameplayKit
 
 
 
-class GameViewController: UIViewController {
+class Exercicio2GameViewController: UIViewController {
     
     
     

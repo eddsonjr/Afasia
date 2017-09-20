@@ -237,10 +237,10 @@
             </objects>
             <point key="canvasLocation" x="2468.5546875" y="-120.3125"/>
         </scene>
-        <!--Game View Controller-->
+        <!--Exercicio2 Game View Controller-->
         <scene sceneID="ahq-1O-KMN">
             <objects>
-                <viewController storyboardIdentifier="GameViewController" id="wCd-Zn-glX" customClass="GameViewController" customModule="Afasia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Exercicio2GameViewController" id="wCd-Zn-glX" customClass="Exercicio2GameViewController" customModule="Afasia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ye8-16-6Ei"/>
                         <viewControllerLayoutGuide type="bottom" id="FWO-Cp-4ji"/>
