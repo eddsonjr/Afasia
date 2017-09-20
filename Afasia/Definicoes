@@ -21,6 +21,32 @@ O nome de cada classe sera de acordo com uma nomeclatura:
 
 
 
+Dentro da pasta Controllers, deverao ficar as classes que fazem referencia as controladoras de
+cada exercício, sendo que cada pasta deverá conter um nome sugestivo (ex: Exercicio1).
+As demais classes dentro desta pasta também deverão estar dentro de subdiretorios com nomes
+sugestivos (ex: Feedbacks, SelecaoDeExercicios).
+A pasta View tambem segue um ritmo praticamente parecido, caso necessário. Os únicos arquivos
+deverão estar na raiz desta pasta são os de storyboard.
+
+
+
+
+
+SPRITEKIT
+Para as cenas e arquvios que utilizam o SpriteKit, deverá haver um diretorio dentro do projeto
+entitulado "SpriteKit", responsável por armazenar todos os elementos. Dentro desta pasta, deverão
+haver os seguintes diretorios:
+    ->View: Conterão os arquivos de cenas para cada exercício, sendo que cada exercício deverá
+        estar contido dentro de uma outra pasta, seguindo regra semelhante com a de cima para
+        os controladores.
+    ->Controller:  Armazenará o nome dos controladores de cada exercício.
+    ->GameScene: Armazenarão as classes com que controlam as ações dentro de cada cena e deverão
+        seguir a nomeclatura: "Exercicio"x"GameScene", onde o x é o número do exercício.
+
+
+
+
+
 NOMECLATURA PARA EXTENSIONS
 As extensions estarao dentro de uma pasta com o nome "Extensions" e seguirao a
 seguinte nomeclatura:
@@ -32,10 +58,16 @@ seguinte nomeclatura:
 
 
 
+
+
 NOMECLATURA PARA CLASSES DE SUPORTE A UI
 Elementos de suporte a UI estarão dentro de uma pasta denominada "Elementos_UI" e
 deverao ter o nome que lhes representam, nao seguindo nenhuma nomeclatura
 especifica.
+
+
+
+
 
 
 NOMECLATURA PARA BANCO DE DADOS E STORES
@@ -54,5 +86,10 @@ o seguinte padrao
 Exemplo:
     ImagemExercicio1 <- classe model
     ImagemExercicio1Store  <- classe de armazenamento de dados estaticos
+
+
+
+
+
 
 

@@ -103,6 +103,7 @@
 		AD1A31061F4489D80058E920 /* Stores */ = {
 			isa = PBXGroup;
 			children = (
+				AD1A31071F448A180058E920 /* ImagemExercicio.swift */,
 				AD1A31091F448EFB0058E920 /* ImagemExercicioStore.swift */,
 			);
 			name = Stores;
@@ -196,7 +197,6 @@
 		AD2B1CB51F43DADB001175E2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AD1A31071F448A180058E920 /* ImagemExercicio.swift */,
 				AD1A31061F4489D80058E920 /* Stores */,
 			);
 			name = Models;
