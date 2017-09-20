@@ -22,9 +22,11 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         
-        if let scene = GKScene(fileNamed: "ReconhecimentoObjetosCena1") {
+        
+        
+        if let scene = GKScene(fileNamed: "Exercicio2") {
             
-            if let sceneNode = scene.rootNode as! ReconhecimentoObjetosCena1? {
+            if let sceneNode = scene.rootNode as! Exercicio2? {
                 sceneNode.scaleMode = .aspectFill
                 if let view = self.view as! SKView? {
                     print(dbgmsg + "Carregando spritekit...")

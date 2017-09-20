@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
+class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
 
     
     //Mark: View componentes
@@ -183,7 +183,7 @@ class ReconhecimentoPalavrasViewController: UIViewController,UIPickerViewDelegat
     func addSwipe() {
         let swipeGestures: [UISwipeGestureRecognizerDirection] = [UISwipeGestureRecognizerDirection.right,UISwipeGestureRecognizerDirection.left]
         for direction in swipeGestures {
-            let gesture = UISwipeGestureRecognizer(target: self, action: #selector(ReconhecimentoPalavrasViewController.handleSwipeGesture(_sender:)))
+            let gesture = UISwipeGestureRecognizer(target: self, action: #selector(Exercicio1ViewController.handleSwipeGesture(_sender:)))
             gesture.direction = direction
             self.swipeView.addGestureRecognizer(gesture)
         }

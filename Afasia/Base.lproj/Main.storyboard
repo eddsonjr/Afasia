@@ -51,7 +51,7 @@
         <!--Nome das Figuras-->
         <scene sceneID="t5C-BM-uja">
             <objects>
-                <viewController id="Eqx-q7-ADe" customClass="ReconhecimentoPalavrasViewController" customModule="Afasia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Eqx-q7-ADe" customClass="Exercicio1ViewController" customModule="Afasia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SzT-Yi-BPC"/>
                         <viewControllerLayoutGuide type="bottom" id="CLa-h4-0fO"/>
@@ -206,10 +206,10 @@
             </objects>
             <point key="canvasLocation" x="2469" y="-894"/>
         </scene>
-        <!--Selecao Reconhecimento Objs Cena View Controller-->
+        <!--Exercicio2 View Controller-->
         <scene sceneID="yAq-ge-V0m">
             <objects>
-                <viewController id="3dq-VW-npU" customClass="SelecaoReconhecimentoObjsCenaViewController" customModule="Afasia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3dq-VW-npU" customClass="Exercicio2ViewController" customModule="Afasia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Phc-nq-PH2"/>
                         <viewControllerLayoutGuide type="bottom" id="Hks-Kz-JNa"/>

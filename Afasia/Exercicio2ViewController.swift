@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SelecaoReconhecimentoObjsCenaViewController: UIViewController {
+class Exercicio2ViewController: UIViewController {
     
     
 
