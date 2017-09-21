@@ -15,6 +15,15 @@ import UIKit
 class Exercicio2Cena3: SKScene{
     
     
+    
+    //Mark: variavel do delegate
+    var mySpriteKitDelegate: MySpriteKitDelegate?
+    
+
+    
+    
+    
+    
     override func sceneDidLoad() {
         
         

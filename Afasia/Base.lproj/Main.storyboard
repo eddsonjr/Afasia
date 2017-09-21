@@ -266,7 +266,21 @@
                     <view key="view" contentMode="scaleToFill" id="BiK-xR-JYy" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIV-eB-vm9">
+                                <rect key="frame" x="912" y="28" width="46" height="30"/>
+                                <state key="normal" title="Voltar"/>
+                                <connections>
+                                    <action selector="voltarBTN:" destination="wCd-Zn-glX" eventType="touchUpInside" id="JM2-QU-Dan"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qIV-eB-vm9" firstAttribute="top" secondItem="Ye8-16-6Ei" secondAttribute="bottom" constant="8" id="1wf-GZ-vgl"/>
+                            <constraint firstItem="qIV-eB-vm9" firstAttribute="leading" secondItem="BiK-xR-JYy" secondAttribute="leadingMargin" constant="892" id="3is-UI-rtb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qIV-eB-vm9" secondAttribute="trailing" constant="46" id="LP1-GN-DGv"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z2s-Z9-5RB" userLabel="First Responder" sceneMemberID="firstResponder"/>

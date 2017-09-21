@@ -14,9 +14,13 @@ import GameplayKit
 
 class Exercicio2GameViewController: UIViewController,MySpriteKitDelegate {
     
-    
+    //Mark: Responsavel por receber o codigo da cena  a ser carregada
     var cenaAserCarregada: Int = Int()
     
+    //Mark: View responsavel por adqurir a cena do exercicio a ser carregada
+    var viewDoExercicio:SKView? = nil
+    
+    //Mark: Mensagem de identificacao de bug
     private let dbgmsg = "[GameViewController]: "
     
     override func viewDidLoad() {
@@ -27,23 +31,21 @@ class Exercicio2GameViewController: UIViewController,MySpriteKitDelegate {
        //escolhendo a cena do exercicio a ser carregada
         switch self.cenaAserCarregada {
         case 1:
-            if let scene = GKScene(fileNamed: "Exercicio2Cena1") {
-                
-                if let sceneNode = scene.rootNode as! Exercicio2Cena1? {
-                    sceneNode.scaleMode = .aspectFill
-                    if let view = self.view as! SKView? {
-                        print(dbgmsg + "Carregando spritekit...")
-                        view.presentScene(sceneNode)
-                        
-                        view.ignoresSiblingOrder = true
-                        
-                        view.showsFPS = true
-                        view.showsNodeCount = true
-                    }
+            
+            if let view = self.view as! SKView? {
+                self.viewDoExercicio = view
+                if let scene = Exercicio2Cena1(fileNamed: "Exercicio2Cena1") {
+                    scene.scaleMode = .aspectFill
                     
+                    //conformando com o protocolo MySpriteKitDelegate
+                    scene.mySpriteKitDelegate = self
                     
+                    view.presentScene(scene)
                 }
-            } //fecha o if let scene = GKScene...
+                
+                view.ignoresSiblingOrder = true
+                
+            }
             
             
         case 2:
@@ -60,6 +62,7 @@ class Exercicio2GameViewController: UIViewController,MySpriteKitDelegate {
                         view.showsFPS = true
                         view.showsNodeCount = true
                     }
+                    sceneNode.mySpriteKitDelegate = self
                 }
                 
                 
@@ -135,6 +138,16 @@ class Exercicio2GameViewController: UIViewController,MySpriteKitDelegate {
     
     
     
+    //Mark: Funcoes de botoes [IBActions]
+    @IBAction func voltarBTN(_ sender: Any) {
+        
+        carregarTelaDeSelecaoDeExercicio()
+    }
+    
+    
+    
+    
+    
     
     
     
@@ -142,11 +155,12 @@ class Exercicio2GameViewController: UIViewController,MySpriteKitDelegate {
     
     //Mark: Funcoes de conformidade do MySpriteKitDelegate
     func carregarFeedback() {
-        
+        print(dbgmsg + "Carregando feedback [DELEGATE]")
     }
     
     
     func carregarTelaDeSelecaoDeExercicio() {
+        print(dbgmsg + "Carregando tela de selecao de exercicio [DELEGATE]")
         
     }
     

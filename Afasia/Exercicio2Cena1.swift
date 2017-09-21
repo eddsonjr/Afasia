@@ -25,6 +25,9 @@ class Exercicio2Cena1: SKScene{
     
     
     
+    //Mark: Variavel do delegate
+    var mySpriteKitDelegate: MySpriteKitDelegate?
+    
     
     override func sceneDidLoad() {
         
