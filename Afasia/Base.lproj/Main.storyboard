@@ -225,11 +225,29 @@
                                     <action selector="carregarExercicio2_1:" destination="3dq-VW-npU" eventType="touchUpInside" id="90Z-Pw-2tm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvH-pP-OGR">
+                                <rect key="frame" x="489.5" y="407" width="45" height="30"/>
+                                <state key="normal" title="Cena2"/>
+                                <connections>
+                                    <action selector="carregarExercicio2_2:" destination="3dq-VW-npU" eventType="touchUpInside" id="wja-rw-9Bl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmQ-Xy-S2m">
+                                <rect key="frame" x="489.5" y="445" width="45" height="30"/>
+                                <state key="normal" title="Cena3"/>
+                                <connections>
+                                    <action selector="carregarExercicio2_3:" destination="3dq-VW-npU" eventType="touchUpInside" id="IYb-Yq-PPK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="hmQ-Xy-S2m" firstAttribute="centerX" secondItem="Z9Z-LW-0kc" secondAttribute="centerX" id="6Sl-uQ-dY5"/>
                             <constraint firstItem="79B-F7-ArE" firstAttribute="centerY" secondItem="Z9Z-LW-0kc" secondAttribute="centerY" id="HxW-xn-23y"/>
+                            <constraint firstItem="hmQ-Xy-S2m" firstAttribute="top" secondItem="nvH-pP-OGR" secondAttribute="bottom" constant="8" id="Kgz-TM-eoA"/>
                             <constraint firstItem="79B-F7-ArE" firstAttribute="centerX" secondItem="Z9Z-LW-0kc" secondAttribute="centerX" id="fj0-7b-cFl"/>
+                            <constraint firstItem="nvH-pP-OGR" firstAttribute="top" secondItem="79B-F7-ArE" secondAttribute="bottom" constant="8" id="qhs-aP-fzB"/>
+                            <constraint firstItem="nvH-pP-OGR" firstAttribute="centerX" secondItem="Z9Z-LW-0kc" secondAttribute="centerX" id="ynl-3L-S0F"/>
                         </constraints>
                     </view>
                 </viewController>

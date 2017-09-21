@@ -27,6 +27,11 @@
 		AD80D8C71F681AA80064201B /* Exercicio2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80D8C61F681AA80064201B /* Exercicio2ViewController.swift */; };
 		AD82A68F1F4CD57300F4F5CD /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82A68D1F4CD57300F4F5CD /* SCLAlertView.swift */; };
 		AD82A6901F4CD57300F4F5CD /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82A68E1F4CD57300F4F5CD /* SCLExtensions.swift */; };
+		ADF0C48F1F73EFA100856EBC /* Exercicio2Cena2.sks in Resources */ = {isa = PBXBuildFile; fileRef = ADF0C48E1F73EFA100856EBC /* Exercicio2Cena2.sks */; };
+		ADF0C4911F73EFE300856EBC /* Exercicio2Cena3.sks in Resources */ = {isa = PBXBuildFile; fileRef = ADF0C4901F73EFE300856EBC /* Exercicio2Cena3.sks */; };
+		ADF0C4931F73F00700856EBC /* Exercicio2Cena2.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0C4921F73F00700856EBC /* Exercicio2Cena2.swift */; };
+		ADF0C4951F73F01900856EBC /* Exercicio2Cena3.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0C4941F73F01900856EBC /* Exercicio2Cena3.swift */; };
+		ADF0C4971F73F68300856EBC /* MySpriteKitDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0C4961F73F68300856EBC /* MySpriteKitDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +78,11 @@
 		AD80D8C61F681AA80064201B /* Exercicio2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercicio2ViewController.swift; sourceTree = "<group>"; };
 		AD82A68D1F4CD57300F4F5CD /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
 		AD82A68E1F4CD57300F4F5CD /* SCLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLExtensions.swift; sourceTree = "<group>"; };
+		ADF0C48E1F73EFA100856EBC /* Exercicio2Cena2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Exercicio2Cena2.sks; sourceTree = "<group>"; };
+		ADF0C4901F73EFE300856EBC /* Exercicio2Cena3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Exercicio2Cena3.sks; sourceTree = "<group>"; };
+		ADF0C4921F73F00700856EBC /* Exercicio2Cena2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercicio2Cena2.swift; sourceTree = "<group>"; };
+		ADF0C4941F73F01900856EBC /* Exercicio2Cena3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercicio2Cena3.swift; sourceTree = "<group>"; };
+		ADF0C4961F73F68300856EBC /* MySpriteKitDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySpriteKitDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +272,7 @@
 		AD7E20451F72A73500EA3A66 /* GameScene */ = {
 			isa = PBXGroup;
 			children = (
+				ADF0C4961F73F68300856EBC /* MySpriteKitDelegate.swift */,
 				ADB2A2AD1F72B5BD00CABEB5 /* Exercicio2 */,
 			);
 			name = GameScene;
@@ -288,6 +299,8 @@
 			isa = PBXGroup;
 			children = (
 				AD80D8C41F6816960064201B /* Exercicio2Cena1.swift */,
+				ADF0C4921F73F00700856EBC /* Exercicio2Cena2.swift */,
+				ADF0C4941F73F01900856EBC /* Exercicio2Cena3.swift */,
 			);
 			name = Exercicio2;
 			sourceTree = "<group>";
@@ -296,6 +309,8 @@
 			isa = PBXGroup;
 			children = (
 				AD80D8BF1F6815820064201B /* Exercicio2Cena1.sks */,
+				ADF0C48E1F73EFA100856EBC /* Exercicio2Cena2.sks */,
+				ADF0C4901F73EFE300856EBC /* Exercicio2Cena3.sks */,
 			);
 			name = Exercicio2;
 			sourceTree = "<group>";
@@ -414,6 +429,8 @@
 				AD2B1C8F1F43D99C001175E2 /* LaunchScreen.storyboard in Resources */,
 				AD7E203E1F729A3B00EA3A66 /* Definicoes in Resources */,
 				AD2B1C8C1F43D99C001175E2 /* Assets.xcassets in Resources */,
+				ADF0C4911F73EFE300856EBC /* Exercicio2Cena3.sks in Resources */,
+				ADF0C48F1F73EFA100856EBC /* Exercicio2Cena2.sks in Resources */,
 				AD2B1C871F43D99C001175E2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,12 +460,15 @@
 				AD1A31051F447FBB0058E920 /* Exercicio1ViewController.swift in Sources */,
 				AD42C13A1F66C66500CBB7EE /* SpeechTranscribe.swift in Sources */,
 				AD80D8C71F681AA80064201B /* Exercicio2ViewController.swift in Sources */,
+				ADF0C4971F73F68300856EBC /* MySpriteKitDelegate.swift in Sources */,
 				AD80D8C51F6816960064201B /* Exercicio2Cena1.swift in Sources */,
 				AD82A68F1F4CD57300F4F5CD /* SCLAlertView.swift in Sources */,
 				AD82A6901F4CD57300F4F5CD /* SCLExtensions.swift in Sources */,
 				AD7BE2BE1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift in Sources */,
+				ADF0C4931F73F00700856EBC /* Exercicio2Cena2.swift in Sources */,
 				AD2B1C821F43D99C001175E2 /* AppDelegate.swift in Sources */,
 				AD1A310A1F448EFB0058E920 /* ImagemExercicioStore.swift in Sources */,
+				ADF0C4951F73F01900856EBC /* Exercicio2Cena3.swift in Sources */,
 				AD2B1C8A1F43D99C001175E2 /* Afasia.xcdatamodeld in Sources */,
 				AD80D8C21F6815DD0064201B /* Exercicio2GameViewController.swift in Sources */,
 				AD1A31081F448A180058E920 /* ImagemExercicio.swift in Sources */,
