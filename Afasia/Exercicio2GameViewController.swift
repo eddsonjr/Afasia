@@ -12,6 +12,7 @@ import GameplayKit
 
 
 
+
 class Exercicio2GameViewController: UIViewController,MySpriteKitDelegate {
     
     //Mark: Responsavel por receber o codigo da cena  a ser carregada
@@ -141,12 +142,38 @@ class Exercicio2GameViewController: UIViewController,MySpriteKitDelegate {
     //Mark: Funcoes de botoes [IBActions]
     @IBAction func voltarBTN(_ sender: Any) {
         
-        carregarTelaDeSelecaoDeExercicio()
+        alertarExercicioEmCurso(irParaFeedback: false)
     }
     
     
     
     
+    
+    
+    //Mark: Funcao para alertar exercicio em curso
+    func alertarExercicioEmCurso(irParaFeedback: Bool) {
+        
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: true
+        )
+        
+        let alert = SCLAlertView(appearance: appearance)
+        alert.addButton("Sair") {
+            
+            //escolhe se deseja carregar a tela de feedback ou sair para a tela anterior
+            if irParaFeedback {
+                print(self.dbgmsg + "Saindo do exercicio.Indo para o feedback")
+                self.carregarFeedback()
+            }else {
+                print(self.dbgmsg + "Saindo do exercicio.Indo para a selecao de jogos")
+                self.carregarTelaDeSelecaoDeExercicio()
+            }
+        }
+        
+        alert.showWarning("Sair do Exercício?", subTitle: "Você deseja realmente sair deste exercício?", closeButtonTitle: "Cancelar", timeout: nil, colorStyle: 0xFED035, colorTextButton: 0x262626, animationStyle: .topToBottom)
+        
+    }
+
     
     
     
@@ -155,12 +182,18 @@ class Exercicio2GameViewController: UIViewController,MySpriteKitDelegate {
     
     //Mark: Funcoes de conformidade do MySpriteKitDelegate
     func carregarFeedback() {
-        print(dbgmsg + "Carregando feedback [DELEGATE]")
+        print(dbgmsg + "Carregando feedback [GAME DELEGATE]")
     }
     
     
     func carregarTelaDeSelecaoDeExercicio() {
-        print(dbgmsg + "Carregando tela de selecao de exercicio [DELEGATE]")
+        print(dbgmsg + "Carregando tela de selecao de exercicio [GAME DELEGATE]")
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "Exercicio2SelecaoCenas") as! Exercicio2ViewController
+        
+        //chamando controladora
+        self.present(controller, animated: true, completion: nil)
         
     }
     

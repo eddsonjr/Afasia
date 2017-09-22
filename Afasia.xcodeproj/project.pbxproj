@@ -142,6 +142,7 @@
 		AD2B1C801F43D99C001175E2 /* Afasia */ = {
 			isa = PBXGroup;
 			children = (
+				AD480FAC1F749D08002A7066 /* Extensions */,
 				AD7E20421F72A71B00EA3A66 /* SpriteKit */,
 				AD7E203C1F7299EC00EA3A66 /* outros */,
 				AD42C1381F66C63D00CBB7EE /* AudioSystem */,
@@ -216,6 +217,13 @@
 				AD42C1391F66C66500CBB7EE /* SpeechTranscribe.swift */,
 			);
 			name = AudioSystem;
+			sourceTree = "<group>";
+		};
+		AD480FAC1F749D08002A7066 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		AD7E203C1F7299EC00EA3A66 /* outros */ = {

@@ -209,7 +209,7 @@
         <!--Exercicio2 View Controller-->
         <scene sceneID="yAq-ge-V0m">
             <objects>
-                <viewController id="3dq-VW-npU" customClass="Exercicio2ViewController" customModule="Afasia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Exercicio2SelecaoCenas" id="3dq-VW-npU" customClass="Exercicio2ViewController" customModule="Afasia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Phc-nq-PH2"/>
                         <viewControllerLayoutGuide type="bottom" id="Hks-Kz-JNa"/>
