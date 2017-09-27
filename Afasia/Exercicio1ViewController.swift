@@ -27,7 +27,7 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
     
     
     //Mark: Configuracoes do picker
-    var configExecPickerData: [String] = ["Todas","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","Y","Z"]
+    var configExecPickerData: [String] = ["Diversas  palavras","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","Y","Z"]
     
     
     
@@ -70,13 +70,9 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
         
         
         //Carregando todas as imagens no vetor de imagens
-        carregarTodasImagens(imagens: ImagemExercicioStore.getAllImagensExecs(), qtImagens: 4)
+        carregarDiversasImagens(imagens: ImagemExercicioStore.getAllImagensExecs(), qtImagens: 4)
         
         
-        
-        
-        //Testando 
-        var speechTest: SpeechTranscribe = SpeechTranscribe(speechLocaleIdentifier: Locale.init(identifier: "pt-BR"))
     }
 
     override func didReceiveMemoryWarning() {
@@ -339,7 +335,7 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
         self.ImageView.image = self.estruturaDeAcertosErrosDuvidas?.first?.imagemExec?.asset
         self.idImagemAtual = 0
 
-         print(dbgmsg + "Estrutura de acertos,erros,duvidas com: \(self.estruturaDeAcertosErrosDuvidas?.count) elementos. Indice da imagem em: \(self.idImagemAtual)")
+         print(dbgmsg + "Estrutura de acertos,erros,duvidas com: \(String(describing: self.estruturaDeAcertosErrosDuvidas?.count)) elementos. Indice da imagem em: \(String(describing: self.idImagemAtual))")
         
     }
     
@@ -351,66 +347,28 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
     
     
     //Mark: Funcao para carregar imagens no vetor de imagens e mostra - las na tela
-    func carregarTodasImagens(imagens: [ImagemExercicio],qtImagens: Int) {
+    func carregarDiversasImagens(imagens: [ImagemExercicio],qtImagens: Int) {
       
+    
         self.estruturaDeAcertosErrosDuvidas = []
         self.duvidas = 0
-
-        var ultimoSelecionado: Int = 0
-        var selecoes: Int = 0
+        
+        //Primeiramente embaralhando o vetor de imagens
+        let imgsEmbaralhadas = imagens.shuffled()
         
         
-        /*ALGORITMO ERRADO: FUNCIONA, MAS NAO ATINGE A LOGICA PRETENDIDA*/
-        while selecoes < qtImagens {
-            
-            //pegando randomicamente uma imagem
-            var imagemAleatoria = Int(arc4random_uniform(UInt32(imagens.count)))
-            
-            //verificando se a mesma imagem ja nao foi selecionada
-            if self.estruturaDeAcertosErrosDuvidas?.count == 0 { //neste caso ainda nao existem imagens
-                ultimoSelecionado = imagemAleatoria
-            }else {
-                if imagemAleatoria == ultimoSelecionado {
-                    print(dbgmsg + "Foram selecionadas duas imagens iguais.")
-                    
-                    while true {
-                        imagemAleatoria = Int(arc4random_uniform(UInt32(imagens.count)))
-                        if imagemAleatoria != ultimoSelecionado {
-                            ultimoSelecionado = imagemAleatoria
-                            break
-                        }
-                    }
-                }
-            }
-            
-            self.estruturaDeAcertosErrosDuvidas?.append(acertoErroDuvidaStruct.init(imagemExec: imagens[imagemAleatoria], estado: estadosDoExercicio1.duvida.rawValue))
-
+        for i in 0 ... qtImagens-1{
+            self.estruturaDeAcertosErrosDuvidas?.append(acertoErroDuvidaStruct.init(imagemExec: imgsEmbaralhadas[i], estado: estadosDoExercicio1.duvida.rawValue))
             self.duvidas = duvidas + 1
-            
 
-            selecoes = selecoes + 1
         }
-        
         self.ImageView.image = self.estruturaDeAcertosErrosDuvidas?.first?.imagemExec?.asset
         self.idImagemAtual = 0
+
+    
         
         
-         print(dbgmsg + "Estrutura de acertos,erros,duvidas com: \(self.estruturaDeAcertosErrosDuvidas?.count) elementos. Indice da imagem em: \(self.idImagemAtual)")
-        
-        
-        
-        /*Antigo Codigo*/
-        //percorrendo todas as imagens e adicionando cada uma no vetor
-//        for imagem in imagens {
-//            self.estruturaDeAcertosErrosDuvidas.append(acertoErroDuvidaStruct.init(imagemExec: imagem, estado: estadosDoExercicio1.duvida.rawValue))
-//            self.duvidas = duvidas + 1
-//        }
-//        
-//        print(dbgmsg + "Estrutura de acertos,erros,duvidas com: \(self.estruturaDeAcertosErrosDuvidas.count) elementos.")
-//        
-//        
-//        self.ImageView.image = self.estruturaDeAcertosErrosDuvidas.first?.imagemExec?.asset
-//        self.idImagemAtual = 0
+         print(dbgmsg + "Estrutura de acertos,erros,duvidas com: \(String(describing: self.estruturaDeAcertosErrosDuvidas?.count)) elementos. Indice da imagem em: \(String(describing: self.idImagemAtual))")
         
     }
     
@@ -531,27 +489,8 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
         
     }
     
-    //Mark: Funcao para animar a label que indica acerto ou erro
-//    func animarImagemStatusLabel() {
-//        
-//       UIView.transition(with: self.statusDaImagem, duration: 1.0, options: .transitionCrossDissolve, animations: {
-//            [weak self] in
-//                self?.statusDaImagem.text = self?.estruturaDeAcertosErrosDuvidas?[(self?.idImagemAtual!)!].estado
-//       }) { (true) in
-//            print("Animation Ended!")
-//        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
-//            if self.verificarSeTodasImagensForamRespondidas() {
-//                print(self.dbgmsg + "Todas imagens ja foram computadas. Va para a tela de feedback")
-//                self.alertarConclusaoExercicio()
-//            }
-//        })
-//        
-//        
-//
-//        }
-//        
-//    }
     
-
+    
+    
+    
 }
