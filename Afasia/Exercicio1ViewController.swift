@@ -314,6 +314,11 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
         /*Falta implementar para carregar todas as imagens*/
         carregarImagens(imagens: ImagemExercicioStore.getAllImagensExecs(incial: opcaoSelecionada))
         
+        if opcaoSelecionada == "Diversas  palavras" {
+            print(dbgmsg + "Carregando diversas palavras")
+            carregarDiversasImagens(imagens: ImagemExercicioStore.getAllImagensExecs(), qtImagens: 4)
+        }
+        
     }
     
     
