@@ -18,7 +18,9 @@
 		AD2B1C8F1F43D99C001175E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD2B1C8D1F43D99C001175E2 /* LaunchScreen.storyboard */; };
 		AD2B1C9A1F43D99D001175E2 /* AfasiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B1C991F43D99D001175E2 /* AfasiaTests.swift */; };
 		AD2B1CA51F43D99D001175E2 /* AfasiaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B1CA41F43D99D001175E2 /* AfasiaUITests.swift */; };
-		AD42C13A1F66C66500CBB7EE /* SpeechTranscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD42C1391F66C66500CBB7EE /* SpeechTranscribe.swift */; };
+		AD2BA90A1F7C75CD00031374 /* Exercicio3GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2BA9091F7C75CD00031374 /* Exercicio3GameViewController.swift */; };
+		AD2BA90C1F7C770900031374 /* Exercicio3.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD2BA90B1F7C770900031374 /* Exercicio3.sks */; };
+		AD2BA90E1F7C771F00031374 /* Exercicio3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2BA90D1F7C771F00031374 /* Exercicio3.swift */; };
 		AD7BE2BE1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7BE2BD1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift */; };
 		AD7E203E1F729A3B00EA3A66 /* Definicoes in Resources */ = {isa = PBXBuildFile; fileRef = AD7E203D1F729A3B00EA3A66 /* Definicoes */; };
 		AD80D8C01F6815820064201B /* Exercicio2Cena1.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD80D8BF1F6815820064201B /* Exercicio2Cena1.sks */; };
@@ -70,7 +72,9 @@
 		AD2B1CA01F43D99D001175E2 /* AfasiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AfasiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD2B1CA41F43D99D001175E2 /* AfasiaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfasiaUITests.swift; sourceTree = "<group>"; };
 		AD2B1CA61F43D99D001175E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AD42C1391F66C66500CBB7EE /* SpeechTranscribe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechTranscribe.swift; sourceTree = "<group>"; };
+		AD2BA9091F7C75CD00031374 /* Exercicio3GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercicio3GameViewController.swift; sourceTree = "<group>"; };
+		AD2BA90B1F7C770900031374 /* Exercicio3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Exercicio3.sks; sourceTree = "<group>"; };
+		AD2BA90D1F7C771F00031374 /* Exercicio3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercicio3.swift; sourceTree = "<group>"; };
 		AD7BE2BD1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackTipo1ViewController.swift; sourceTree = "<group>"; };
 		AD7E203D1F729A3B00EA3A66 /* Definicoes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Definicoes; sourceTree = "<group>"; };
 		AD80D8BF1F6815820064201B /* Exercicio2Cena1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Exercicio2Cena1.sks; sourceTree = "<group>"; };
@@ -147,7 +151,6 @@
 				AD480FAC1F749D08002A7066 /* Extensions */,
 				AD7E20421F72A71B00EA3A66 /* SpriteKit */,
 				AD7E203C1F7299EC00EA3A66 /* outros */,
-				AD42C1381F66C63D00CBB7EE /* AudioSystem */,
 				AD2B1CB51F43DADB001175E2 /* Models */,
 				AD2B1CB41F43DACE001175E2 /* Controllers */,
 				AD2B1CB31F43DAC4001175E2 /* View */,
@@ -213,12 +216,20 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		AD42C1381F66C63D00CBB7EE /* AudioSystem */ = {
+		AD2BA90F1F7C773800031374 /* Exercicio3 */ = {
 			isa = PBXGroup;
 			children = (
-				AD42C1391F66C66500CBB7EE /* SpeechTranscribe.swift */,
+				AD2BA90B1F7C770900031374 /* Exercicio3.sks */,
 			);
-			name = AudioSystem;
+			name = Exercicio3;
+			sourceTree = "<group>";
+		};
+		AD2BA9101F7C774500031374 /* Exercicio3 */ = {
+			isa = PBXGroup;
+			children = (
+				AD2BA90D1F7C771F00031374 /* Exercicio3.swift */,
+			);
+			name = Exercicio3;
 			sourceTree = "<group>";
 		};
 		AD480FAC1F749D08002A7066 /* Extensions */ = {
@@ -257,6 +268,7 @@
 		AD7E20421F72A71B00EA3A66 /* SpriteKit */ = {
 			isa = PBXGroup;
 			children = (
+				ADF0C4961F73F68300856EBC /* MySpriteKitDelegate.swift */,
 				AD7E20451F72A73500EA3A66 /* GameScene */,
 				AD7E20441F72A72B00EA3A66 /* Controller */,
 				AD7E20431F72A72500EA3A66 /* View */,
@@ -267,6 +279,7 @@
 		AD7E20431F72A72500EA3A66 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AD2BA90F1F7C773800031374 /* Exercicio3 */,
 				ADB2A2AE1F72B5E900CABEB5 /* Exercicio2 */,
 			);
 			name = View;
@@ -276,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				AD80D8C11F6815DD0064201B /* Exercicio2GameViewController.swift */,
+				AD2BA9091F7C75CD00031374 /* Exercicio3GameViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -283,7 +297,7 @@
 		AD7E20451F72A73500EA3A66 /* GameScene */ = {
 			isa = PBXGroup;
 			children = (
-				ADF0C4961F73F68300856EBC /* MySpriteKitDelegate.swift */,
+				AD2BA9101F7C774500031374 /* Exercicio3 */,
 				ADB2A2AD1F72B5BD00CABEB5 /* Exercicio2 */,
 			);
 			name = GameScene;
@@ -439,6 +453,7 @@
 				AD80D8C01F6815820064201B /* Exercicio2Cena1.sks in Resources */,
 				AD2B1C8F1F43D99C001175E2 /* LaunchScreen.storyboard in Resources */,
 				AD7E203E1F729A3B00EA3A66 /* Definicoes in Resources */,
+				AD2BA90C1F7C770900031374 /* Exercicio3.sks in Resources */,
 				AD2B1C8C1F43D99C001175E2 /* Assets.xcassets in Resources */,
 				ADF0C4911F73EFE300856EBC /* Exercicio2Cena3.sks in Resources */,
 				ADF0C48F1F73EFA100856EBC /* Exercicio2Cena2.sks in Resources */,
@@ -469,7 +484,6 @@
 			files = (
 				AD2B1C841F43D99C001175E2 /* SelecaoJogosViewController.swift in Sources */,
 				AD1A31051F447FBB0058E920 /* Exercicio1ViewController.swift in Sources */,
-				AD42C13A1F66C66500CBB7EE /* SpeechTranscribe.swift in Sources */,
 				AD80D8C71F681AA80064201B /* Exercicio2ViewController.swift in Sources */,
 				ADF0C4971F73F68300856EBC /* MySpriteKitDelegate.swift in Sources */,
 				AD80D8C51F6816960064201B /* Exercicio2Cena1.swift in Sources */,
@@ -480,8 +494,10 @@
 				AD2B1C821F43D99C001175E2 /* AppDelegate.swift in Sources */,
 				AD1A310A1F448EFB0058E920 /* ImagemExercicioStore.swift in Sources */,
 				ADCB83DD1F7BE3DD001D4384 /* Array_extension_shuffle.swift in Sources */,
+				AD2BA90A1F7C75CD00031374 /* Exercicio3GameViewController.swift in Sources */,
 				ADF0C4951F73F01900856EBC /* Exercicio2Cena3.swift in Sources */,
 				AD2B1C8A1F43D99C001175E2 /* Afasia.xcdatamodeld in Sources */,
+				AD2BA90E1F7C771F00031374 /* Exercicio3.swift in Sources */,
 				AD80D8C21F6815DD0064201B /* Exercicio2GameViewController.swift in Sources */,
 				AD1A31081F448A180058E920 /* ImagemExercicio.swift in Sources */,
 			);

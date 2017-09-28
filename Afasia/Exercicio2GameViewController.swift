@@ -11,8 +11,6 @@ import SpriteKit
 import GameplayKit
 
 
-
-
 class Exercicio2GameViewController: UIViewController,MySpriteKitDelegate {
     
     //Mark: Responsavel por receber o codigo da cena  a ser carregada

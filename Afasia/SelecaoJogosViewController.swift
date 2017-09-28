@@ -28,5 +28,18 @@ class SelecaoJogosViewController: UIViewController {
     }
 
 
+    
+    
+    @IBAction func carregarExercicio3BTN(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "Exercicio3") as! Exercicio3GameViewController
+        
+        //chamando controladora
+        self.present(controller, animated: true, completion: nil)
+
+    }
+    
+    
 }
 
