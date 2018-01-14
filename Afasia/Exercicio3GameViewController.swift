@@ -133,6 +133,17 @@ class Exercicio3GameViewController: UIViewController,MySpriteKitDelegate {
         self.present(controller, animated: true, completion: nil)
         
     }
+    
+    
+    
+    @IBAction func VoltarParaTelaPrincipal(_ sender: Any) {
+        
+        
+        
+    }
+    
+    
+    
 
     
     
