@@ -57,6 +57,13 @@ class Exercicio3: SKScene {
     //Variavel que representa a Label com o nome da imagem a ser digitado
     var NomeImagem: SKLabelNode?
     
+    
+    //Variaveis que informam a quantidade de imagens totais do exercicio e
+    //a quantidade de imagens ja realizadas
+    var labelContadorTotal: SKLabelNode?
+    var labelContadorAtual: SKLabelNode?
+    
+    
     //Variavel que ira servir de texto para o nome da imagem, que sera colocado em Nome_Imagem
     var nomeDaImagemASerFormada: String!
     
@@ -97,10 +104,11 @@ class Exercicio3: SKScene {
     
     
     override func didMove(to view: SKView) {
-        setupSprites()//configurando o que sera mostrado na cena
-        
         carregarDiversasImagens(imagens: ImagemExercicioStore.getAllImagensExecs(), qtImagens: 3)
         //carregando diversas imagens do Store
+        
+        
+        setupSprites()//configurando o que sera mostrado na cena
         
         
         
@@ -203,6 +211,11 @@ class Exercicio3: SKScene {
         self.nomeDaImagemASerFormada = ""
         
         
+    
+        self.labelContadorTotal = self.childNode(withName: "contador_total") as? SKLabelNode
+        self.labelContadorAtual = self.childNode(withName: "contador_atual") as? SKLabelNode
+        self.labelContadorAtual?.text = String(self.indiceAtual)
+        self.labelContadorTotal?.text = String(describing: self.listaDeImagens?.count)
         
     }
     
