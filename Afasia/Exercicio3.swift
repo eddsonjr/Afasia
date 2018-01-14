@@ -86,6 +86,16 @@ class Exercicio3: SKScene {
     var alerta: SCLAlertView? = nil
     
     
+    
+    
+    //Mark: Variavel do delegate
+    var mySpriteKitDelegate: MySpriteKitDelegate?
+    
+    
+    
+    
+    
+    
     override func didMove(to view: SKView) {
         setupSprites()//configurando o que sera mostrado na cena
         
