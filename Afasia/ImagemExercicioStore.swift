@@ -23,7 +23,7 @@ class ImagemExercicioStore {
 
             //Palavras que iniciam com A
             (UIImage(named: "aviao")!,
-             "Avião",
+             "Aviao",
              "A"
              ),
             

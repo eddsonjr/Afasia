@@ -214,7 +214,7 @@ class Exercicio3: SKScene {
     
         self.labelContadorTotal = self.childNode(withName: "contador_total") as? SKLabelNode
         self.labelContadorAtual = self.childNode(withName: "contador_atual") as? SKLabelNode
-        self.labelContadorAtual?.text = String(self.indiceAtual)
+        self.labelContadorAtual?.text = String(self.indiceAtual + 1)
         self.labelContadorTotal?.text = String(describing: self.listaDeImagens.count)
         
         
@@ -529,6 +529,7 @@ class Exercicio3: SKScene {
         self.Imagem?.texture = texture
         self.nomeDaImagemASerFormada = ""
         self.NomeImagem?.text = nomeDaImagemASerFormada
+        self.labelContadorAtual?.text = String(self.indiceAtual + 1)
         
     }
     
