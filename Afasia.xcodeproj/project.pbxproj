@@ -19,7 +19,6 @@
 		AD2B1C9A1F43D99D001175E2 /* AfasiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B1C991F43D99D001175E2 /* AfasiaTests.swift */; };
 		AD2B1CA51F43D99D001175E2 /* AfasiaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B1CA41F43D99D001175E2 /* AfasiaUITests.swift */; };
 		AD2BA90A1F7C75CD00031374 /* Exercicio3GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2BA9091F7C75CD00031374 /* Exercicio3GameViewController.swift */; };
-		AD2BA90C1F7C770900031374 /* Exercicio3.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD2BA90B1F7C770900031374 /* Exercicio3.sks */; };
 		AD2BA90E1F7C771F00031374 /* Exercicio3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2BA90D1F7C771F00031374 /* Exercicio3.swift */; };
 		AD7BE2BE1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7BE2BD1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift */; };
 		AD7E203E1F729A3B00EA3A66 /* Definicoes in Resources */ = {isa = PBXBuildFile; fileRef = AD7E203D1F729A3B00EA3A66 /* Definicoes */; };
@@ -73,7 +72,6 @@
 		AD2B1CA41F43D99D001175E2 /* AfasiaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfasiaUITests.swift; sourceTree = "<group>"; };
 		AD2B1CA61F43D99D001175E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD2BA9091F7C75CD00031374 /* Exercicio3GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercicio3GameViewController.swift; sourceTree = "<group>"; };
-		AD2BA90B1F7C770900031374 /* Exercicio3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Exercicio3.sks; sourceTree = "<group>"; };
 		AD2BA90D1F7C771F00031374 /* Exercicio3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercicio3.swift; sourceTree = "<group>"; };
 		AD7BE2BD1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackTipo1ViewController.swift; sourceTree = "<group>"; };
 		AD7E203D1F729A3B00EA3A66 /* Definicoes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Definicoes; sourceTree = "<group>"; };
@@ -219,7 +217,6 @@
 		AD2BA90F1F7C773800031374 /* Exercicio3 */ = {
 			isa = PBXGroup;
 			children = (
-				AD2BA90B1F7C770900031374 /* Exercicio3.sks */,
 			);
 			name = Exercicio3;
 			sourceTree = "<group>";
@@ -454,7 +451,6 @@
 				AD80D8C01F6815820064201B /* Exercicio2Cena1.sks in Resources */,
 				AD2B1C8F1F43D99C001175E2 /* LaunchScreen.storyboard in Resources */,
 				AD7E203E1F729A3B00EA3A66 /* Definicoes in Resources */,
-				AD2BA90C1F7C770900031374 /* Exercicio3.sks in Resources */,
 				AD2B1C8C1F43D99C001175E2 /* Assets.xcassets in Resources */,
 				ADF0C4911F73EFE300856EBC /* Exercicio2Cena3.sks in Resources */,
 				ADF0C48F1F73EFA100856EBC /* Exercicio2Cena2.sks in Resources */,
