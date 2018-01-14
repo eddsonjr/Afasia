@@ -124,10 +124,10 @@ class Exercicio3GameViewController: UIViewController,MySpriteKitDelegate {
     
     
     func carregarTelaDeSelecaoDeExercicio() {
-        print(dbgmsg + "Carregando tela de selecao de exercicio [GAME DELEGATE]")
+        print(dbgmsg + "Carregando tela principal do app [GAME DELEGATE]")
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "Exercicio2SelecaoCenas") as! Exercicio2ViewController
+        let controller = storyboard.instantiateViewController(withIdentifier: "SelecaoJogos") as! SelecaoJogosViewController
         
         //chamando controladora
         self.present(controller, animated: true, completion: nil)
@@ -138,7 +138,7 @@ class Exercicio3GameViewController: UIViewController,MySpriteKitDelegate {
     
     @IBAction func VoltarParaTelaPrincipal(_ sender: Any) {
         
-        
+        carregarTelaDeSelecaoDeExercicio()
         
     }
     
