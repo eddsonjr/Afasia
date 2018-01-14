@@ -84,7 +84,7 @@ class Exercicio3: SKScene {
     var erros = 0
     
     //A lista abaixo serve para armazenar as imagens que foram coletadas do Store
-    var listaDeImagens: [ImagemExercicio]? = nil
+    var listaDeImagens: [ImagemExercicio] = []
     var indiceAtual = 0 //indica a posicao atual das imagens na lista
     
     
@@ -215,7 +215,12 @@ class Exercicio3: SKScene {
         self.labelContadorTotal = self.childNode(withName: "contador_total") as? SKLabelNode
         self.labelContadorAtual = self.childNode(withName: "contador_atual") as? SKLabelNode
         self.labelContadorAtual?.text = String(self.indiceAtual)
-        self.labelContadorTotal?.text = String(describing: self.listaDeImagens?.count)
+        self.labelContadorTotal?.text = String(describing: self.listaDeImagens.count)
+        
+        
+        //Colocando a imagem como textura para ser mostrada na tela
+        let texture = trocarTextura(imagem: (self.listaDeImagens.first?.asset)!)
+        self.Imagem?.texture = texture
         
     }
     
@@ -386,7 +391,7 @@ class Exercicio3: SKScene {
             
         }else if (self.RefazerButton?.contains(point))! {
             print(dbgmsg + "REFAZER pressionado")
-            refazer(imagemExercicio: self.listaDeImagens![self.indiceAtual])
+            refazer(imagemExercicio: self.listaDeImagens[self.indiceAtual])
             
             
         }else if (self.VoltarLetraButton?.contains(point))! {
@@ -398,7 +403,7 @@ class Exercicio3: SKScene {
         
         //Verificando se o usuario acertou ou nao a palavra
         if self.qtAtualDeCaracteres == 0 {
-            verificarAcerto(imagem: self.listaDeImagens![self.indiceAtual])
+            verificarAcerto(imagem: self.listaDeImagens[self.indiceAtual])
         }
         
         
@@ -489,14 +494,11 @@ class Exercicio3: SKScene {
         let imgsEmbaralhadas = imagens.shuffled()
         self.listaDeImagens = imgsEmbaralhadas
         
-        //Colocando a imagem como textura para ser mostrada na tela
-        let texture = trocarTextura(imagem: (self.listaDeImagens?.first?.asset)!)
-        self.Imagem?.texture = texture
         
         //carregando a quantidade de letras que a primeira palavra a ser mostrada tem
-        self.qtAtualDeCaracteres = getQtLetrasString(imagem: (self.listaDeImagens?.first)!)
+        self.qtAtualDeCaracteres = getQtLetrasString(imagem: (self.listaDeImagens.first)!)
         
-        print(dbgmsg + "Quantidade de imagens carregadas: \(self.listaDeImagens?.count)")
+        print(dbgmsg + "Quantidade de imagens carregadas: \(self.listaDeImagens.count)")
         print(dbgmsg + "Quantidade de caracteres da 1a palavra: \(self.qtAtualDeCaracteres)")
         
         
@@ -554,10 +556,10 @@ class Exercicio3: SKScene {
             
             self.alerta?.addButton("Ok", action: {
                 print(self.dbgmsg + "[Alerta]Carregando a proxima imagem para mostrar para o usuario")
-                self.carregarProximaImagem(texture: self.trocarTextura(imagem: self.listaDeImagens![self.indiceAtual].asset!)) //carrega a proxima imagem a ser mostrada assim
+                self.carregarProximaImagem(texture: self.trocarTextura(imagem: self.listaDeImagens[self.indiceAtual].asset!)) //carrega a proxima imagem a ser mostrada assim
                 //que o usuario aperta no ok na tela
                 
-                self.qtAtualDeCaracteres = self.getQtLetrasString(imagem: self.listaDeImagens![self.indiceAtual])
+                self.qtAtualDeCaracteres = self.getQtLetrasString(imagem: self.listaDeImagens[self.indiceAtual])
                 
                 
                 
@@ -568,7 +570,7 @@ class Exercicio3: SKScene {
         }else{
             self.alerta?.addButton("Ok", action: {
                 print(self.dbgmsg + "[Alerta]Refazendo o mesmo exercicio.")
-                self.refazer(imagemExercicio: self.listaDeImagens![self.indiceAtual])
+                self.refazer(imagemExercicio: self.listaDeImagens[self.indiceAtual])
                 //caso o usuario erre o nome da imagem, ele simplesmente ira refazer o exercicio
                 
             })
