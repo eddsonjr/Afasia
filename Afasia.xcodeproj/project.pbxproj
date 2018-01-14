@@ -29,10 +29,6 @@
 		AD80D8C71F681AA80064201B /* Exercicio2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80D8C61F681AA80064201B /* Exercicio2ViewController.swift */; };
 		AD82A68F1F4CD57300F4F5CD /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82A68D1F4CD57300F4F5CD /* SCLAlertView.swift */; };
 		AD82A6901F4CD57300F4F5CD /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82A68E1F4CD57300F4F5CD /* SCLExtensions.swift */; };
-		ADCA51471F7C8E36002EC933 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADCA51451F7C8E36002EC933 /* Realm.framework */; };
-		ADCA51481F7C8E36002EC933 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ADCA51451F7C8E36002EC933 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		ADCA51491F7C8E36002EC933 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADCA51461F7C8E36002EC933 /* RealmSwift.framework */; };
-		ADCA514A1F7C8E36002EC933 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ADCA51461F7C8E36002EC933 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ADCB83DD1F7BE3DD001D4384 /* Array_extension_shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCB83DC1F7BE3DD001D4384 /* Array_extension_shuffle.swift */; };
 		ADF0C48F1F73EFA100856EBC /* Exercicio2Cena2.sks in Resources */ = {isa = PBXBuildFile; fileRef = ADF0C48E1F73EFA100856EBC /* Exercicio2Cena2.sks */; };
 		ADF0C4911F73EFE300856EBC /* Exercicio2Cena3.sks in Resources */ = {isa = PBXBuildFile; fileRef = ADF0C4901F73EFE300856EBC /* Exercicio2Cena3.sks */; };
@@ -57,21 +53,6 @@
 			remoteInfo = Afasia;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		ADCA514B1F7C8E36002EC933 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				ADCA514A1F7C8E36002EC933 /* RealmSwift.framework in Embed Frameworks */,
-				ADCA51481F7C8E36002EC933 /* Realm.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AD1A31041F447FBB0058E920 /* Exercicio1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercicio1ViewController.swift; sourceTree = "<group>"; };
@@ -102,8 +83,6 @@
 		AD80D8C61F681AA80064201B /* Exercicio2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercicio2ViewController.swift; sourceTree = "<group>"; };
 		AD82A68D1F4CD57300F4F5CD /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
 		AD82A68E1F4CD57300F4F5CD /* SCLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLExtensions.swift; sourceTree = "<group>"; };
-		ADCA51451F7C8E36002EC933 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Realm/Realm.framework; sourceTree = "<group>"; };
-		ADCA51461F7C8E36002EC933 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Realm/RealmSwift.framework; sourceTree = "<group>"; };
 		ADCB83DC1F7BE3DD001D4384 /* Array_extension_shuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array_extension_shuffle.swift; sourceTree = "<group>"; };
 		ADF0C48E1F73EFA100856EBC /* Exercicio2Cena2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Exercicio2Cena2.sks; sourceTree = "<group>"; };
 		ADF0C4901F73EFE300856EBC /* Exercicio2Cena3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Exercicio2Cena3.sks; sourceTree = "<group>"; };
@@ -117,8 +96,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADCA51491F7C8E36002EC933 /* RealmSwift.framework in Frameworks */,
-				ADCA51471F7C8E36002EC933 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,8 +128,6 @@
 		AD2B1C751F43D99C001175E2 = {
 			isa = PBXGroup;
 			children = (
-				ADCA51451F7C8E36002EC933 /* Realm.framework */,
-				ADCA51461F7C8E36002EC933 /* RealmSwift.framework */,
 				AD2B1C801F43D99C001175E2 /* Afasia */,
 				AD2B1C981F43D99D001175E2 /* AfasiaTests */,
 				AD2B1CA31F43D99D001175E2 /* AfasiaUITests */,
@@ -375,7 +350,6 @@
 				AD2B1C7A1F43D99C001175E2 /* Sources */,
 				AD2B1C7B1F43D99C001175E2 /* Frameworks */,
 				AD2B1C7C1F43D99C001175E2 /* Resources */,
-				ADCA514B1F7C8E36002EC933 /* Embed Frameworks */,
 				ADCA514C1F7C8F2C002EC933 /* ShellScript */,
 			);
 			buildRules = (
@@ -516,7 +490,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -697,11 +671,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7WV8M257CC;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Realm",
-				);
 				INFOPLIST_FILE = Afasia/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -716,11 +685,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7WV8M257CC;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Realm",
-				);
 				INFOPLIST_FILE = Afasia/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
