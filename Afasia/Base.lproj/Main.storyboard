@@ -280,21 +280,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5IE-xy-aKr">
-                                <rect key="frame" x="922" y="96" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Voltar"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5IE-xy-aKr">
+                                <rect key="frame" x="20" y="60" width="73" height="73"/>
+                                <state key="normal" image="Voltar"/>
                                 <connections>
                                     <action selector="VoltarParaTelaPrincipal:" destination="Skn-z3-mex" eventType="touchUpInside" id="9aS-Oh-BnA"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5IE-xy-aKr" firstAttribute="leading" secondItem="Hhp-JG-Yq8" secondAttribute="leading" constant="20" id="7R1-7J-Ik3"/>
+                            <constraint firstItem="5IE-xy-aKr" firstAttribute="top" secondItem="hkQ-UI-NQK" secondAttribute="bottom" constant="40" id="zxf-Wx-xmM"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hk1-bn-rCn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2469" y="613"/>
+            <point key="canvasLocation" x="2468.5546875" y="612.5"/>
         </scene>
         <!--Exercicio2 Game View Controller-->
         <scene sceneID="ahq-1O-KMN">
@@ -442,6 +445,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Voltar" width="73" height="73"/>
         <image name="aviao" width="2658" height="1614"/>
     </resources>
 </document>
