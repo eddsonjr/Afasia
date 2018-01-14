@@ -490,8 +490,12 @@ class Exercicio3: SKScene {
     func carregarDiversasImagens(imagens: [ImagemExercicio],qtImagens: Int) {
         
         
+        for current in 0...qtImagens {
+            self.listaDeImagens.append(imagens[current])
+        }
+        
         //Primeiramente embaralhando o vetor de imagens
-        let imgsEmbaralhadas = imagens.shuffled()
+        let imgsEmbaralhadas = self.listaDeImagens.shuffled()
         self.listaDeImagens = imgsEmbaralhadas
         
         
