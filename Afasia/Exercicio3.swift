@@ -560,26 +560,12 @@ class Exercicio3: SKScene {
             //carregar a proxima imagem
             
             self.alerta?.addButton("Ok", action: {
-                
-                
-                //Verifica se o usuario conseguiu atingir todas as imagens e, caso positivo, carrega a tela de feedback
-                
-                
-                
-                
-                
-                
                 print(self.dbgmsg + "[Alerta]Carregando a proxima imagem para mostrar para o usuario")
-                
-                
-                
-                
+           
                 self.carregarProximaImagem(texture: self.trocarTextura(imagem: self.listaDeImagens[self.indiceAtual].asset!)) //carrega a proxima imagem a ser mostrada assim
                 //que o usuario aperta no ok na tela
                 
                 self.qtAtualDeCaracteres = self.getQtLetrasString(imagem: self.listaDeImagens[self.indiceAtual])
-                
-                
                 
             })
             
