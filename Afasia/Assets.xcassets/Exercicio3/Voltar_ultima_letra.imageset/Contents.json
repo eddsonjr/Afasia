@@ -7,10 +7,12 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "Voltar_ultima_letra@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Voltar_ultima_letra@3x.png",
       "scale" : "3x"
     }
   ],
