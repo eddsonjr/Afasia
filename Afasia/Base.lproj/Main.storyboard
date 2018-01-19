@@ -162,7 +162,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Nome das Figuras" id="4qR-9h-iDA">
-                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="7W0-zX-ViC">
+                        <barButtonItem key="leftBarButtonItem" title="Voltar" style="done" id="7W0-zX-ViC">
                             <connections>
                                 <action selector="voltarParaTelaAnterior:" destination="Eqx-q7-ADe" id="FDX-De-NrC"/>
                             </connections>
