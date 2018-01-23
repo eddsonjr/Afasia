@@ -78,6 +78,9 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
         // Hide the navigation bar on the this view controller
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
+        //Sumindo com tabbar
+        self.tabBarController?.tabBar.isHidden = true
+        
         
     }
 

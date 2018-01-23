@@ -96,21 +96,21 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bju-zD-2Xd">
-                                <rect key="frame" x="408" y="650" width="210" height="50"/>
+                                <rect key="frame" x="408" y="690" width="210" height="50"/>
                                 <state key="normal" image="Botao_acertou"/>
                                 <connections>
                                     <action selector="acertou:" destination="Eqx-q7-ADe" eventType="touchUpInside" id="QXA-f2-Q8e"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bML-Z1-tHM">
-                                <rect key="frame" x="129" y="650" width="210" height="50"/>
+                                <rect key="frame" x="129" y="690" width="210" height="50"/>
                                 <state key="normal" title="Errou" image="Botao_errou"/>
                                 <connections>
                                     <action selector="errou:" destination="Eqx-q7-ADe" eventType="touchUpInside" id="fDY-Ei-taL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAN-a0-iIf">
-                                <rect key="frame" x="687" y="650" width="210" height="50"/>
+                                <rect key="frame" x="687" y="690" width="210" height="50"/>
                                 <state key="normal" image="Botao_finalizar"/>
                                 <connections>
                                     <action selector="finalizar:" destination="Eqx-q7-ADe" eventType="touchUpInside" id="zHP-d7-5yR"/>
@@ -133,7 +133,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CLa-h4-0fO" firstAttribute="top" secondItem="Bju-zD-2Xd" secondAttribute="bottom" constant="19" id="81R-Su-Aa1"/>
+                            <constraint firstItem="CLa-h4-0fO" firstAttribute="top" secondItem="Bju-zD-2Xd" secondAttribute="bottom" constant="28" id="81R-Su-Aa1"/>
                             <constraint firstAttribute="trailing" secondItem="UAN-a0-iIf" secondAttribute="trailing" constant="127" id="DHG-mH-NOr"/>
                             <constraint firstItem="UAN-a0-iIf" firstAttribute="leading" secondItem="Bju-zD-2Xd" secondAttribute="trailing" constant="69" id="DUq-vJ-2gv"/>
                             <constraint firstItem="syn-sR-Xg3" firstAttribute="centerY" secondItem="4G0-sG-uSz" secondAttribute="centerY" constant="-36" id="EY3-1U-pGh"/>
@@ -145,10 +145,10 @@
                             <constraint firstItem="syn-sR-Xg3" firstAttribute="top" secondItem="jMn-af-s5G" secondAttribute="bottom" constant="2" id="ZJp-Fj-yYd"/>
                             <constraint firstItem="syn-sR-Xg3" firstAttribute="top" secondItem="wx2-HQ-fNt" secondAttribute="bottom" constant="2" id="aXy-E4-0Jo"/>
                             <constraint firstItem="syn-sR-Xg3" firstAttribute="centerX" secondItem="4G0-sG-uSz" secondAttribute="centerX" id="cYt-MR-0Xj"/>
-                            <constraint firstItem="CLa-h4-0fO" firstAttribute="top" secondItem="UAN-a0-iIf" secondAttribute="bottom" constant="19" id="fBE-9A-lLP"/>
+                            <constraint firstItem="CLa-h4-0fO" firstAttribute="top" secondItem="UAN-a0-iIf" secondAttribute="bottom" constant="28" id="fBE-9A-lLP"/>
                             <constraint firstAttribute="trailing" secondItem="wx2-HQ-fNt" secondAttribute="trailing" constant="20" id="jZz-lH-rbP"/>
                             <constraint firstItem="jMn-af-s5G" firstAttribute="leading" secondItem="4G0-sG-uSz" secondAttribute="leading" constant="20" id="kDE-r5-Xnt"/>
-                            <constraint firstItem="CLa-h4-0fO" firstAttribute="top" secondItem="bML-Z1-tHM" secondAttribute="bottom" constant="19" id="s6L-iF-hJf"/>
+                            <constraint firstItem="CLa-h4-0fO" firstAttribute="top" secondItem="bML-Z1-tHM" secondAttribute="bottom" constant="28" id="s6L-iF-hJf"/>
                             <constraint firstItem="AS8-DB-6hg" firstAttribute="centerX" secondItem="4G0-sG-uSz" secondAttribute="centerX" id="t0N-aO-wqs"/>
                         </constraints>
                     </view>
@@ -165,6 +165,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="ImageView" destination="FDA-2G-Y94" id="thQ-IJ-X6l"/>
                         <outlet property="acertouBTN" destination="Bju-zD-2Xd" id="KFb-BP-gFg"/>
