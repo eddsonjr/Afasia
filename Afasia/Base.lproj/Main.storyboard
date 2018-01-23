@@ -71,55 +71,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="syn-sR-Xg3">
-                                <rect key="frame" x="20" y="81" width="984" height="520"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syn-sR-Xg3">
+                                <rect key="frame" x="20" y="103" width="984" height="513"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aviao" translatesAutoresizingMaskIntoConstraints="NO" id="FDA-2G-Y94">
-                                        <rect key="frame" x="196" y="0.0" width="531" height="464"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="abacaxi" translatesAutoresizingMaskIntoConstraints="NO" id="FDA-2G-Y94">
+                                        <rect key="frame" x="170" y="113" width="644" height="392"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eu7-70-BDi">
-                                        <rect key="frame" x="340" y="1709" width="305" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="jJJ-Be-51l"/>
-                                        </constraints>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eu7-70-BDi">
+                                        <rect key="frame" x="340" y="55" width="305" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="FDA-2G-Y94" secondAttribute="trailing" constant="170" id="9uv-lb-O7z"/>
+                                    <constraint firstItem="FDA-2G-Y94" firstAttribute="centerX" secondItem="syn-sR-Xg3" secondAttribute="centerX" id="SfR-pp-nFb"/>
+                                    <constraint firstAttribute="width" constant="984" id="bKZ-xl-ljy"/>
+                                    <constraint firstAttribute="height" constant="513" id="jZg-4g-tIh"/>
+                                    <constraint firstItem="FDA-2G-Y94" firstAttribute="leading" secondItem="syn-sR-Xg3" secondAttribute="leading" constant="170" id="rLq-Dp-VMJ"/>
+                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAN-a0-iIf">
-                                <rect key="frame" x="884" y="647" width="120" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Finalizar"/>
-                                <connections>
-                                    <action selector="finalizar:" destination="Eqx-q7-ADe" eventType="touchUpInside" id="zHP-d7-5yR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bju-zD-2Xd">
-                                <rect key="frame" x="821" y="609" width="120" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Acertou"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bju-zD-2Xd">
+                                <rect key="frame" x="408" y="650" width="210" height="50"/>
+                                <state key="normal" image="Botao_acertou"/>
                                 <connections>
                                     <action selector="acertou:" destination="Eqx-q7-ADe" eventType="touchUpInside" id="QXA-f2-Q8e"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bML-Z1-tHM">
-                                <rect key="frame" x="91" y="609" width="46" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Errou"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bML-Z1-tHM">
+                                <rect key="frame" x="129" y="650" width="210" height="50"/>
+                                <state key="normal" title="Errou" image="Botao_errou"/>
                                 <connections>
                                     <action selector="errou:" destination="Eqx-q7-ADe" eventType="touchUpInside" id="fDY-Ei-taL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAN-a0-iIf">
+                                <rect key="frame" x="687" y="650" width="210" height="50"/>
+                                <state key="normal" image="Botao_finalizar"/>
+                                <connections>
+                                    <action selector="finalizar:" destination="Eqx-q7-ADe" eventType="touchUpInside" id="zHP-d7-5yR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CLa-h4-0fO" firstAttribute="top" secondItem="Bju-zD-2Xd" secondAttribute="bottom" constant="19" id="81R-Su-Aa1"/>
+                            <constraint firstAttribute="trailing" secondItem="UAN-a0-iIf" secondAttribute="trailing" constant="127" id="DHG-mH-NOr"/>
+                            <constraint firstItem="UAN-a0-iIf" firstAttribute="leading" secondItem="Bju-zD-2Xd" secondAttribute="trailing" constant="69" id="DUq-vJ-2gv"/>
+                            <constraint firstItem="syn-sR-Xg3" firstAttribute="centerY" secondItem="4G0-sG-uSz" secondAttribute="centerY" constant="-24.5" id="EY3-1U-pGh"/>
+                            <constraint firstItem="Bju-zD-2Xd" firstAttribute="leading" secondItem="bML-Z1-tHM" secondAttribute="trailing" constant="69" id="K8I-Wu-8VK"/>
+                            <constraint firstItem="bML-Z1-tHM" firstAttribute="leading" secondItem="4G0-sG-uSz" secondAttribute="leading" constant="129" id="WbG-WY-Ge0"/>
+                            <constraint firstItem="Bju-zD-2Xd" firstAttribute="centerX" secondItem="4G0-sG-uSz" secondAttribute="centerX" constant="1" id="YtK-t7-TI2"/>
+                            <constraint firstItem="syn-sR-Xg3" firstAttribute="centerX" secondItem="4G0-sG-uSz" secondAttribute="centerX" id="cYt-MR-0Xj"/>
+                            <constraint firstItem="CLa-h4-0fO" firstAttribute="top" secondItem="UAN-a0-iIf" secondAttribute="bottom" constant="19" id="fBE-9A-lLP"/>
+                            <constraint firstItem="CLa-h4-0fO" firstAttribute="top" secondItem="bML-Z1-tHM" secondAttribute="bottom" constant="19" id="s6L-iF-hJf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Nome das Figuras" id="4qR-9h-iDA">
                         <barButtonItem key="leftBarButtonItem" title="Voltar" style="done" id="7W0-zX-ViC">
@@ -404,7 +413,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Botao_acertou" width="208" height="50"/>
+        <image name="Botao_errou" width="208" height="50"/>
+        <image name="Botao_finalizar" width="208" height="50"/>
         <image name="Voltar" width="78" height="78"/>
-        <image name="aviao" width="2658" height="1614"/>
+        <image name="abacaxi" width="1000" height="820"/>
     </resources>
 </document>
