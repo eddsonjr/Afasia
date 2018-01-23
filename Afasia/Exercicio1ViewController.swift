@@ -73,11 +73,27 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
         carregarDiversasImagens(imagens: ImagemExercicioStore.getAllImagensExecs(), qtImagens: 4)
         
         
+        
+        //Sumindo com a Navigation
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Show the navigation bar on other view controllers
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
 
