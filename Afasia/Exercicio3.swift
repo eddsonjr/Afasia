@@ -164,6 +164,7 @@ class Exercicio3: SKScene {
     
     
     override func update(_ currentTime: TimeInterval) {
+        print(dbgmsg + "Qt. Acertos: \(self.acertos) | Qt. Erros: \(self.erros)")
         
     }
     
@@ -401,6 +402,8 @@ class Exercicio3: SKScene {
         
         
         
+        
+        
         //Verificando se o usuario acertou ou nao a palavra
         if self.qtAtualDeCaracteres == 0 {
             verificarAcerto(imagem: self.listaDeImagens[self.indiceAtual])
@@ -593,10 +596,12 @@ class Exercicio3: SKScene {
         if verificarAcertoNaPalavra(imagem: imagem) {
             print(dbgmsg + "O usuario acertou o nome da imagem")
             self.indiceAtual = self.indiceAtual + 1
+            self.acertos = self.acertos + 1
             alertarUsuario(mostrarMsgAcerto: true)
         }else {
             print(dbgmsg + "O usuario errou o nome da imagem")
             alertarUsuario(mostrarMsgAcerto: false)
+            self.erros = self.erros + 1
         }
     }
     
