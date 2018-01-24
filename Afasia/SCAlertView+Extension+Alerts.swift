@@ -13,6 +13,8 @@ import UIKit
 extension SCLAlertView {
     
     
+    //Mark: Funcoes do tipo warning
+    
     
     //Alerta do tipo warning simples
     func alertaMensagemSimplesWarning(titulo: String,mensagemAlerta: String,textoBotao: String){
@@ -53,7 +55,7 @@ extension SCLAlertView {
     }
     
     
-    
+    //Alerta do tipo warning com botao de cancelar
     func alertaMensagemWarningComBotaoCancelar(titulo: String, mensagemAlerta: String,textoBotao: String, completionHandler: @escaping ()->()){
         
         let appearance = SCLAlertView.SCLAppearance(
@@ -70,6 +72,71 @@ extension SCLAlertView {
         alert.showWarning(titulo, subTitle: mensagemAlerta, closeButtonTitle: "Cancelar", timeout: nil, colorStyle: 0xFED035, colorTextButton: 0x262626, animationStyle: .topToBottom)
         
     }
+    
+    
+    
+    
+    
+    
+    //Mark: Funcoes do tipo sucess
+    
+    
+    //mensagem simples do tipo sucesso
+    func alertaMensagemSimplesSucesso(titulo: String,mensagemAlerta: String,textoBotao: String){
+        
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: false
+        )
+        let alert = SCLAlertView(appearance: appearance)
+        
+        alert.addButton(textoBotao) {
+            
+        }
+        
+        alert.showSuccess(titulo, subTitle: mensagemAlerta, closeButtonTitle: "Cancelar", timeout: nil, colorStyle: 0x17D472, colorTextButton: 0xFFFFFF, animationStyle: .topToBottom)
+        
+    }
+    
+    
+    
+    
+    //mensagem simples do tipo sucess com completionHandler
+    func alertaMensagemSimplesSucesso(titulo: String,mensagemAlerta: String,textoBotao: String,completionHandler: @escaping ()->()){
+        
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: false
+        )
+        let alert = SCLAlertView(appearance: appearance)
+        
+        alert.addButton(textoBotao) {
+            completionHandler()
+            
+        }
+        
+        alert.showSuccess(titulo, subTitle: mensagemAlerta, closeButtonTitle: "Cancelar", timeout: nil, colorStyle: 0x17D472, colorTextButton: 0xFFFFFF, animationStyle: .topToBottom)
+        
+    }
+    
+    
+    
+    func alertaMensagemSucessoComBotaoCancelar(titulo: String,mensagemAlerta: String,textoBotao: String,completionHandler: @escaping ()->()){
+        
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: true
+        )
+        let alert = SCLAlertView(appearance: appearance)
+        
+        alert.addButton(textoBotao) {
+            completionHandler()
+            
+        }
+        
+        alert.showSuccess(titulo, subTitle: mensagemAlerta, closeButtonTitle: "Cancelar", timeout: nil, colorStyle: 0x17D472, colorTextButton: 0xFFFFFF, animationStyle: .topToBottom)
+        
+    }
+    
+    
+    
     
     
     

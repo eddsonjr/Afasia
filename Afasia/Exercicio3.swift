@@ -111,9 +111,6 @@ class Exercicio3: SKScene {
         setupSprites()//configurando o que sera mostrado na cena
         alerta = SCLAlertView()
      
-        
-        
-        
     }
     
     
