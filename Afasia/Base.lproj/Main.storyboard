@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -27,32 +28,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qs-aE-aiJ">
-                                <rect key="frame" x="418" y="369" width="188" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Reconhecimento de figuras"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qs-aE-aiJ">
+                                <rect key="frame" x="20" y="197" width="310" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="310" id="wl6-4o-grF"/>
+                                </constraints>
+                                <state key="normal" image="fale"/>
                                 <connections>
                                     <segue destination="Eqx-q7-ADe" kind="show" id="ORB-8P-jbf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5n-X4-yiH">
-                                <rect key="frame" x="347" y="407" width="331" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Reconhecer objetos em cenas"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5n-X4-yiH">
+                                <rect key="frame" x="358" y="197" width="309" height="375"/>
+                                <state key="normal" image="encontre"/>
                                 <connections>
                                     <segue destination="3dq-VW-npU" kind="show" id="Y5v-Zg-kZd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcd-bD-US3">
-                                <rect key="frame" x="450" y="445" width="125" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Soletrar as figuras"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcd-bD-US3">
+                                <rect key="frame" x="694" y="197" width="310" height="375"/>
+                                <state key="normal" image="escreva"/>
                                 <connections>
                                     <action selector="carregarExercicio3BTN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gTI-8c-sLF"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Fale o nome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xz-Am-fj9">
+                                <rect key="frame" x="100" y="580" width="150" height="37"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                <color key="textColor" red="0.38547035029999999" green="0.57561610090000004" blue="0.73219384519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Encontre objetos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bu1-VE-ni1">
+                                <rect key="frame" x="426" y="580" width="172" height="31"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                <color key="textColor" red="0.38547035029999999" green="0.57561610090000004" blue="0.73219384519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escreva o nome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ji-r7-jE6">
+                                <rect key="frame" x="776" y="580" width="160" height="29"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                <color key="textColor" red="0.38547035029999999" green="0.57561610090000004" blue="0.73219384519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercícios" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5q-oE-gxh">
+                                <rect key="frame" x="425" y="72" width="175" height="49.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="36"/>
+                                <color key="textColor" red="0.38547035029999999" green="0.57561610090000004" blue="0.73219384519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bu1-VE-ni1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2BF-gO-CLD"/>
+                            <constraint firstAttribute="trailing" secondItem="4Ji-r7-jE6" secondAttribute="trailing" constant="88" id="3sE-XM-c7k"/>
+                            <constraint firstItem="4Ji-r7-jE6" firstAttribute="top" secondItem="Xcd-bD-US3" secondAttribute="bottom" constant="8" id="45R-1T-DAh"/>
+                            <constraint firstItem="B5n-X4-yiH" firstAttribute="leading" secondItem="6qs-aE-aiJ" secondAttribute="trailing" constant="27.5" id="5KT-Ii-ccH"/>
+                            <constraint firstItem="B5n-X4-yiH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5ae-6V-F3a"/>
+                            <constraint firstItem="Xcd-bD-US3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="133" id="7ej-x9-hGZ"/>
+                            <constraint firstItem="B5n-X4-yiH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8np-GP-dIQ"/>
+                            <constraint firstItem="q5q-oE-gxh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="AOb-tI-s0J"/>
+                            <constraint firstItem="bu1-VE-ni1" firstAttribute="top" secondItem="B5n-X4-yiH" secondAttribute="bottom" constant="8" id="IZz-6X-EiG"/>
+                            <constraint firstItem="4Ji-r7-jE6" firstAttribute="firstBaseline" secondItem="2Xz-Am-fj9" secondAttribute="firstBaseline" id="Izr-BN-NU5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2Xz-Am-fj9" secondAttribute="bottom" constant="102" id="OTo-cI-wAZ"/>
+                            <constraint firstAttribute="trailing" secondItem="Xcd-bD-US3" secondAttribute="trailing" constant="20" id="OWU-gw-UtS"/>
+                            <constraint firstItem="6qs-aE-aiJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="YAz-9z-dDG"/>
+                            <constraint firstItem="2Xz-Am-fj9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="a8u-yG-fTx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4Ji-r7-jE6" secondAttribute="bottom" constant="110" id="dHO-wR-4sD"/>
+                            <constraint firstItem="6qs-aE-aiJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="133" id="g2O-MQ-xcT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bu1-VE-ni1" secondAttribute="bottom" constant="108.5" id="jxN-wj-0wh"/>
+                            <constraint firstItem="2Xz-Am-fj9" firstAttribute="top" secondItem="6qs-aE-aiJ" secondAttribute="bottom" constant="8" id="ttJ-za-vyb"/>
+                            <constraint firstItem="Xcd-bD-US3" firstAttribute="leading" secondItem="B5n-X4-yiH" secondAttribute="trailing" constant="27.5" id="xvv-W5-IUB"/>
+                            <constraint firstItem="q5q-oE-gxh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zHQ-FP-ol0"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dBl-5m-cyt"/>
                 </viewController>
@@ -449,5 +496,8 @@
         <image name="Botao_finalizar" width="208" height="50"/>
         <image name="Voltar" width="78" height="78"/>
         <image name="abacate" width="620" height="330"/>
+        <image name="encontre" width="309" height="375"/>
+        <image name="escreva" width="309" height="375"/>
+        <image name="fale" width="309" height="375"/>
     </resources>
 </document>
