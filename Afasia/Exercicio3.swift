@@ -109,6 +109,8 @@ class Exercicio3: SKScene {
         
         
         setupSprites()//configurando o que sera mostrado na cena
+        alerta = SCLAlertView()
+     
         
         
         
@@ -118,7 +120,7 @@ class Exercicio3: SKScene {
     
     override func sceneDidLoad() {
         
-        
+      
         
         
     }
@@ -141,6 +143,7 @@ class Exercicio3: SKScene {
         for touch in touches {
             let location = touch.location(in: self)
             verificarBotoesTocados(point: location)
+           
         }
         
     }
