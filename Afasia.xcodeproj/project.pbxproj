@@ -21,6 +21,7 @@
 		AD2BA90A1F7C75CD00031374 /* Exercicio3GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2BA9091F7C75CD00031374 /* Exercicio3GameViewController.swift */; };
 		AD2BA90E1F7C771F00031374 /* Exercicio3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2BA90D1F7C771F00031374 /* Exercicio3.swift */; };
 		AD55A25F201805C4006CEFA7 /* SCAlertView+Extension+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD55A25E201805C4006CEFA7 /* SCAlertView+Extension+Alerts.swift */; };
+		AD55A26120181836006CEFA7 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD55A26020181836006CEFA7 /* UIViewController+Extensions.swift */; };
 		AD697ED0200BECE0003776FB /* Exercicio3.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD697ECF200BECE0003776FB /* Exercicio3.sks */; };
 		AD7BE2BE1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7BE2BD1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift */; };
 		AD7E203E1F729A3B00EA3A66 /* Definicoes in Resources */ = {isa = PBXBuildFile; fileRef = AD7E203D1F729A3B00EA3A66 /* Definicoes */; };
@@ -76,6 +77,7 @@
 		AD2BA9091F7C75CD00031374 /* Exercicio3GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercicio3GameViewController.swift; sourceTree = "<group>"; };
 		AD2BA90D1F7C771F00031374 /* Exercicio3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercicio3.swift; sourceTree = "<group>"; };
 		AD55A25E201805C4006CEFA7 /* SCAlertView+Extension+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCAlertView+Extension+Alerts.swift"; sourceTree = "<group>"; };
+		AD55A26020181836006CEFA7 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		AD697ECF200BECE0003776FB /* Exercicio3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Exercicio3.sks; sourceTree = "<group>"; };
 		AD7BE2BD1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackTipo1ViewController.swift; sourceTree = "<group>"; };
 		AD7E203D1F729A3B00EA3A66 /* Definicoes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Definicoes; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 			children = (
 				ADCB83DC1F7BE3DD001D4384 /* Array_extension_shuffle.swift */,
 				AD55A25E201805C4006CEFA7 /* SCAlertView+Extension+Alerts.swift */,
+				AD55A26020181836006CEFA7 /* UIViewController+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				ADF0C4931F73F00700856EBC /* Exercicio2Cena2.swift in Sources */,
 				AD2B1C821F43D99C001175E2 /* AppDelegate.swift in Sources */,
 				AD1A310A1F448EFB0058E920 /* ImagemExercicioStore.swift in Sources */,
+				AD55A26120181836006CEFA7 /* UIViewController+Extensions.swift in Sources */,
 				ADCB83DD1F7BE3DD001D4384 /* Array_extension_shuffle.swift in Sources */,
 				AD2BA90A1F7C75CD00031374 /* Exercicio3GameViewController.swift in Sources */,
 				ADF0C4951F73F01900856EBC /* Exercicio2Cena3.swift in Sources */,
