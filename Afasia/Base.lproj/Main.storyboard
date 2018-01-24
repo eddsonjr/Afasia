@@ -18,7 +18,7 @@
         <!--Selecao Jogos View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="SelecaoJogos" id="BYZ-38-t0r" customClass="SelecaoJogosViewController" customModule="Afasia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelecaoJogosViewController" id="BYZ-38-t0r" customClass="SelecaoJogosViewController" customModule="Afasia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -221,7 +221,7 @@
         <!--Exercicio2 View Controller-->
         <scene sceneID="yAq-ge-V0m">
             <objects>
-                <viewController storyboardIdentifier="Exercicio2SelecaoCenas" id="3dq-VW-npU" customClass="Exercicio2ViewController" customModule="Afasia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Exercicio2ViewController" id="3dq-VW-npU" customClass="Exercicio2ViewController" customModule="Afasia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Phc-nq-PH2"/>
                         <viewControllerLayoutGuide type="bottom" id="Hks-Kz-JNa"/>

@@ -125,13 +125,8 @@ class Exercicio3GameViewController: UIViewController,MySpriteKitDelegate {
     
     func carregarTelaDeSelecaoDeExercicio() {
         print(dbgmsg + "Carregando tela principal do app [GAME DELEGATE]")
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "SelecaoJogos") as! SelecaoJogosViewController
-        
-        //chamando controladora
+        let controller = SelecaoJogosViewController.instantiateFromStoryboard()
         self.present(controller, animated: true, completion: nil)
-        
     }
     
     
