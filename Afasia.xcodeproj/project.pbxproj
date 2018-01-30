@@ -22,6 +22,7 @@
 		AD2BA90E1F7C771F00031374 /* Exercicio3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2BA90D1F7C771F00031374 /* Exercicio3.swift */; };
 		AD55A25F201805C4006CEFA7 /* SCAlertView+Extension+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD55A25E201805C4006CEFA7 /* SCAlertView+Extension+Alerts.swift */; };
 		AD55A26120181836006CEFA7 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD55A26020181836006CEFA7 /* UIViewController+Extensions.swift */; };
+		AD57EE28201FFB7E005745BB /* SKspriteNode+extension+animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD57EE27201FFB7E005745BB /* SKspriteNode+extension+animations.swift */; };
 		AD697ED0200BECE0003776FB /* Exercicio3.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD697ECF200BECE0003776FB /* Exercicio3.sks */; };
 		AD7BE2BE1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7BE2BD1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift */; };
 		AD7E203E1F729A3B00EA3A66 /* Definicoes in Resources */ = {isa = PBXBuildFile; fileRef = AD7E203D1F729A3B00EA3A66 /* Definicoes */; };
@@ -78,6 +79,7 @@
 		AD2BA90D1F7C771F00031374 /* Exercicio3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercicio3.swift; sourceTree = "<group>"; };
 		AD55A25E201805C4006CEFA7 /* SCAlertView+Extension+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCAlertView+Extension+Alerts.swift"; sourceTree = "<group>"; };
 		AD55A26020181836006CEFA7 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		AD57EE27201FFB7E005745BB /* SKspriteNode+extension+animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKspriteNode+extension+animations.swift"; sourceTree = "<group>"; };
 		AD697ECF200BECE0003776FB /* Exercicio3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Exercicio3.sks; sourceTree = "<group>"; };
 		AD7BE2BD1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackTipo1ViewController.swift; sourceTree = "<group>"; };
 		AD7E203D1F729A3B00EA3A66 /* Definicoes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Definicoes; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				ADCB83DC1F7BE3DD001D4384 /* Array_extension_shuffle.swift */,
 				AD55A25E201805C4006CEFA7 /* SCAlertView+Extension+Alerts.swift */,
 				AD55A26020181836006CEFA7 /* UIViewController+Extensions.swift */,
+				AD57EE27201FFB7E005745BB /* SKspriteNode+extension+animations.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				AD2B1C841F43D99C001175E2 /* SelecaoJogosViewController.swift in Sources */,
 				AD1A31051F447FBB0058E920 /* Exercicio1ViewController.swift in Sources */,
 				AD80D8C71F681AA80064201B /* Exercicio2ViewController.swift in Sources */,
+				AD57EE28201FFB7E005745BB /* SKspriteNode+extension+animations.swift in Sources */,
 				ADF0C4971F73F68300856EBC /* MySpriteKitDelegate.swift in Sources */,
 				AD80D8C51F6816960064201B /* Exercicio2Cena1.swift in Sources */,
 				AD82A68F1F4CD57300F4F5CD /* SCLAlertView.swift in Sources */,
