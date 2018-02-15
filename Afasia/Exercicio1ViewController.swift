@@ -419,6 +419,7 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
         
         //chamando controladora
         self.present(controller, animated: true, completion: nil)
+        
     }
     
     

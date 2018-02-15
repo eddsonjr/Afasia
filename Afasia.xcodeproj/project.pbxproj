@@ -156,6 +156,7 @@
 		AD2B1C801F43D99C001175E2 /* Afasia */ = {
 			isa = PBXGroup;
 			children = (
+				ADEE46A920350AC300E6CF10 /* Helpers */,
 				AD480FAC1F749D08002A7066 /* Extensions */,
 				AD7E20421F72A71B00EA3A66 /* SpriteKit */,
 				AD7E203C1F7299EC00EA3A66 /* outros */,
@@ -192,7 +193,6 @@
 				AD2B1C901F43D99C001175E2 /* Info.plist */,
 				AD2B1C881F43D99C001175E2 /* Afasia.xcdatamodeld */,
 				AD2B1C811F43D99C001175E2 /* AppDelegate.swift */,
-				ADEE46A72035053E00E6CF10 /* AlertaHelper.swift */,
 			);
 			name = System;
 			sourceTree = "<group>";
@@ -350,6 +350,14 @@
 				ADF0C4901F73EFE300856EBC /* Exercicio2Cena3.sks */,
 			);
 			name = Exercicio2;
+			sourceTree = "<group>";
+		};
+		ADEE46A920350AC300E6CF10 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				ADEE46A72035053E00E6CF10 /* AlertaHelper.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
