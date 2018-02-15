@@ -15,10 +15,19 @@ class TrocaDeCenasHelper {
     
     //Este alerta serve para caso o usuario queira sair do exercicio e ele esteja em curso
     static func alertaSairExercicioEmCurso(completionHandler:@escaping ()->()){
-        var alerta: SCLAlertView = SCLAlertView()
+        let alerta: SCLAlertView = SCLAlertView()
         
         alerta.alertaMensagemSimplesWarning(titulo: "Sair do Exercicio?", mensagemAlerta: "Você deseja realmente sair deste exercício", textoBotao: "Sair", completionHandler: completionHandler)
+    }
+    
+    
+    
+    
+    //Este alerta serve para caso o usuario tenha completado o exercicio com sucesso
+    static func alertarConclusaoExercicio(completionHandler:@escaping ()->()){
+        let alerta: SCLAlertView = SCLAlertView()
         
+        alerta.alertaMensagemSimplesSucesso(titulo: "Exercício Concluído", mensagemAlerta: "Você completou este exercício. Veja seus resultados!", textoBotao: "Ok", completionHandler: completionHandler)
     }
     
 
