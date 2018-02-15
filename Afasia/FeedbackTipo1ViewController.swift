@@ -31,7 +31,6 @@ class FeedbackTipo1ViewController: UIViewController {
 
         
         //monstrando na tela a quantidade de erros, acertos e duvidas
-        
         self.labelAcertos.text = String(self.acertos)
         self.labelErros.text = String(self.erros)
         self.labelDuvidas.text = String(self.duvidas)

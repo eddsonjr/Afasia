@@ -35,6 +35,7 @@
 		ADCB83DD1F7BE3DD001D4384 /* Array_extension_shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCB83DC1F7BE3DD001D4384 /* Array_extension_shuffle.swift */; };
 		ADEE46A82035053E00E6CF10 /* AlertaHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEE46A72035053E00E6CF10 /* AlertaHelper.swift */; };
 		ADEE46AF20351EB200E6CF10 /* TrocarTelaHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEE46AE20351EB200E6CF10 /* TrocarTelaHelper.swift */; };
+		ADEE46B12035251900E6CF10 /* FeedbackTipo2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEE46B02035251900E6CF10 /* FeedbackTipo2ViewController.swift */; };
 		ADF0C48F1F73EFA100856EBC /* Exercicio2Cena2.sks in Resources */ = {isa = PBXBuildFile; fileRef = ADF0C48E1F73EFA100856EBC /* Exercicio2Cena2.sks */; };
 		ADF0C4911F73EFE300856EBC /* Exercicio2Cena3.sks in Resources */ = {isa = PBXBuildFile; fileRef = ADF0C4901F73EFE300856EBC /* Exercicio2Cena3.sks */; };
 		ADF0C4931F73F00700856EBC /* Exercicio2Cena2.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0C4921F73F00700856EBC /* Exercicio2Cena2.swift */; };
@@ -94,6 +95,7 @@
 		ADCB83DC1F7BE3DD001D4384 /* Array_extension_shuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array_extension_shuffle.swift; sourceTree = "<group>"; };
 		ADEE46A72035053E00E6CF10 /* AlertaHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertaHelper.swift; sourceTree = "<group>"; };
 		ADEE46AE20351EB200E6CF10 /* TrocarTelaHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrocarTelaHelper.swift; sourceTree = "<group>"; };
+		ADEE46B02035251900E6CF10 /* FeedbackTipo2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTipo2ViewController.swift; sourceTree = "<group>"; };
 		ADF0C48E1F73EFA100856EBC /* Exercicio2Cena2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Exercicio2Cena2.sks; sourceTree = "<group>"; };
 		ADF0C4901F73EFE300856EBC /* Exercicio2Cena3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Exercicio2Cena3.sks; sourceTree = "<group>"; };
 		ADF0C4921F73F00700856EBC /* Exercicio2Cena2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercicio2Cena2.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				AD7BE2BD1F4B2E3D0026F4B9 /* FeedbackTipo1ViewController.swift */,
+				ADEE46B02035251900E6CF10 /* FeedbackTipo2ViewController.swift */,
 			);
 			name = Feedbacks;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 			files = (
 				AD2B1C841F43D99C001175E2 /* SelecaoJogosViewController.swift in Sources */,
 				AD1A31051F447FBB0058E920 /* Exercicio1ViewController.swift in Sources */,
+				ADEE46B12035251900E6CF10 /* FeedbackTipo2ViewController.swift in Sources */,
 				AD80D8C71F681AA80064201B /* Exercicio2ViewController.swift in Sources */,
 				AD57EE28201FFB7E005745BB /* SKspriteNode+extension+animations.swift in Sources */,
 				ADF0C4971F73F68300856EBC /* MySpriteKitDelegate.swift in Sources */,

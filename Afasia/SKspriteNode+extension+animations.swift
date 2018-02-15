@@ -13,6 +13,7 @@ import SpriteKit
 
 extension SKSpriteNode {
     
+    //Animacao de fazer um sprite piscar e parar acesso (com alpha em 1)
     func piscarPararAcesso() {
         
         let fadeOutAnimation = SKAction.fadeAlpha(to: 0.25, duration: 0.5)
@@ -25,6 +26,7 @@ extension SKSpriteNode {
     
     
     
+    //Esmaecer um sprite ate ele ficar com alpha igual a 0.25
     func fadeOut25(){
         let fadeOutAnimation = SKAction.fadeAlpha(to: 0.25, duration: 0.5)
         self.run(fadeOutAnimation)
