@@ -402,26 +402,7 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
     
     
     
-    //Mark: Funcao para carregar a tela de feedback via storyboard id
-    func carregarTelaFeedaback() {
-        
-        //colocar alertas sobre algumas condicao "adversa" antes de chamar a tela de feedback
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "FeedbackTipo1") as! FeedbackTipo1ViewController
-        
-        
-        //carregando variaveis
-        controller.acertos = self.acertos
-        controller.erros = self.erros
-        controller.duvidas = self.duvidas
-    
-        
-        //chamando controladora
-        self.present(controller, animated: true, completion: nil)
-        
-    }
-    
+   
     
     //Mark: funcao para verificar se todas as imagens ja foram tidas como corretas ou erradas
     func verificarSeTodasImagensForamRespondidas() -> Bool{
@@ -436,40 +417,14 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
     
     
     
-    //Mark: carregar tela de selecao de jogos
-    func carregarTelaSelecaoJogos() {
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "SelecaoJogos") as! SelecaoJogosViewController
-        
-        //chamando controladora
-        self.present(controller, animated: true, completion: nil)
-        
-        
-        
-    }
-    
-    
-    
-    
-    
-    
-    //Mark: Criar alerta para informar que todas as imagens foram respondidas 
-    func alertarConclusaoExercicio() {
-        
+   
 
-        let appearance = SCLAlertView.SCLAppearance(
-            showCloseButton: false
-        )
-        
-        let alert = SCLAlertView(appearance: appearance)
-        alert.addButton("Ok") {
-            print(self.dbgmsg + "Exercicio concluido. Indo para a tela de feedback.")
-            //chamar a tela de feedback aqui
-            self.carregarTelaFeedaback()
+    
+    //Mark: Criar alerta para informar que todas as imagens foram respondidas e que o exercicio terminou
+    func alertarConclusaoExercicio() {
+        AlertaHelper.alertarConclusaoExercicio {
+            self.carregarTelaFeedback()
         }
-        
-        alert.showSuccess("Exercício Concluído", subTitle: "Você completou este exercício. Veja seus resultados!")
     }
     
     
@@ -488,7 +443,7 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
             //escolhe se deseja carregar a tela de feedback ou sair para a tela anterior
             if irParaFeedback {
                 print(self.dbgmsg + "Saindo do exercicio.Indo para o feedback")
-                self.carregarTelaFeedaback()
+                self.carregarTelaFeedback()
             }else {
                 print(self.dbgmsg + "Saindo do exercicio.Indo para a selecao de jogos")
                 self.carregarTelaSelecaoJogos()
@@ -511,6 +466,44 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
         if idImagemAtual! < (self.estruturaDeAcertosErrosDuvidas?.count)!{
              self.ImageView.image = self.estruturaDeAcertosErrosDuvidas?[idImagemAtual!].imagemExec?.asset
         }
+        
+    }
+    
+    
+    
+    
+    //Mark: FUNCOES DE CARGA DE TELAS
+    
+    
+    //Mark: Funcao para chamar a tela de feedback
+    func carregarTelaFeedback(){
+        
+        //Chamando a tela de feedback deste tipo de exercicio
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "FeedbackTipo1") as! FeedbackTipo1ViewController
+        
+        //carregando variaveis
+        controller.acertos = self.acertos
+        controller.erros = self.erros
+        controller.duvidas = self.duvidas
+        
+        //chamando controladora
+        self.present(controller, animated: true, completion: nil)
+        
+    }
+    
+    
+    
+    //Mark: carregar tela de selecao de jogos
+    func carregarTelaSelecaoJogos() {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "SelecaoJogos") as! SelecaoJogosViewController
+        
+        //chamando controladora
+        self.present(controller, animated: true, completion: nil)
+        
+        
         
     }
     
