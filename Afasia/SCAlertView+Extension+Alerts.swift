@@ -56,6 +56,7 @@ extension SCLAlertView {
     
     
     //Alerta do tipo warning com botao de cancelar
+    //Usado quando a pessoa quer sair de algum exercicio em progresso
     func alertaMensagemWarningComBotaoCancelar(titulo: String, mensagemAlerta: String,textoBotao: String, completionHandler: @escaping ()->()){
         
         let appearance = SCLAlertView.SCLAppearance(

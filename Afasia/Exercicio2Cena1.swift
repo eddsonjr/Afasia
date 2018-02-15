@@ -26,8 +26,12 @@ class Exercicio2Cena1: SKScene{
     var tvMiniatura: SKSpriteNode?
     
     //Mark: lista de sprites a serem achados
-    var listaDeSpritesASeremAchados: [SKSpriteNode]?
+    var listaDeSpritesASeremAchados: [SKSpriteNode] = []
     
+    
+    //Mark: variaveis que computam a quantidade de acertos e erros
+    var acertos = 0
+    var erros = 0
     
     
     //Mark: Variavel do delegate
@@ -51,23 +55,39 @@ class Exercicio2Cena1: SKScene{
         if let touch = touches.first {
             let location = touch.location(in: self)
             
+            computarAcertosErros(listaDeSprites: self.listaDeSpritesASeremAchados, ponto: location, acaoAcerto: {
+                self.acertos = self.acertos+1
+                verificarQualSpriteFoiTocado(position: position).fadeOut25()
+                
+            }, acaoErro: {
+                self.erros = self.erros+1
+            }, terminoExercicio: {
+                print("Chamar a tela de feedback aqui!")
+            })
             
-            if (self.tvAreaReconhecimento?.contains(location))!{
-                print(dbgmsg + "O usuario conseguiu encontrar a tv")
-                self.tvMiniatura?.fadeOut25()
-                self.listaDeSpritesASeremAchados?.removeFirstEqualItem(item: self.tvAreaReconhecimento!)
-                
-            }else if (self.sofaAreaReconhecimento?.contains(location))!{
-                print(dbgmsg + "O usuario conseguiu encontrar a tv")
-                self.sofaMiniatura?.fadeOut25()
-                self.listaDeSpritesASeremAchados?.removeFirstEqualItem(item: self.sofaAreaReconhecimento!)
-                
-            }else{
-                print(dbgmsg + "O usuario errou o clique")
-                self.tvMiniatura?.piscarPararAcesso()
-                self.sofaMiniatura?.piscarPararAcesso()
-               
-            }
+            print(dbgmsg + "Quantidade de acertos: \(self.acertos) | Erros: \(self.erros)")
+            
+            
+            
+//            if (self.tvAreaReconhecimento?.contains(location))!{
+//                print(dbgmsg + "O usuario conseguiu encontrar a tv")
+////                self.tvMiniatura?.fadeOut25()
+////                self.listaDeSpritesASeremAchados?.removeFirstEqualItem(item: self.tvAreaReconhecimento!)
+//
+//
+//
+//
+//            }else if (self.sofaAreaReconhecimento?.contains(location))!{
+//                print(dbgmsg + "O usuario conseguiu encontrar a tv")
+//                self.sofaMiniatura?.fadeOut25()
+//                self.listaDeSpritesASeremAchados.removeFirstEqualItem(item: self.sofaAreaReconhecimento!)
+//
+//            }else{
+//                print(dbgmsg + "O usuario errou o clique")
+//                self.tvMiniatura?.piscarPararAcesso()
+//                self.sofaMiniatura?.piscarPararAcesso()
+//
+//            }
             
         }
         
@@ -112,26 +132,48 @@ class Exercicio2Cena1: SKScene{
         self.sofaMiniatura = self.childNode(withName: "sofaDescricaoSprite") as? SKSpriteNode
         self.tvMiniatura = self.childNode(withName: "tvDescricaoSprite") as? SKSpriteNode
         
-        self.listaDeSpritesASeremAchados?.append(self.tvAreaReconhecimento!)
-        self.listaDeSpritesASeremAchados?.append(self.sofaAreaReconhecimento!)
+        self.listaDeSpritesASeremAchados.append(self.tvAreaReconhecimento!)
+        self.listaDeSpritesASeremAchados.append(self.sofaAreaReconhecimento!)
     }
     
     
     
-    func computarAcertosErros(listaDeSprites: [SKSpriteNode],ponto: CGPoint,acaoAcerto: ()->(),acaoErro:()->(),terminoExercicio:()->()){
+    func computarAcertosErros(listaDeSprites: [SKSpriteNode],ponto: CGPoint,acaoAcerto: ()->(),acaoErro: ()->(),terminoExercicio:()->()){
         
+        var index = 0
         
-        if listaDeSpritesASeremAchados != nil{
-            for sprite in listaDeSpritesASeremAchados! {
+        if listaDeSpritesASeremAchados.count > 0{
+            for sprite in listaDeSpritesASeremAchados {
                 if sprite.contains(ponto){
-                    listaDeSpritesASeremAchados?.removeFirstEqualItem(item: sprite)
+                    listaDeSpritesASeremAchados.removeFirstEqualItem(item: sprite)
+                    index = index+1
                     acaoAcerto()
+                }else if index >= listaDeSprites.count {
+                    acaoErro()
                 }
             }
         }else{
             terminoExercicio()
         }
         
+    }
+    
+    
+    
+    
+    
+    func verificarQualSpriteFoiTocado(position: CGPoint) -> SKSpriteNode {
+        
+        var sprite: SKSpriteNode = SKSpriteNode()
+        
+        if (self.tvAreaReconhecimento?.contains(position))!{
+            print("AQUI")
+            sprite = tvAreaReconhecimento!
+        }
+        if (self.sofaAreaReconhecimento?.contains(position))!{
+            sprite = sofaAreaReconhecimento!
+        }
+        return sprite
     }
     
 
