@@ -447,26 +447,22 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
     //Mark: Funcao para chamar a tela de feedback
     func carregarTelaFeedback(){
         
-        //Chamando a tela de feedback deste tipo de exercicio
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: StoryboardIDEnum.feedbackExercicio1.rawValue) as! FeedbackTipo1ViewController
+        let controller = FeedbackTipo1ViewController.instantiateFromStoryboard()
         
         //carregando variaveis
         controller.acertos = self.acertos
         controller.erros = self.erros
         controller.duvidas = self.duvidas
         
-        //chamando controladora
         self.present(controller, animated: true, completion: nil)
-        
+
+
     }
     
     
     //Mark: carregar tela de selecao de jogos
     func carregarTelaSelecaoJogos() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: StoryboardIDEnum.telaPrincipalDeSelecaoDeExecsDoApp.rawValue) as! SelecaoJogosViewController
-        //chamando controladora
+        let controller = SelecaoJogosViewController.instantiateFromStoryboard()
         self.present(controller, animated: true, completion: nil)
         
     }

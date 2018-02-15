@@ -23,8 +23,6 @@ extension UIViewController {
         return controller
     }
     
-    
     //Usage:
     //let controller = MyViewController.instantiateFromStoryboard()
-    
 }

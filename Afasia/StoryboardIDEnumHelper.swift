@@ -9,10 +9,9 @@
 import Foundation
 import UIKit
 
-
 enum StoryboardIDEnum: String {
-    case telaPrincipalDeSelecaoDeExecsDoApp = "SelecaoJogosViewController"
+    case telaPrincipalDeSelecaoDeExecsDoApp =  "SelecaoJogosViewController"
     case feedbackExercicio1 = "FeedbackTipo1"
     
-    
 }
+
