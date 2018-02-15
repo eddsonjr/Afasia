@@ -9,9 +9,30 @@
 import Foundation
 import UIKit
 
+
 class TrocarTelaHelper {
     
     
+    static func chamarFeedbackTipo1(acertos: Int, erros: Int, duvidas: Int, viewController: UIViewController){
+        
+        let controller = FeedbackTipo1ViewController.instantiateFromStoryboard()
+
+        //carregando variaveis
+        controller.acertos = acertos
+        controller.erros = erros
+        controller.duvidas = duvidas
+  
+        viewController.present(controller, animated: true, completion: nil)
+
+    }
+    
+    
+    
+    
+    static func chamarTelaPrincipalDeSelecaoExercicios(viewController: UIViewController){
+        let controller = SelecaoJogosViewController.instantiateFromStoryboard()
+        viewController.present(controller, animated: true, completion: nil)
+    }
     
     
 }

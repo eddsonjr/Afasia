@@ -113,7 +113,7 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
     //responsavel por voltar para a tela anterior
     @IBAction func voltarParaTelaAnterior(_ sender: Any) {
         AlertaHelper.alertaSairExercicioEmCurso {
-            self.carregarTelaSelecaoJogos()
+            TrocarTelaHelper.chamarTelaPrincipalDeSelecaoExercicios(viewController: self)
         }
     }
     
@@ -189,7 +189,7 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
         print(dbgmsg + "acertos: \(acertos) | erros: \(erros) | duvidas: \(duvidas)")
        
         AlertaHelper.alertaSairExercicioEmCurso {
-            self.carregarTelaFeedback()
+            TrocarTelaHelper.chamarFeedbackTipo1(acertos: self.acertos, erros: self.erros, duvidas: self.duvidas, viewController: self)
         }
         
         
@@ -411,22 +411,15 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
         }
     }
     
-    
-    
-    
-   
 
     
     //Mark: Criar alerta para informar que todas as imagens foram respondidas e que o exercicio terminou
     func alertarConclusaoExercicio() {
         AlertaHelper.alertarConclusaoExercicio {
-            self.carregarTelaFeedback()
+            TrocarTelaHelper.chamarFeedbackTipo1(acertos: self.acertos, erros: self.erros, duvidas: self.duvidas, viewController: self)
         }
     }
 
-    
-    
-    
     
     //Mark: Funcao para passar as imagens de forma automatica
     func carregarProximaImagem() {
@@ -438,33 +431,5 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
         
     }
     
-    
-    
-    
-    //Mark: FUNCOES DE CARGA DE TELAS
-    
-    
-    //Mark: Funcao para chamar a tela de feedback
-    func carregarTelaFeedback(){
-        
-        let controller = FeedbackTipo1ViewController.instantiateFromStoryboard()
-        
-        //carregando variaveis
-        controller.acertos = self.acertos
-        controller.erros = self.erros
-        controller.duvidas = self.duvidas
-        
-        self.present(controller, animated: true, completion: nil)
-
-
-    }
-    
-    
-    //Mark: carregar tela de selecao de jogos
-    func carregarTelaSelecaoJogos() {
-        let controller = SelecaoJogosViewController.instantiateFromStoryboard()
-        self.present(controller, animated: true, completion: nil)
-        
-    }
 
 }
