@@ -112,8 +112,9 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
     
     //responsavel por voltar para a tela anterior
     @IBAction func voltarParaTelaAnterior(_ sender: Any) {
-        alertarExercicioEmCurso(irParaFeedback: false)
-        
+        AlertaHelper.alertaSairExercicioEmCurso {
+            self.carregarTelaSelecaoJogos()
+        }
     }
     
     
@@ -186,7 +187,15 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
      
         //carregar a tela de feedback de erros e acertos aqui
         print(dbgmsg + "acertos: \(acertos) | erros: \(erros) | duvidas: \(duvidas)")
-       alertarExercicioEmCurso(irParaFeedback: true)
+       
+        AlertaHelper.alertaSairExercicioEmCurso {
+            self.carregarTelaFeedback()
+        }
+        
+        
+        
+        
+       
         
         
     }
@@ -362,12 +371,7 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
          print(dbgmsg + "Estrutura de acertos,erros,duvidas com: \(String(describing: self.estruturaDeAcertosErrosDuvidas?.count)) elementos. Indice da imagem em: \(String(describing: self.idImagemAtual))")
         
     }
-    
-    
-    
-    
-    
-    
+ 
     
     
     //Mark: Funcao para carregar imagens no vetor de imagens e mostra - las na tela
@@ -397,13 +401,6 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
     }
     
     
-    
-    
-    
-    
-    
-   
-    
     //Mark: funcao para verificar se todas as imagens ja foram tidas como corretas ou erradas
     func verificarSeTodasImagensForamRespondidas() -> Bool{
         
@@ -426,23 +423,7 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
             self.carregarTelaFeedback()
         }
     }
-    
-    
-    
-    
-    //Mark: Criar alerta para informar que o exercicio esta em curso caso o usuario queira sair
-    func alertarExercicioEmCurso(irParaFeedback: Bool) {
-        
-        if irParaFeedback{ //chama a tela de feedback
-            AlertaHelper.alertaSairExercicioEmCurso {
-                self.carregarTelaFeedback()
-            }
-        }else{ //chama a tela de selecao de exercicios
-            AlertaHelper.alertarConclusaoExercicio {
-                self.carregarTelaSelecaoJogos()
-            }
-        }
-    }
+
     
     
     
@@ -468,7 +449,7 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
         
         //Chamando a tela de feedback deste tipo de exercicio
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "FeedbackTipo1") as! FeedbackTipo1ViewController
+        let controller = storyboard.instantiateViewController(withIdentifier: StoryboardIDEnum.feedbackExercicio1.rawValue) as! FeedbackTipo1ViewController
         
         //carregando variaveis
         controller.acertos = self.acertos
@@ -481,22 +462,13 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
     }
     
     
-    
     //Mark: carregar tela de selecao de jogos
     func carregarTelaSelecaoJogos() {
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "SelecaoJogos") as! SelecaoJogosViewController
-        
+        let controller = storyboard.instantiateViewController(withIdentifier: StoryboardIDEnum.telaPrincipalDeSelecaoDeExecsDoApp.rawValue) as! SelecaoJogosViewController
         //chamando controladora
         self.present(controller, animated: true, completion: nil)
         
-        
-        
     }
-    
-    
-    
-    
-    
+
 }
