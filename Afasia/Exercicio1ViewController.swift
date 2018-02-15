@@ -433,27 +433,15 @@ class Exercicio1ViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
     //Mark: Criar alerta para informar que o exercicio esta em curso caso o usuario queira sair
     func alertarExercicioEmCurso(irParaFeedback: Bool) {
         
-        let appearance = SCLAlertView.SCLAppearance(
-            showCloseButton: true
-        )
-        
-        let alert = SCLAlertView(appearance: appearance)
-        alert.addButton("Sair") {
-            
-            //escolhe se deseja carregar a tela de feedback ou sair para a tela anterior
-            if irParaFeedback {
-                print(self.dbgmsg + "Saindo do exercicio.Indo para o feedback")
+        if irParaFeedback{ //chama a tela de feedback
+            AlertaHelper.alertaSairExercicioEmCurso {
                 self.carregarTelaFeedback()
-            }else {
-                print(self.dbgmsg + "Saindo do exercicio.Indo para a selecao de jogos")
+            }
+        }else{ //chama a tela de selecao de exercicios
+            AlertaHelper.alertarConclusaoExercicio {
                 self.carregarTelaSelecaoJogos()
             }
         }
-        
-        
-        /*NECESSITA AJEITAR*/
-        alert.showWarning("Sair do Exercício?", subTitle: "Você deseja realmente sair deste exercício?", closeButtonTitle: "Cancelar", timeout: nil, colorStyle: 0xFED035, colorTextButton: 0x262626, animationStyle: .topToBottom)
-       
     }
     
     
