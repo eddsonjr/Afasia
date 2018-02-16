@@ -251,7 +251,6 @@ class Exercicio3: SKScene {
             self.qtAtualDeCaracteres = self.qtAtualDeCaracteres - 1
             
             
-            
         }else if (self.D_Button?.contains(point))! {
             print(dbgmsg + "Letra D pressionada")
             self.D_Button?.texture = trocarTextura(imagem: #imageLiteral(resourceName: "d toque"))

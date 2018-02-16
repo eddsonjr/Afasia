@@ -17,6 +17,6 @@ import Foundation
 protocol MySpriteKitDelegate {
     
     func carregarFeedback()
-    
+    func carregarFeedback(acertos: Int, erros: Int)
     func carregarTelaDeSelecaoDeExercicio()
 }

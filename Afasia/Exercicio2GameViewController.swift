@@ -13,6 +13,8 @@ import GameplayKit
 
 class Exercicio2GameViewController: UIViewController,MySpriteKitDelegate {
     
+    
+    
     //Mark: Responsavel por receber o codigo da cena  a ser carregada
     var cenaAserCarregada: Int = Int()
     
@@ -184,6 +186,11 @@ class Exercicio2GameViewController: UIViewController,MySpriteKitDelegate {
     }
     
     
+    func carregarFeedback(acertos: Int, erros: Int) {
+        
+    }
+    
+    
     func carregarTelaDeSelecaoDeExercicio() {
         print(dbgmsg + "Carregando a tela de selecao de cenarios do exercicio2")
         let controller = Exercicio2ViewController.instantiateFromStoryboard()
@@ -191,6 +198,11 @@ class Exercicio2GameViewController: UIViewController,MySpriteKitDelegate {
     
         
     }
+    
+    
+    
+    
+    
     
 
 

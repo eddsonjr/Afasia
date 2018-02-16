@@ -15,6 +15,8 @@ import GameplayKit
 class Exercicio3GameViewController: UIViewController,MySpriteKitDelegate {
     
     
+    
+    
     //Mark: Mensagem de identificacao de bug e warnings
     private let dbgmsg = "[GameViewController]: "
     
@@ -48,23 +50,9 @@ class Exercicio3GameViewController: UIViewController,MySpriteKitDelegate {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-    }
-    
-    
-    
-    
-    override var shouldAutorotate: Bool {
-        return true
-    }
+    override func viewDidAppear(_ animated: Bool) {}
+
+    override var shouldAutorotate: Bool {return true }
     
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -76,66 +64,41 @@ class Exercicio3GameViewController: UIViewController,MySpriteKitDelegate {
     }
     
     
+    override func didReceiveMemoryWarning() { super.didReceiveMemoryWarning() }
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-        
-        
-    }
+    override var prefersStatusBarHidden: Bool { return true }
  
-    
-    
-    //Mark: Funcao para alertar exercicio em curso
-    func alertarExercicioEmCurso(irParaFeedback: Bool) {
-        
-        let appearance = SCLAlertView.SCLAppearance(
-            showCloseButton: true
-        )
-        
-        let alert = SCLAlertView(appearance: appearance)
-        alert.addButton("Sair") {
-            
-            //escolhe se deseja carregar a tela de feedback ou sair para a tela anterior
-            if irParaFeedback {
-                print(self.dbgmsg + "Saindo do exercicio.Indo para o feedback")
-                self.carregarFeedback()
-            }else {
-                print(self.dbgmsg + "Saindo do exercicio.Indo para a selecao de jogos")
-                self.carregarTelaDeSelecaoDeExercicio()
-            }
-        }
-        
-        alert.showWarning("Sair do Exercício?", subTitle: "Você deseja realmente sair deste exercício?", closeButtonTitle: "Cancelar", timeout: nil, colorStyle: 0xFED035, colorTextButton: 0x262626, animationStyle: .topToBottom)
-        
-    }
 
     
     
     //Mark: Funcoes de conformidade do MySpriteKitDelegate
+    
     func carregarFeedback() {
-        print(dbgmsg + "Carregando feedback [GAME DELEGATE]")
+      //Esta funcao nao realiza nenhuma acao, somente conforma com protocolo
         
     }
+    
+    
+    //carrega a tela de feedback passando a quantidade de acertos e erros
+    func carregarFeedback(acertos: Int, erros: Int) {
+        AlertaHelper.alertarConclusaoExercicio {
+            TrocarTelaHelper.chamarFeedbackTipo2(acertos: acertos, erros: erros, viewController: self)
+        }
+    }
+    
     
     
     func carregarTelaDeSelecaoDeExercicio() {
-        print(dbgmsg + "Carregando tela principal do app [GAME DELEGATE]")
-        let controller = SelecaoJogosViewController.instantiateFromStoryboard()
-        self.present(controller, animated: true, completion: nil)
+        AlertaHelper.alertaSairExercicioEmCurso {
+            TrocarTelaHelper.chamarTelaPrincipalDeSelecaoExercicios(viewController: self)
+        }
     }
     
     
     
+    //chama a tela de principal do aplicativo de selecao de exercicios
     @IBAction func VoltarParaTelaPrincipal(_ sender: Any) {
-        
         carregarTelaDeSelecaoDeExercicio()
-        
     }
     
     
