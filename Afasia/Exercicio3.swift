@@ -91,19 +91,11 @@ class Exercicio3: SKScene {
     
     //Variaveis do tipo alerta
     var alerta: SCLAlertView? = nil
-    
-    
-    
+ 
     
     //Mark: Variavel do delegate
     var mySpriteKitDelegate: MySpriteKitDelegate?
-    
 
-    
-    
-    
-    
-    
     
     override func didMove(to view: SKView) {
         carregarDiversasImagens(imagens: ImagemExercicioStore.getAllImagensExecs(), qtImagens: 3)
@@ -170,6 +162,9 @@ class Exercicio3: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         print(dbgmsg + "Qt. Acertos: \(self.acertos) | Qt. Erros: \(self.erros)")
+        
+        //Verifica se o usuario conseguiu terminar o exercicio
+        verificarConclusaoExercicio()
         
     }
     
@@ -403,17 +398,13 @@ class Exercicio3: SKScene {
         }else if (self.VoltarLetraButton?.contains(point))! {
             removerUltimaLetra()
         }
+
         
-        
-        
-        
-        
-        
+       
         //Verificando se o usuario acertou ou nao a palavra
         if self.qtAtualDeCaracteres == 0 {
             verificarAcerto(imagem: self.listaDeImagens[self.indiceAtual])
         }
-        
         
         
     }
@@ -611,6 +602,16 @@ class Exercicio3: SKScene {
     }
     
     
+    
+    
+    
+    //Mark: Funcao para verificar se o usuario terminou o exercicio
+    func verificarConclusaoExercicio() {
+        if self.indiceAtual >= self.listaDeImagens.count {
+            print(dbgmsg + "O usuário terminou o exercicio. Chamando o feedback")
+            mySpriteKitDelegate?.carregarFeedback()
+        }
+    }
     
     
     

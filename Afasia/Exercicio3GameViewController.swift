@@ -120,6 +120,7 @@ class Exercicio3GameViewController: UIViewController,MySpriteKitDelegate {
     //Mark: Funcoes de conformidade do MySpriteKitDelegate
     func carregarFeedback() {
         print(dbgmsg + "Carregando feedback [GAME DELEGATE]")
+        
     }
     
     
