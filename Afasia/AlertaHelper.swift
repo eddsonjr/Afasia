@@ -30,6 +30,26 @@ class AlertaHelper {
         alerta.alertaMensagemSimplesSucesso(titulo: "Exercício Concluído", mensagemAlerta: "Você completou este exercício. Veja seus resultados!", textoBotao: "Ok", completionHandler: completionHandler)
     }
     
+    
+    
+    
+    static func alertaAcerto(completionHandler: @escaping ()->()){
+        let alerta: SCLAlertView = SCLAlertView()
+        
+        alerta.alertaMensagemSimplesSucesso(titulo: "Parabéns", mensagemAlerta: "Meus parabéns, você acertou!", textoBotao: "Ok", completionHandler: completionHandler)
+    }
+    
+    
+    
+    static func alertaErro(completionHandler: @escaping ()->()){
+        let alerta: SCLAlertView = SCLAlertView()
+        
+        alerta.alertaMensagemSimplesFalha(titulo: "Poxa", mensagemAlerta: "Infelizmente você errou", textoBotao: "Ok", completionHandler: completionHandler)
+    }
+    
+    
+    
+    
 
     
     

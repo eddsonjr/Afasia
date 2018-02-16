@@ -14,18 +14,15 @@ import GameplayKit
 
 class Exercicio3GameViewController: UIViewController,MySpriteKitDelegate {
     
-    
-    
+ 
     
     //Mark: Mensagem de identificacao de bug e warnings
     private let dbgmsg = "[GameViewController]: "
     
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         if let scene = GKScene(fileNamed: "Exercicio3") {
             

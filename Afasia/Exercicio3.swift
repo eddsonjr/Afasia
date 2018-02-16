@@ -76,8 +76,7 @@ class Exercicio3: SKScene {
     //quando a palavra escrita pelo usuario ja foi completada
     var qtAtualDeCaracteres = 0
     
-    
-    
+
     
     //As variaveis abaixo indicam a quantidade de acertos e erros que ocorreram
     var acertos = 0
@@ -87,84 +86,48 @@ class Exercicio3: SKScene {
     var listaDeImagens: [ImagemExercicio] = []
     var indiceAtual = 0 //indica a posicao atual das imagens na lista
     
-    
-    
-    //Variaveis do tipo alerta
-    var alerta: SCLAlertView? = nil
- 
-    
+  
     //Mark: Variavel do delegate
     var mySpriteKitDelegate: MySpriteKitDelegate?
 
     
     override func didMove(to view: SKView) {
-        carregarDiversasImagens(imagens: ImagemExercicioStore.getAllImagensExecs(), qtImagens: 3)
+        
         //carregando diversas imagens do Store
-        
-        
+        carregarDiversasImagens(imagens: ImagemExercicioStore.getAllImagensExecs(), qtImagens: 3)
         setupSprites()//configurando o que sera mostrado na cena
-        alerta = SCLAlertView()
-        
-                
-        
-       
-    }
-    
-    
-    
-    override func sceneDidLoad() {
-        
-      
-        
         
     }
+
     
+    override func sceneDidLoad() { }
     
-    func touchDown(atPoint pos : CGPoint) {
-        
-    }
+    func touchDown(atPoint pos : CGPoint) { }
     
-    func touchMoved(toPoint pos : CGPoint) {
-        
-    }
+    func touchMoved(toPoint pos : CGPoint) { }
     
-    func touchUp(atPoint pos : CGPoint) {
-        
-    }
+    func touchUp(atPoint pos : CGPoint) { }
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)
             verificarBotoesTocados(point: location)
-           
         }
         
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-    }
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {}
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         colocarTexturasOriginaisLetras()
-        
-        
-        
-        
-        
     }
     
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-    }
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) { }
     
     
     override func update(_ currentTime: TimeInterval) {
         print(dbgmsg + "Qt. Acertos: \(self.acertos) | Qt. Erros: \(self.erros)")
-        
-        //Verifica se o usuario conseguiu terminar o exercicio
-        verificarConclusaoExercicio()
         
     }
     
@@ -399,13 +362,11 @@ class Exercicio3: SKScene {
         }
 
         
-       
-        //Verificando se o usuario acertou ou nao a palavra
+        //Verifica se o usuario conseguiu terminar o exercicio ou se ainda restam palavras
         if self.qtAtualDeCaracteres == 0 {
             verificarAcerto(imagem: self.listaDeImagens[self.indiceAtual])
         }
-        
-        
+    
     }
     
     
@@ -487,7 +448,6 @@ class Exercicio3: SKScene {
     //Mark: Funcao para carregar imagens no vetor de imagens e mostra - las na tela
     func carregarDiversasImagens(imagens: [ImagemExercicio],qtImagens: Int) {
         
-        
         for current in 0...qtImagens {
             self.listaDeImagens.append(imagens[current])
         }
@@ -502,7 +462,6 @@ class Exercicio3: SKScene {
         
         print(dbgmsg + "Quantidade de imagens carregadas: \(self.listaDeImagens.count)")
         print(dbgmsg + "Quantidade de caracteres da 1a palavra: \(self.qtAtualDeCaracteres)")
-        
         
     }
     
@@ -536,55 +495,6 @@ class Exercicio3: SKScene {
     }
     
     
-    
-    
-    /*Este metodo tem por objetivo alertar o usuário sobre ele ter acertado ou errado
-     o exercicio*/
-    func alertarUsuario(mostrarMsgAcerto: Bool) {
-        
-        /*Alterando a aparencia do alerta*/
-        let appearance = SCLAlertView.SCLAppearance(
-            kWindowWidth: CGFloat(280), kWindowHeight: CGFloat(196), kTitleFont: UIFont(name: "HelveticaNeue", size: 24)!,
-            kTextFont: UIFont(name: "HelveticaNeue", size: 21)!,
-            
-            
-            kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 18)!,
-            showCloseButton: false
-        )
-        
-        self.alerta = SCLAlertView(appearance: appearance)
-        
-        if(mostrarMsgAcerto){ //configura o alerta exibir a mensagem de acerto junto com um botao para
-            //carregar a proxima imagem
-            
-            self.alerta?.addButton("Ok", action: {
-                print(self.dbgmsg + "[Alerta]Carregando a proxima imagem para mostrar para o usuario")
-           
-                self.carregarProximaImagem(texture: self.trocarTextura(imagem: self.listaDeImagens[self.indiceAtual].asset!)) //carrega a proxima imagem a ser mostrada assim
-                //que o usuario aperta no ok na tela
-                
-                self.qtAtualDeCaracteres = self.getQtLetrasString(imagem: self.listaDeImagens[self.indiceAtual])
-                
-            })
-            
-            self.alerta?.showSuccess("Parabéns", subTitle: "Você acertou o nome da imagem \n")
-            
-        }else{
-            self.alerta?.addButton("Ok", action: {
-                print(self.dbgmsg + "[Alerta]Refazendo o mesmo exercicio.")
-                self.refazer(imagemExercicio: self.listaDeImagens[self.indiceAtual])
-                //caso o usuario erre o nome da imagem, ele simplesmente ira refazer o exercicio
-                
-            })
-            
-            self.alerta?.showError("Poxa!", subTitle: "Você errou o nome da imagem. Tente novamente!")
-        }
-        
-        
-    }
-    
-    
-    
     /*A funcao abaixo server para verificar se a pessoa acertou o exercicio ou nao. Caso ela
      tenha acertado, carregue a proxima imagem. Caso ela tenha errado, refaca o exercicio*/
     func verificarAcerto(imagem: ImagemExercicio) {
@@ -592,28 +502,33 @@ class Exercicio3: SKScene {
             print(dbgmsg + "O usuario acertou o nome da imagem")
             self.indiceAtual = self.indiceAtual + 1
             self.acertos = self.acertos + 1
-            alertarUsuario(mostrarMsgAcerto: true)
+            
+            //verifica se o usuario ja concluiu todas as palavras
+            if self.indiceAtual >= self.listaDeImagens.count {
+                print(dbgmsg + "O usuário terminou o exercicio. Chamando o feedback")
+                mySpriteKitDelegate?.carregarFeedback(acertos: self.acertos, erros: self.erros)
+            
+            }else{
+                AlertaHelper.alertaAcerto {
+                    
+                    //Carrega a proxima imagem solicitando a troca de textura
+                    self.carregarProximaImagem(texture: self.trocarTextura(imagem: self.listaDeImagens[self.indiceAtual].asset!))
+                    
+                    //Atualiza a quantidade de letras que a palavra tem e que o usuario devera escrever
+                    self.qtAtualDeCaracteres = self.getQtLetrasString(imagem: self.listaDeImagens[self.indiceAtual])
+                    
+                }
+
+            }
         }else {
             print(dbgmsg + "O usuario errou o nome da imagem")
-            alertarUsuario(mostrarMsgAcerto: false)
             self.erros = self.erros + 1
+           
+            AlertaHelper.alertaErro {
+                //caso o usuario erre o nome da imagem, ele simplesmente ira refazer o exercicio
+                self.refazer(imagemExercicio: self.listaDeImagens[self.indiceAtual])
+            }
         }
     }
-    
-    
-    
-    
-    
-    //Mark: Funcao para verificar se o usuario terminou o exercicio
-    func verificarConclusaoExercicio() {
-        if self.indiceAtual >= self.listaDeImagens.count {
-            print(dbgmsg + "O usuário terminou o exercicio. Chamando o feedback")
-            mySpriteKitDelegate?.carregarFeedback()
-        }
-    }
-    
-    
-    
-    
     
 }

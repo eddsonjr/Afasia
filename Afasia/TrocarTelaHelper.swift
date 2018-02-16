@@ -39,7 +39,7 @@ class TrocarTelaHelper {
     
     //chama a tela de feedback tipo 2
     static func chamarFeedbackTipo2(acertos: Int, erros: Int, viewController: UIViewController){
-        let controller = FeedbackTipo1ViewController.instantiateFromStoryboard()
+        let controller = FeedbackTipo2ViewController.instantiateFromStoryboard()
         
         //carregando variaveis
         controller.acertos = acertos
