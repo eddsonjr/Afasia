@@ -135,66 +135,35 @@ class Exercicio2GameViewController: UIViewController,MySpriteKitDelegate {
 
         
     }
-    
-    
+
     
     
     //Mark: Funcoes de botoes [IBActions]
     @IBAction func voltarBTN(_ sender: Any) {
-        
-        alertarExercicioEmCurso(irParaFeedback: false)
-    }
-    
-    
-    
-    
-    
-    
-    //Mark: Funcao para alertar exercicio em curso
-    func alertarExercicioEmCurso(irParaFeedback: Bool) {
-        
-        let appearance = SCLAlertView.SCLAppearance(
-            showCloseButton: true
-        )
-        
-        let alert = SCLAlertView(appearance: appearance)
-        alert.addButton("Sair") {
-            
-            //escolhe se deseja carregar a tela de feedback ou sair para a tela anterior
-            if irParaFeedback {
-                print(self.dbgmsg + "Saindo do exercicio.Indo para o feedback")
-                self.carregarFeedback()
-            }else {
-                print(self.dbgmsg + "Saindo do exercicio.Indo para a selecao de jogos")
-                self.carregarTelaDeSelecaoDeExercicio()
-            }
-        }
-        
-        alert.showWarning("Sair do Exercício?", subTitle: "Você deseja realmente sair deste exercício?", closeButtonTitle: "Cancelar", timeout: nil, colorStyle: 0xFED035, colorTextButton: 0x262626, animationStyle: .topToBottom)
+        carregarTelaDeSelecaoDeExercicio()
         
     }
-
-    
-    
-    
-    
-    
     
     //Mark: Funcoes de conformidade do MySpriteKitDelegate
     func carregarFeedback() {
-        print(dbgmsg + "Carregando feedback [GAME DELEGATE]")
+       //Essa funcao nao realiza nenhuma tarefa, apenas conforma com o protocolo
+        
     }
     
     
+    
     func carregarFeedback(acertos: Int, erros: Int) {
+        AlertaHelper.alertarConclusaoExercicio {
+            TrocarTelaHelper.chamarFeedbackTipo2(acertos: acertos, erros: erros, viewController: self)
+        }
         
     }
     
     
     func carregarTelaDeSelecaoDeExercicio() {
-        print(dbgmsg + "Carregando a tela de selecao de cenarios do exercicio2")
-        let controller = Exercicio2ViewController.instantiateFromStoryboard()
-        self.present(controller, animated: true, completion: nil)
+        AlertaHelper.alertaSairExercicioEmCurso {
+            TrocarTelaHelper.chamarTelaPrincipalDeSelecaoExercicios(viewController: self)
+        }
     
         
     }
