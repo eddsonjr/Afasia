@@ -55,66 +55,30 @@ class Exercicio2Cena1: SKScene{
         if let touch = touches.first {
             let location = touch.location(in: self)
             
-            computarAcertosErros(listaDeSprites: self.listaDeSpritesASeremAchados, ponto: location, acaoAcerto: {
-                self.acertos = self.acertos+1
-                verificarQualSpriteFoiTocado(position: position).fadeOut25()
-                
-            }, acaoErro: {
+            if verificarSpritePressionado(location: location){
                 self.erros = self.erros+1
-            }, terminoExercicio: {
-                print("Chamar a tela de feedback aqui!")
-            })
+            }
             
             print(dbgmsg + "Quantidade de acertos: \(self.acertos) | Erros: \(self.erros)")
             
             
             
-//            if (self.tvAreaReconhecimento?.contains(location))!{
-//                print(dbgmsg + "O usuario conseguiu encontrar a tv")
-////                self.tvMiniatura?.fadeOut25()
-////                self.listaDeSpritesASeremAchados?.removeFirstEqualItem(item: self.tvAreaReconhecimento!)
-//
-//
-//
-//
-//            }else if (self.sofaAreaReconhecimento?.contains(location))!{
-//                print(dbgmsg + "O usuario conseguiu encontrar a tv")
-//                self.sofaMiniatura?.fadeOut25()
-//                self.listaDeSpritesASeremAchados.removeFirstEqualItem(item: self.sofaAreaReconhecimento!)
-//
-//            }else{
-//                print(dbgmsg + "O usuario errou o clique")
-//                self.tvMiniatura?.piscarPararAcesso()
-//                self.sofaMiniatura?.piscarPararAcesso()
-//
-//            }
-            
         }
         
     }
     
-    
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-    
-    }
-    
+
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) { }
     
     func touchsEndOrCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-    
+        chamarFeedback()
     }
-    
-    
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        chamarFeedback()
     }
     
-    
-    
-    
     override func update(_ currentTime: CFTimeInterval) {
-
         
     }
     
@@ -138,48 +102,44 @@ class Exercicio2Cena1: SKScene{
     
     
     
-    func computarAcertosErros(listaDeSprites: [SKSpriteNode],ponto: CGPoint,acaoAcerto: ()->(),acaoErro: ()->(),terminoExercicio:()->()){
+    //Esta funcao serve para verificar se o usuario clicou nas areas das figuras que
+    //devem ser computadas como certas. Caso o clique tenha sido fora de alguma dessas areas
+    //a funcao retonara indicando que se deve computar erro
+    func verificarSpritePressionado(location: CGPoint) -> Bool{
+        var computarErro: Bool = true
         
-        var index = 0
         
-        if listaDeSpritesASeremAchados.count > 0{
-            for sprite in listaDeSpritesASeremAchados {
-                if sprite.contains(ponto){
-                    listaDeSpritesASeremAchados.removeFirstEqualItem(item: sprite)
-                    index = index+1
-                    acaoAcerto()
-                }else if index >= listaDeSprites.count {
-                    acaoErro()
-                }
-            }
-        }else{
-            terminoExercicio()
+        if (self.tvAreaReconhecimento?.contains(location))!{
+            self.acertos = self.acertos+1
+            self.tvMiniatura?.fadeOut25()
+            computarErro = false
+            listaDeSpritesASeremAchados.removeFirstEqualItem(item: tvAreaReconhecimento!)
+            print(dbgmsg + "Itens restantes a serem achados: \(self.listaDeSpritesASeremAchados.count)")
         }
         
+        if(self.sofaAreaReconhecimento?.contains(location))!{
+            self.acertos = self.acertos+1
+            self.sofaMiniatura?.fadeOut25()
+            computarErro = false
+            
+            listaDeSpritesASeremAchados.removeFirstEqualItem(item: sofaAreaReconhecimento!)
+            print(dbgmsg + "Itens restantes a serem achados: \(self.listaDeSpritesASeremAchados.count)")
+        }
+        
+        return computarErro
     }
     
     
     
     
-    
-    func verificarQualSpriteFoiTocado(position: CGPoint) -> SKSpriteNode {
-        
-        var sprite: SKSpriteNode = SKSpriteNode()
-        
-        if (self.tvAreaReconhecimento?.contains(position))!{
-            print("AQUI")
-            sprite = tvAreaReconhecimento!
+    //Esta funcao verifica se ainda existem itens a serem achados, caso nao haja
+    //chama a tela de feedback
+    func chamarFeedback(){
+        if self.listaDeSpritesASeremAchados.count <= 0 {
+            mySpriteKitDelegate?.carregarFeedback(acertos: self.acertos, erros: self.erros)
         }
-        if (self.sofaAreaReconhecimento?.contains(position))!{
-            sprite = sofaAreaReconhecimento!
-        }
-        return sprite
+        
     }
-    
-
-    
-    
- 
     
     
     
