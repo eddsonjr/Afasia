@@ -14,6 +14,9 @@ import GameplayKit
 class Exercicio2GameViewController: UIViewController,MySpriteKitDelegate {
     
     
+    //Mark: view da cena
+  
+    
     
     //Mark: Responsavel por receber o codigo da cena  a ser carregada
     var cenaAserCarregada: Int = Int()
@@ -33,9 +36,13 @@ class Exercicio2GameViewController: UIViewController,MySpriteKitDelegate {
         switch self.cenaAserCarregada {
         case 1:
             
+            
+            
             if let view = self.view as! SKView? {
+            
                 self.viewDoExercicio = view
                 if let scene = Exercicio2Cena1(fileNamed: "Exercicio2Cena1") {
+                    
                     scene.scaleMode = .aspectFill
                     
                     //conformando com o protocolo MySpriteKitDelegate
@@ -154,6 +161,7 @@ class Exercicio2GameViewController: UIViewController,MySpriteKitDelegate {
     
     func carregarFeedback(acertos: Int, erros: Int) {
         AlertaHelper.alertarConclusaoExercicio {
+            self.viewDoExercicio?.isPaused = true
             TrocarTelaHelper.chamarFeedbackTipo2(acertos: acertos, erros: erros, viewController: self)
         }
         
@@ -162,6 +170,7 @@ class Exercicio2GameViewController: UIViewController,MySpriteKitDelegate {
     
     func carregarTelaDeSelecaoDeExercicio() {
         AlertaHelper.alertaSairExercicioEmCurso {
+            self.viewDoExercicio?.isPaused = true
             TrocarTelaHelper.chamarTelaPrincipalDeSelecaoExercicios(viewController: self)
         }
     

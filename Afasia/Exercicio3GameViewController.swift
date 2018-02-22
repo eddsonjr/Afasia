@@ -16,6 +16,9 @@ class Exercicio3GameViewController: UIViewController,MySpriteKitDelegate {
     
  
     
+    //Mark: View responsavel por adqurir a cena do exercicio a ser carregada
+    var viewDoExercicio:SKView? = nil
+    
     //Mark: Mensagem de identificacao de bug e warnings
     private let dbgmsg = "[GameViewController]: "
     
@@ -25,10 +28,15 @@ class Exercicio3GameViewController: UIViewController,MySpriteKitDelegate {
         super.viewDidLoad()
         
         if let scene = GKScene(fileNamed: "Exercicio3") {
+        
             
             if let sceneNode = scene.rootNode as! Exercicio3? {
+                
                 sceneNode.scaleMode = .aspectFill
                 if let view = self.view as! SKView? {
+                    self.viewDoExercicio = view
+                    
+                    
                     print(dbgmsg + "Carregando spritekit...")
                     view.presentScene(sceneNode)
                     
@@ -79,6 +87,7 @@ class Exercicio3GameViewController: UIViewController,MySpriteKitDelegate {
     //carrega a tela de feedback passando a quantidade de acertos e erros
     func carregarFeedback(acertos: Int, erros: Int) {
         AlertaHelper.alertarConclusaoExercicio {
+            self.viewDoExercicio?.isPaused = true
             TrocarTelaHelper.chamarFeedbackTipo2(acertos: acertos, erros: erros, viewController: self)
         }
     }
@@ -86,7 +95,9 @@ class Exercicio3GameViewController: UIViewController,MySpriteKitDelegate {
     
     
     func carregarTelaDeSelecaoDeExercicio() {
+        
         AlertaHelper.alertaSairExercicioEmCurso {
+            self.viewDoExercicio?.isPaused = true
             TrocarTelaHelper.chamarTelaPrincipalDeSelecaoExercicios(viewController: self)
         }
     }

@@ -17,6 +17,8 @@ class Exercicio2Cena1: SKScene{
     
     private let dbgmsg = "[RecObjCena1]: "
     
+    var i = 0
+    
     //Mark: Variaveis de sprites na tela
     var tvAreaReconhecimento: SKSpriteNode?
     var sofaAreaReconhecimento: SKSpriteNode?
@@ -80,6 +82,7 @@ class Exercicio2Cena1: SKScene{
     
     override func update(_ currentTime: CFTimeInterval) {
         
+        
     }
     
     
@@ -135,7 +138,9 @@ class Exercicio2Cena1: SKScene{
     //Esta funcao verifica se ainda existem itens a serem achados, caso nao haja
     //chama a tela de feedback
     func chamarFeedback(){
+        
         if self.listaDeSpritesASeremAchados.count <= 0 {
+            self.view?.isPaused = true
             mySpriteKitDelegate?.carregarFeedback(acertos: self.acertos, erros: self.erros)
         }
         

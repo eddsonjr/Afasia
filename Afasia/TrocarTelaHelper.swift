@@ -30,6 +30,9 @@ class TrocarTelaHelper {
     
     //chama  a tela principal de selecao de exercicios
     static func chamarTelaPrincipalDeSelecaoExercicios(viewController: UIViewController){
+        
+        // viewController.dismiss(animated: false, completion: nil)
+        
         let controller = SelecaoJogosViewController.instantiateFromStoryboard()
         viewController.present(controller, animated: true, completion: nil)
     }
