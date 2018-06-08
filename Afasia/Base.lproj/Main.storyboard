@@ -95,7 +95,9 @@
                             <constraint firstItem="q5q-oE-gxh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zHQ-FP-ol0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dBl-5m-cyt"/>
+                    <navigationItem key="navigationItem" id="dBl-5m-cyt">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="PtU-sJ-ET6"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -591,11 +593,11 @@
             </objects>
             <point key="canvasLocation" x="33.984375" y="38.28125"/>
         </scene>
-        <!--Item-->
+        <!--Exercícios-->
         <scene sceneID="pb4-YA-H4A">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nLC-vV-1VL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="iRU-ru-coo"/>
+                    <tabBarItem key="tabBarItem" title="Exercícios" image="exercicios copy" id="iRU-ru-coo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yeG-9O-KAm">
                         <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
@@ -620,6 +622,7 @@
         <image name="abacate" width="620" height="330"/>
         <image name="encontre" width="309" height="375"/>
         <image name="escreva" width="309" height="375"/>
+        <image name="exercicios copy" width="21" height="24"/>
         <image name="fale" width="309" height="375"/>
     </resources>
 </document>
