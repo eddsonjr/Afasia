@@ -47,14 +47,16 @@ class Exercicio2ViewController: UIViewController {
     
     @IBAction func carregarExercicio2_2(_ sender: Any) {
         print(dbgmsg + "Carregando cena 2")
-        carregarGameScene(cena: 2)
+        //carregarGameScene(cena: 2)
+        AlertaHelper.alertaFuncionalidadeEmDesenvolvimento()
         
     }
     
     
     @IBAction func carregarExercicio2_3(_ sender: Any) {
         print(dbgmsg + "Carregando cena 3")
-        carregarGameScene(cena: 3)
+        //carregarGameScene(cena: 3)
+        AlertaHelper.alertaFuncionalidadeEmDesenvolvimento()
         
     }
 

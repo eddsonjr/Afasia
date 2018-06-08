@@ -57,27 +57,29 @@ class Exercicio2GameViewController: UIViewController,MySpriteKitDelegate {
             
             
         case 2:
+            
             if let scene = GKScene(fileNamed: "Exercicio2Cena2") {
-                
+
                 if let sceneNode = scene.rootNode as! Exercicio2Cena2? {
                     sceneNode.scaleMode = .aspectFill
                     if let view = self.view as! SKView? {
                         print(dbgmsg + "Carregando spritekit...")
                         view.presentScene(sceneNode)
-                        
+
                         view.ignoresSiblingOrder = true
-                        
+
                         view.showsFPS = true
                         view.showsNodeCount = true
                     }
                     sceneNode.mySpriteKitDelegate = self
                 }
-                
-                
+
+
             } //fecha o if let scene = GKScene...
             
             
         case 3:
+            
             if let scene = GKScene(fileNamed: "Exercicio2Cena3") {
                 
                 if let sceneNode = scene.rootNode as! Exercicio2Cena3? {
