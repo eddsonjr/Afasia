@@ -278,22 +278,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79B-F7-ArE">
-                                <rect key="frame" x="491" y="369" width="42" height="30"/>
-                                <state key="normal" title="Cena1"/>
+                                <rect key="frame" x="59" y="353.5" width="220" height="61"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="2fO-Wl-kSh"/>
+                                    <constraint firstAttribute="height" constant="61" id="9Rs-y2-e43"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="42"/>
+                                <state key="normal" title="Cena 1">
+                                    <color key="titleColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="carregarExercicio2_1:" destination="3dq-VW-npU" eventType="touchUpInside" id="90Z-Pw-2tm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvH-pP-OGR">
-                                <rect key="frame" x="489.5" y="407" width="45" height="30"/>
-                                <state key="normal" title="Cena2"/>
+                                <rect key="frame" x="402" y="353.5" width="220" height="61"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="pST-T0-f5z"/>
+                                    <constraint firstAttribute="height" constant="61" id="rR8-N0-HaF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="42"/>
+                                <state key="normal" title="Cena 2">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="carregarExercicio2_2:" destination="3dq-VW-npU" eventType="touchUpInside" id="wja-rw-9Bl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmQ-Xy-S2m">
-                                <rect key="frame" x="489.5" y="445" width="45" height="30"/>
-                                <state key="normal" title="Cena3"/>
+                                <rect key="frame" x="763" y="353" width="220" height="61"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="Vna-vc-YaG"/>
+                                    <constraint firstAttribute="height" constant="61" id="xk2-Yd-O37"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="42"/>
+                                <state key="normal" title="Cena 3">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="carregarExercicio2_3:" destination="3dq-VW-npU" eventType="touchUpInside" id="IYb-Yq-PPK"/>
                                 </connections>
@@ -301,12 +325,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hmQ-Xy-S2m" firstAttribute="centerX" secondItem="Z9Z-LW-0kc" secondAttribute="centerX" id="6Sl-uQ-dY5"/>
-                            <constraint firstItem="79B-F7-ArE" firstAttribute="centerY" secondItem="Z9Z-LW-0kc" secondAttribute="centerY" id="HxW-xn-23y"/>
-                            <constraint firstItem="hmQ-Xy-S2m" firstAttribute="top" secondItem="nvH-pP-OGR" secondAttribute="bottom" constant="8" id="Kgz-TM-eoA"/>
-                            <constraint firstItem="79B-F7-ArE" firstAttribute="centerX" secondItem="Z9Z-LW-0kc" secondAttribute="centerX" id="fj0-7b-cFl"/>
-                            <constraint firstItem="nvH-pP-OGR" firstAttribute="top" secondItem="79B-F7-ArE" secondAttribute="bottom" constant="8" id="qhs-aP-fzB"/>
-                            <constraint firstItem="nvH-pP-OGR" firstAttribute="centerX" secondItem="Z9Z-LW-0kc" secondAttribute="centerX" id="ynl-3L-S0F"/>
+                            <constraint firstItem="nvH-pP-OGR" firstAttribute="centerX" secondItem="Z9Z-LW-0kc" secondAttribute="centerX" id="67m-me-WA0"/>
+                            <constraint firstItem="nvH-pP-OGR" firstAttribute="centerY" secondItem="Z9Z-LW-0kc" secondAttribute="centerY" id="73Z-fM-HoK"/>
+                            <constraint firstItem="79B-F7-ArE" firstAttribute="centerY" secondItem="nvH-pP-OGR" secondAttribute="centerY" id="86h-80-sX9"/>
+                            <constraint firstItem="79B-F7-ArE" firstAttribute="leading" secondItem="Z9Z-LW-0kc" secondAttribute="leading" constant="59" id="8UR-A8-2ye"/>
+                            <constraint firstItem="hmQ-Xy-S2m" firstAttribute="centerY" secondItem="nvH-pP-OGR" secondAttribute="centerY" id="F1S-rM-Wv1"/>
+                            <constraint firstAttribute="trailing" secondItem="hmQ-Xy-S2m" secondAttribute="trailing" constant="41" id="LI1-iv-ECi"/>
                         </constraints>
                     </view>
                 </viewController>
