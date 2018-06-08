@@ -49,6 +49,14 @@ class AlertaHelper {
     
     
     
+    static func alertaFuncionalidadeEmDesenvolvimento() {
+        
+        let alerta: SCLAlertView = SCLAlertView()
+        
+        alerta.alertaMensagemSimplesWarning(titulo: "Em breve!", mensagemAlerta: "Esta funcionalidade ainda está sendo desenvolvida. Aguarde as próximas versões.", textoBotao: "Ok")
+    }
+    
+    
     
 
     
